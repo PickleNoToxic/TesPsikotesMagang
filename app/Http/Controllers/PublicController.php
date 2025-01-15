@@ -16,8 +16,10 @@ class PublicController extends Controller
 
     public function registration()
     {
-        $events = Event::where('is_active', 1)->latest()->get();
-        $managements = Management::where('is_active', 1)->latest()->get();
+        // $events = Event::where('is_active', 1)->latest()->get();
+        // $managements = Management::where('is_active', 1)->latest()->get();
+        $events = null;
+        $managements = null;
         return view('public.pages.registration', [
             'events' => $events,
             'managements' => $managements

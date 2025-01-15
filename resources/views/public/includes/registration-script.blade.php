@@ -25,22 +25,17 @@
         
         const formData = {
             fullname: document.getElementById('fullname').value,
+            email: document.getElementById('email').value,
+            whatsapp: document.getElementById('whatsapp_number').value,
+            address: document.getElementById('address').value,
+            position: document.getElementById('position').value,
             code: codeUnique,
-            nickname: document.getElementById('nickname').value,
             birthday: document.getElementById('birthday').value,
-            hometown: document.getElementById('hometown').value,
-            father: document.getElementById('father').value,
-            mother: document.getElementById('mother').value,
-            junior_highschool: document.getElementById('junior_highschool').value,
-            senior_highschool: document.getElementById('senior_highschool').value,
             gender: document.getElementById('gender').value,
-            color: document.getElementById('color').value,
-            event_id: document.getElementById('event_id').value,
-            management_id: document.getElementById('management_id').value,
         };
 
         try {
-            const response = await fetch('{{ route("participants.store") }}', {
+            const response = await fetch('{{ route("user.store") }}', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -55,19 +50,14 @@
             
             localStorage.setItem('fullname', formData.fullname);
             localStorage.setItem('code', codeUnique);
-            localStorage.setItem('nickname', formData.nickname);
             const parts = formData.birthday.split("-");
             const reversedbirthday = `${parts[2]}-${parts[1]}-${parts[0]}`;
             localStorage.setItem('birthday', reversedbirthday);
-            localStorage.setItem('hometown', formData.hometown);
-            localStorage.setItem('father', formData.father);
-            localStorage.setItem('mother', formData.mother);
-            localStorage.setItem('junior_highschool', formData.junior_highschool);
-            localStorage.setItem('senior_highschool', formData.senior_highschool);
             localStorage.setItem('gender', formData.gender);
-            localStorage.setItem('color', formData.color);
-            localStorage.setItem('event_id', formData.event_id);
-            localStorage.setItem('management_id', formData.management_id);
+            localStorage.setItem('email', formData.email);
+            localStorage.setItem('whatsapp', formData.whatsapp);
+            localStorage.setItem('address', formData.address);
+            localStorage.setItem('position', formData.position);
             
             window.location.href = "{{ route('resting-state') }}";
         } catch (error) {

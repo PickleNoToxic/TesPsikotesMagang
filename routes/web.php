@@ -7,6 +7,7 @@ use App\Http\Controllers\ManagementController;
 use App\Http\Controllers\ParticipantController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ValidationController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,6 +34,8 @@ Route::controller(PublicController::class)->group(function () {
     Route::get('/validation', 'validation')->name('validation');
     Route::get('/finish', 'finish')->name('finish');
 });
+
+Route::post('/user-store', [UserController::class, 'store'])->name('user.store');
 
 Route::resource('/participants', ParticipantController::class);
 Route::post('/validation-store/{userCode}', [ValidationController::class, 'store'])->name('validation-store');
