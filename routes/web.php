@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DetailInteligenceQuotientTestController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\InteligenceQuotientTestController;
 use App\Http\Controllers\PersonalityTestController;
@@ -34,14 +35,18 @@ Route::controller(PublicController::class)->group(function () {
     Route::get('/resting-state', 'resting')->name('resting-state');
     Route::get('/biografi', 'biografi')->name('biografi');
     Route::get('/cognitive', 'cognitive')->name('cognitive');
-    Route::get('/validation', 'validation')->name('validation');
+    // Route::get('/validation', 'validation')->name('validation');
     Route::get('/finish', 'finish')->name('finish');
+    Route::get('/inteligence-quotient',  'inteligenceQuotientTest')->name('inteligence-quotient');
 });
+
+Route::put('/inteligence-quotient-score/{userCode}',  [UserController::class, 'score'])->name('inteligence-quotient-score');
+
 
 Route::post('/user-store', [UserController::class, 'store'])->name('user.store');
 
 Route::resource('/participants', ParticipantController::class);
-Route::post('/validation-store/{userCode}', [ValidationController::class, 'store'])->name('validation-store');
+Route::post('/inteligence-quotient-store/{userCode}', [DetailInteligenceQuotientTestController::class, 'store'])->name('inteligence-quotient-store');
 
 Route::controller(AuthController::class)->group(function () {
     Route::get('/cms/login', 'index')->name('admin-login')->middleware('guest');
@@ -52,27 +57,27 @@ Route::controller(AuthController::class)->group(function () {
 Route::prefix('cms')
     ->middleware('admin')
     ->group(function () {
-		Route::get('/', function () {
-			return redirect()->route('admin-home');
-		});
+        Route::get('/', function () {
+            return redirect()->route('admin-home');
+        });
 
         Route::controller(AdminController::class)->group(function () {
-			Route::get('/dashboard', 'index')->name('admin-home');
+            Route::get('/dashboard', 'index')->name('admin-home');
         });
 
         Route::resource('/events', EventController::class);
-		Route::post('/events/active', [EventController::class, 'active'])->name('event-active');
-		Route::post('/events/inactive', [EventController::class, 'inactive'])->name('event-inactive');
+        Route::post('/events/active', [EventController::class, 'active'])->name('event-active');
+        Route::post('/events/inactive', [EventController::class, 'inactive'])->name('event-inactive');
 
         Route::resource('/managements', ManagementController::class);
-		Route::post('/managements/active', [ManagementController::class, 'active'])->name('management-active');
-		Route::post('/managements/inactive', [ManagementController::class, 'inactive'])->name('management-inactive');
+        Route::post('/managements/active', [ManagementController::class, 'active'])->name('management-active');
+        Route::post('/managements/inactive', [ManagementController::class, 'inactive'])->name('management-inactive');
 
-		Route::get('/participants', [UserController::class, 'all'])->name('participants-all');
-		// Route::put('/participants/{participant}', [UserController::class, 'update'])->name('participants-update');
-		// Route::delete('/participants/{participant}', [UserController::class, 'destroy'])->name('participants-delete');
-
-		Route::get('/participants/validations', [ParticipantController::class, 'validations'])->name('participants-validations');
+        Route::get('/participants', [UserController::class, 'all'])->name('participants-all');
+        // Route::put('/participants/{participant}', [UserController::class, 'update'])->name('participants-update');
+        // Route::delete('/participants/{participant}', [UserController::class, 'destroy'])->name('participants-delete');
+    
+        Route::get('/participants/validations', [ParticipantController::class, 'validations'])->name('participants-validations');
         // Route::resource('/statistiks', StatistikController::class);
         // Route::resource('/heroes', HeroController::class);
         // Route::resource('/master', MasterWebController::class);
@@ -87,7 +92,7 @@ Route::prefix('cms')
         // Route::resource('/facility/categories', CategoryFacilityController::class);
         // Route::resource('/facility/facilities', FacilityController::class);
         // Route::resource('/faqs', FaqController::class);
-
+    
         Route::resource('/inteligence-quotient-test', InteligenceQuotientTestController::class);
         Route::post('/inteligence-quotient-test/active', [InteligenceQuotientTestController::class, 'active'])->name('inteligence-quotient-test-active');
         Route::post('/inteligence-quotient-test/inactive', [InteligenceQuotientTestController::class, 'inactive'])->name('inteligence-quotient-test-inactive');
@@ -95,4 +100,4 @@ Route::prefix('cms')
         Route::resource('/personality-test', PersonalityTestController::class);
         Route::post('/personality-test/active', [PersonalityTestController::class, 'active'])->name('personality-test-active');
         Route::post('/personality-test/inactive', [PersonalityTestController::class, 'inactive'])->name('personality-test-inactive');
-});
+    });

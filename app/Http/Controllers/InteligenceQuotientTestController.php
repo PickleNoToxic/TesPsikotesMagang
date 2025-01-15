@@ -11,7 +11,7 @@ class InteligenceQuotientTestController extends Controller
 {
     public function index()
     {
-        $datas = InteligenceQuotientTest::get();
+        $datas = InteligenceQuotientTest::latest()->get();
         return view('admin.pages.inteligence-quotient-test.index', [
             "datas" => $datas
         ]);

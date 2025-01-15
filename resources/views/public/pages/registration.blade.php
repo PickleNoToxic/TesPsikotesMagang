@@ -8,7 +8,7 @@
                     <div
                         class="px-5 py-7 space-y-3 mt-3 font-poppins text-lg text-center font-light flex flex-col items-center justify-center gap-2">
                         <h1 class="text-3xl font-bold mb-3">Intelligence Quotient & Personality Test</h1>
-                        <div class="mx-2">
+                        <div class="mx-16 space-y-4">
                             <p>
                                 Tes ini dirancang untuk mengukur tingkat kecerdasan dan kepribadian Anda secara menyeluruh.
                             </p>

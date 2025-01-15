@@ -32,6 +32,10 @@
         }
     }
 
+    const handleRedirect= () => {
+        window.location.href = '/inteligence-quotient'
+    }
+
     const stimulusOpenEyes = () => {
         toggleButton();
         intervalId = setInterval(countdown, 1000);

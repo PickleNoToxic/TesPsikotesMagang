@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\InteligenceQuotientTest;
 use App\Models\Management;
 use Illuminate\Http\Request;
 
@@ -21,8 +22,15 @@ class PublicController extends Controller
         $events = null;
         $managements = null;
         return view('public.pages.registration', [
-            'events' => $events,
-            'managements' => $managements
+            'events' => null,
+            'managements' => null
+        ]);
+    }
+
+    public function inteligenceQuotientTest(){
+        $datas = InteligenceQuotientTest::latest()->get();
+        return view('public.pages.validation', [
+            "datas" => $datas
         ]);
     }
 

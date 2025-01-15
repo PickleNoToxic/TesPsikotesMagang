@@ -28,6 +28,5 @@
 @endsection
 
 @push('addon-script')
-    @include('public.includes.validation-datas')
     @include('public.includes.validation-script')
 @endpush
