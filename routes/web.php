@@ -3,11 +3,14 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\InteligenceQuotientTestController;
+use App\Http\Controllers\PersonalityTestController;
 use App\Http\Controllers\ManagementController;
 use App\Http\Controllers\ParticipantController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ValidationController;
 use App\Http\Controllers\UserController;
+use App\Models\InteligenceQuotientTest;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -84,4 +87,9 @@ Route::prefix('cms')
         // Route::resource('/facility/categories', CategoryFacilityController::class);
         // Route::resource('/facility/facilities', FacilityController::class);
         // Route::resource('/faqs', FaqController::class);
+
+        Route::resource('/inteligence-quotient-test', InteligenceQuotientTestController::class);
+
+
+        Route::resource('/personality-test', PersonalityTestController::class);
 });

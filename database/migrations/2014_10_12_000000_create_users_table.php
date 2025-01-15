@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('fullname');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('whatsapp');
             $table->date('birthday');
             $table->string('gender');
@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('position');
             $table->integer('score_iq')->default(0);
             $table->boolean('is_admin')->default(false);
+            $table->string('password')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

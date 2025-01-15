@@ -11,13 +11,13 @@ class AdminController extends Controller
 {
     public function index()
     {
-        $events = Event::where('is_active', 1)->count();
-        $managements = Management::where('is_active', 1)->count();
-        $participants = Participant::count();
+        // $events = Event::where('is_active', 1)->count();
+        // $managements = Management::where('is_active', 1)->count();
+        // $participants = Participant::count();
         return view('admin.pages.index', [
-            "events" => $events,
-            "managements" => $managements,
-            "participants" => $participants,
+            "events" => null,
+            "managements" => null,
+            "participants" => null,
         ]);
     }
 }

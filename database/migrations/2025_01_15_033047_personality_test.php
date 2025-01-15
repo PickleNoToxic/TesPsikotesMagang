@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('option_4');
             $table->string('correct_answer');
             $table->integer('score');
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }

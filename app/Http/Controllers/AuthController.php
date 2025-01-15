@@ -21,7 +21,7 @@ class AuthController extends Controller
         ]);
 
         if (Auth::attempt($credentials)) {
-            if (!Auth::user()->is_active) {
+            if (!Auth::user()->is_admin) {
                 Auth::logout();
 
                 $request->session()->invalidate();

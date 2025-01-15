@@ -10,17 +10,14 @@
         <a href="{{ route("admin-home") }}" class="flex flex-row gap-5 {{ Request::is('cms/dashboard') ? 'bg-gray-400/20' : '' }} hover:bg-gray-400/20 py-2 md:py-5 lg:py-2 pl-3 md:pl-5 items-center rounded-lg cursor-pointer">
             <h4 class="text-2xl md:text-4xl lg:text-xl">Dashboard</h4>
         </a>
-        <a href="{{ route('events.index') }}" class="flex flex-row gap-5 {{ Request::is('cms/events') ? 'bg-gray-400/20' : '' }} hover:bg-gray-400/20 py-2 md:py-5 lg:py-2 pl-3 md:pl-5 items-center rounded-lg cursor-pointer">
-            <h4 class="text-2xl md:text-4xl lg:text-xl">Event</h4>
+        <a href="{{ route('inteligence-quotient-test.index') }}" class="flex flex-row gap-5 {{ Request::is('cms/inteligence-quotient-test') ? 'bg-gray-400/20' : '' }} hover:bg-gray-400/20 py-2 md:py-5 lg:py-2 pl-3 md:pl-5 items-center rounded-lg cursor-pointer">
+            <h4 class="text-2xl md:text-4xl lg:text-xl">Inteligence Quotient Test</h4>
         </a>
-        <a href="{{ route('managements.index') }}" class="flex flex-row gap-5 {{ Request::is('cms/managements') ? 'bg-gray-400/20' : '' }} hover:bg-gray-400/20 py-2 md:py-5 lg:py-2 pl-3 md:pl-5 items-center rounded-lg cursor-pointer">
-            <h4 class="text-2xl md:text-4xl lg:text-xl">Management</h4>
+        <a href="{{ route('personality-test.index') }}" class="flex flex-row gap-5 {{ Request::is('cms/personlality-test') ? 'bg-gray-400/20' : '' }} hover:bg-gray-400/20 py-2 md:py-5 lg:py-2 pl-3 md:pl-5 items-center rounded-lg cursor-pointer">
+            <h4 class="text-2xl md:text-4xl lg:text-xl">Personality Test</h4>
         </a>
         <a href="{{ route('participants-all') }}" class="flex flex-row gap-5 {{ Request::is('cms/participants') ? 'bg-gray-400/20' : '' }} hover:bg-gray-400/20 py-2 md:py-5 lg:py-2 pl-3 md:pl-5 items-center rounded-lg cursor-pointer">
             <h4 class="text-2xl md:text-4xl lg:text-xl">Participant</h4>
-        </a>
-        <a href="{{ route('participants-validations') }}" class="flex flex-row gap-5 {{ Request::is('cms/participants/validations') ? 'bg-gray-400/20' : '' }} hover:bg-gray-400/20 py-2 md:py-5 lg:py-2 pl-3 md:pl-5 items-center rounded-lg cursor-pointer">
-            <h4 class="text-2xl md:text-4xl lg:text-xl">Validations</h4>
         </a>
         <a href="{{ route("admin-logout") }}" class="mt-10 flex flex-row gap-5 hover:bg-gray-400/20 py-2 md:py-5 lg:py-2 pl-3 md:pl-5 items-center rounded-lg cursor-pointer">
             <h4 class="text-2xl md:text-4xl lg:text-xl">Logout</h4>
