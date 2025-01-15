@@ -8,7 +8,7 @@ use DB;
 class UserController extends Controller
 {
     public function store(Request $request){
-        DB::table('users')->insert([
+        $userId = DB::table('users')->insertGetId([
             'fullname' => $request->fullname,
             'email' => $request->email,
             'birthday' => $request->birthday,
@@ -18,6 +18,10 @@ class UserController extends Controller
             'position' => $request->position,
             'created_at' => now(),
             'updated_at' => now()
+        ]);
+
+        return response()->json([
+            'user_id' => $userId
         ]);
     }
 }
