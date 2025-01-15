@@ -6,7 +6,7 @@
     const counterHeader = document.getElementById('counter');
 
     let userScore = 0;
-    let countdown = 5; // Timer in seconds
+    let countdown = 200; // Timer in seconds
 
     const updateCountdown = () => {
         const minutes = Math.floor(countdown / 60);
@@ -81,6 +81,9 @@
 
     const storeUpdateAnswer = (index, selectedOption) => {
         userAnswers[index].answer = selectedOption;
+         if (selectedOption === parseInt( dataFiltered[index].correct_answer)) {
+            userScore += dataFiltered[index].score; 
+        }
     };
 
     const checkedAnswer = (index) => {
@@ -139,6 +142,28 @@
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Failed to save answers');
+                }
+                return response.json();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred: ' + error.message);
+            });
+
+
+            fetch(`/inteligence-quotient-score`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                },
+                body: JSON.stringify({
+                    score: userScore
+                })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to save score');
                 }
                 return response.json();
             })

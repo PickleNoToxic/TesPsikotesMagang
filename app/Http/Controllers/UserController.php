@@ -25,7 +25,7 @@ class UserController extends Controller
 
     public function score(Request $request)
     {
-        $userId = session('user_id');
+        $userId =(int) session('user_id');
         $updated = DB::table('users')
             ->where('id', $userId)  
             ->update(['score_iq' => $request->score]);  

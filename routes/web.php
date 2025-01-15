@@ -40,7 +40,7 @@ Route::controller(PublicController::class)->group(function () {
     Route::get('/inteligence-quotient',  'inteligenceQuotientTest')->name('inteligence-quotient');
 });
 
-Route::put('/inteligence-quotient-score/{userCode}',  [UserController::class, 'score'])->name('inteligence-quotient-score');
+Route::put('/inteligence-quotient-score',  [UserController::class, 'score'])->name('inteligence-quotient-score');
 
 
 Route::post('/user-store', [UserController::class, 'store'])->name('user.store');
