@@ -18,19 +18,26 @@ class PersonalityTestController extends Controller
     }
 
     public function store(Request $request) {
-        DB::table('personality_test')->insert([
-            'question' => $request->question,
-            'option_1' => $request->option_1,
-            'option_2' => $request->option_2,
-            'option_3' => $request->option_3,
-            'option_4' => $request->option_4,
-            'correct_answer' => $request->correct_answer,
-            'score' => $request->score,
-            'is_active' => $request->is_active,
-            'created_at' => now(),
-            'updated_at' => now()
-        ]);
-        return redirect()->route('personality-test.index');
+        $result = DB::table('personality_test')->insert([
+                'question' => $request->question,
+                'option_1' => $request->option_1,
+                'option_2' => $request->option_2,
+                'option_3' => $request->option_3,
+                'option_4' => $request->option_4,
+                'correct_answer' => $request->correct_answer,
+                'score' => $request->score,
+                'is_active' => $request->is_active,
+                'created_at' => now(),
+                'updated_at' => now()
+            ]);
+
+        if($result) {
+            Alert::success('Success', 'Data berhasil disimpan');
+            return back();
+        } else {
+            Alert::error('Failed', 'Gagal diproses! Coba beberapa saat lagi.');
+            return back();
+        }
     }
 
     public function active(Request $request)
