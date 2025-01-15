@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('detail_inteligence_quotient_test', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->references('id')->on('users')->name('fk_user_inteligence_quotient_test');;
-            $table->foreignId('inteligence_quotient_test_id')->references('id')->on('inteligence_quotient_test')->name('fk_inteligence_quotient_test');;
-            $table->string('answer');
+            $table->foreignId('user_id')->references('id')->on('users')->name('fk_user_inteligence_quotient_test');
+            $table->foreignId('inteligence_quotient_test_id')->references('id')->on('inteligence_quotient_test')->name('fk_inteligence_quotient_test');
+            $table->integer('answer')->nullable();
             $table->timestamps();
         });
     }
