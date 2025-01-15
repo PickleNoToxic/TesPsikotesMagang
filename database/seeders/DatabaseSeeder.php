@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
                 'address' => '123 Main Street, Jakarta',
                 'position' => 'Developer',
                 'score_iq' => 0, 
+                'score_personality' => 0,
                 'is_admin' => true,
                 'password' => bcrypt('12345'),
             ],
@@ -40,6 +41,7 @@ class DatabaseSeeder extends Seeder
                 'address' => '456 Elm Street, Surabaya',
                 'position' => 'Designer',
                 'score_iq' => 0, 
+                'score_personality' => 0,
                 'is_admin' => false,
                 'password' => null,
             ],
@@ -47,6 +49,21 @@ class DatabaseSeeder extends Seeder
 
         for($i = 0; $i < 50; $i++) {
             DB::table('inteligence_quotient_test')->insert([
+                'question' => 'Question '.($i+1),
+                'option_1' => 'Option 1',
+                'option_2' => 'Option 2',
+                'option_3' => 'Option 3',
+                'option_4' => 'Option 4',
+                'correct_answer' => rand(1,4),
+                'score' => 1,
+                'is_active' => true,
+                'created_at' => now(),
+                'updated_at' => now()
+            ]);
+        } 
+
+        for($i = 0; $i < 50; $i++) {
+            DB::table('personality_test')->insert([
                 'question' => 'Question '.($i+1),
                 'option_1' => 'Option 1',
                 'option_2' => 'Option 2',

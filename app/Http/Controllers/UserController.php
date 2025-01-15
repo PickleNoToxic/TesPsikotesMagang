@@ -24,4 +24,12 @@ class UserController extends Controller
             'user_id' => $userId
         ]);
     }
+
+    public function all(){
+        $datas = DB::table('users')->get();
+
+        return view('admin.pages.participants.index', [
+            "datas" => $datas
+        ]);
+    }
 }

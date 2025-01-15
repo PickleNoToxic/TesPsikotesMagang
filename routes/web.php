@@ -68,9 +68,9 @@ Route::prefix('cms')
 		Route::post('/managements/active', [ManagementController::class, 'active'])->name('management-active');
 		Route::post('/managements/inactive', [ManagementController::class, 'inactive'])->name('management-inactive');
 
-		Route::get('/participants', [ParticipantController::class, 'index'])->name('participants-all');
-		Route::put('/participants/{participant}', [ParticipantController::class, 'update'])->name('participants-update');
-		Route::delete('/participants/{participant}', [ParticipantController::class, 'destroy'])->name('participants-delete');
+		Route::get('/participants', [UserController::class, 'all'])->name('participants-all');
+		// Route::put('/participants/{participant}', [UserController::class, 'update'])->name('participants-update');
+		// Route::delete('/participants/{participant}', [UserController::class, 'destroy'])->name('participants-delete');
 
 		Route::get('/participants/validations', [ParticipantController::class, 'validations'])->name('participants-validations');
         // Route::resource('/statistiks', StatistikController::class);
