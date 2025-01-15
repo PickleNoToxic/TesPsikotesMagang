@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\PersonalityTest;
 use DB;
+use App\Models\MasterWeb;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class PersonalityTestController extends Controller
@@ -12,8 +13,10 @@ class PersonalityTestController extends Controller
     public function index()
     {
         $datas = PersonalityTest::get();
+        $master_web_data = MasterWeb::latest()->first();
         return view('admin.pages.personality-test.index', [
-            "datas" => $datas
+            "datas" => $datas,
+            "master_web_data" => $master_web_data
         ]);
     }
 

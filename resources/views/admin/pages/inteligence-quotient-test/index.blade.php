@@ -196,6 +196,51 @@
         </div>
     </div>
 
+    <!-- modal change master web -->
+    <div id="modal-edit-master-web" class="hidden w-screen h-screen bg-black/90 fixed top-0 left-0 z-50 font-poppins flex justify-center text-white ">
+        <div class="w-full max-h-[100vh] overflow-y-scroll flex justify-center items-start py-10" style="-ms-overflow-style: none; scrollbar-width: none;">
+            <form
+                id="modal-detail-master-web"
+                method="POST" 
+                action="{{ route('master-web.updateIQTest') }}"
+                enctype="multipart/form-data"
+                class="w-11/12 md:w-1/2 lg:w-4/12 bg-white/30 rounded-2xl py-5 px-5 md:px-10 flex flex-col justify-center gap-3 items-center"
+            >
+                @method('PUT')
+                @csrf
+                <h1 class="font-poppins font-semibold text-white text-3xl capitalize tracking-wider" id="detail-title">IQ Test's Configuration </h1>
+                <div class="flex flex-col w-full gap-1 mt-10">
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Number of Questions</span>
+                    <div class="w-full h-9 rounded-full">
+                        <input type="number"
+                            required
+                            id="detail-number-of-questions"
+                            name="number_of_questions_iq_test"
+                            class="font-poppins text-sm bg-white text-black rounded-full w-full h-full px-5 placeholder:italic focus:outline-none focus:ring-0">
+                    </div>
+                </div>
+                <div class="flex flex-col w-full gap-1">
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Test Duration (in Minutes)</span>
+                    <div class="w-full h-9 rounded-full">
+                        <input type="number"
+                            required
+                            id="detail-test-duration"
+                            name="iq_test_duration"
+                            class="font-poppins text-sm bg-white text-black rounded-full w-full h-full px-5 placeholder:italic focus:outline-none focus:ring-0">
+                    </div>
+                </div>
+                <div class="flex justify-end gap-4 w-full flex-row mt-14 mb-3">
+                    <div onclick="toggleModalChangeMasterWeb()" class="px-7 py-2 text-white text-sm text-center font-poppins font-medium border border-white rounded-full cursor-pointer tracking-wider">
+                        Close
+                    </div>
+                    <button type="submit" class="px-7 py-2 text-white text-sm text-center font-poppins font-medium bg-blue-500 rounded-full cursor-pointer tracking-wider">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     {{-- content --}}
     <div class="flex-none flex flex-col justify-center md:justify-start px-0 lg:px-2 w-screen lg:w-[calc(100vw-350px)]">
         <!-- header -->
@@ -203,6 +248,22 @@
             <div class="font-poppins font-bold text-2xl md:text-3xl capitalize">Inteligence Quotient Test Questions</div>
             <div onclick="toggleModalAdd()" class="px-5 md:px-7 py-2 text-white text-sm font-poppins font-medium bg-blue-400 rounded-full cursor-pointer flex flex-row justify-center items-center gap-3">
                 <span>Add Data</span>
+            </div>
+        </div>
+
+        <!-- subheader -->
+        <div class="w-full pl-3 pr-3 mt-5 md:pl-7 md:pr-7 lg:pl-20 lg:pr-0 flex justify-between">
+            <div class="font-poppins font-medium text-xl md:text-2xl capitalize">Number of Questions per Test: {{$master_web_data->number_of_questions_iq_test}} Questions</div>
+        </div>
+
+        <div class="w-full pl-3 pr-3 mt-5 md:pl-7 md:pr-7 lg:pl-20 lg:pr-0 flex justify-between">
+            <div class="font-poppins font-medium text-xl md:text-2xl capitalize">Test Duration: {{$master_web_data->iq_test_duration}} Minutes</div>
+        </div>
+
+        <div class="w-full pl-3 pr-3 mt-5 md:pl-7 md:pr-7 lg:pl-20 lg:pr-0 flex justify-start">
+            <div onclick="toggleModalChangeMasterWeb()" 
+                class="px-5 md:px-7 py-2 text-white text-sm font-poppins font-medium bg-blue-400 rounded-full cursor-pointer">
+                <span>Change</span>
             </div>
         </div>
 
@@ -290,6 +351,32 @@
 
             // Show modal
             modalDetail.classList.remove('hidden');
+        };
+
+        const modalChangeMasterWeb = document.querySelector('#modal-edit-master-web');
+        const modalChangeMasterWebContent = document.querySelector('#modal-detail-master-web');
+        const toggleModalChangeMasterWeb = () => {
+            modalChangeMasterWeb.classList.toggle('hidden');
+        }
+        modalChangeMasterWeb.addEventListener('click', (e) => {
+            if(!modalChangeMasterWebContent.contains(e.target)){
+                toggleModalChangeMasterWeb();
+            }
+        })
+
+        const masterWebData = {
+            numberOfQuestions: {{ $master_web_data->number_of_questions_iq_test }},
+            testDuration: {{ $master_web_data->iq_test_duration }},
+        };
+
+        const showModalChangeMasterWeb = () => {
+            const form = document.getElementById('modal-detail-master-web');
+            
+            document.querySelector('#detail-number-of-questions').value = masterWebData.numberOfQuestions;
+            document.querySelector('#detail-test-duration').value = masterWebData.testDuration;
+
+            // Show modal
+            modalChangeMasterWeb.classList.remove('hidden');
         };
     </script>
 @endpush

@@ -17,7 +17,18 @@ class DatabaseSeeder extends Seeder
      * Seed the application's database.
      */
     public function run(): void
-    {
+    {   
+        DB::table('master_web')->insert([
+            [
+                'number_of_questions_iq_test' => 50,
+                'number_of_questions_personality_test' => 50,
+                'iq_test_duration' => 30,
+                'personality_test_duration' => 30,
+                'created_at' => now(),
+                'updated_at' => now()
+            ]
+        ]);
+
         DB::table('users')->insert([
             [
                 'fullname' => 'Admin 01',
@@ -31,6 +42,8 @@ class DatabaseSeeder extends Seeder
                 'score_personality' => 0,
                 'is_admin' => true,
                 'password' => bcrypt('12345'),
+                'created_at' => now(),
+                'updated_at' => now()
             ],
             [
                 'fullname' => 'Budi',
@@ -44,6 +57,8 @@ class DatabaseSeeder extends Seeder
                 'score_personality' => 0,
                 'is_admin' => false,
                 'password' => null,
+                'created_at' => now(),
+                'updated_at' => now()
             ],
         ]);
 

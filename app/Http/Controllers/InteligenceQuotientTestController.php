@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\InteligenceQuotientTest;
+use App\Models\MasterWeb;
 use DB;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -12,8 +13,10 @@ class InteligenceQuotientTestController extends Controller
     public function index()
     {
         $datas = InteligenceQuotientTest::get();
+        $master_web_data = MasterWeb::latest()->first();
         return view('admin.pages.inteligence-quotient-test.index', [
-            "datas" => $datas
+            "datas" => $datas,
+            "master_web_data" => $master_web_data
         ]);
     }
 

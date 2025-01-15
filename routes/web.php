@@ -9,6 +9,7 @@ use App\Http\Controllers\ManagementController;
 use App\Http\Controllers\ParticipantController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ValidationController;
+use App\Http\Controllers\MasterWebController;
 use App\Http\Controllers\UserController;
 use App\Models\InteligenceQuotientTest;
 use Illuminate\Support\Facades\Route;
@@ -95,4 +96,7 @@ Route::prefix('cms')
         Route::resource('/personality-test', PersonalityTestController::class);
         Route::post('/personality-test/active', [PersonalityTestController::class, 'active'])->name('personality-test-active');
         Route::post('/personality-test/inactive', [PersonalityTestController::class, 'inactive'])->name('personality-test-inactive');
+
+        Route::put('/master-web/update-iq-test', [MasterWebController::class, 'updateIQTest'])->name('master-web.updateIQTest');
+        Route::put('/master-web/update-personality-test', [MasterWebController::class, 'updatePersonalityTest'])->name('master-web.updatePersonalityTest');
 });
