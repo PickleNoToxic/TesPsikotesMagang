@@ -7,6 +7,8 @@ namespace Database\Seeders;
 use App\Models\Event;
 use App\Models\Management;
 use App\Models\User;
+use DB;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,46 +18,27 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::create([
-            'name' => 'SuperAdmin',
-            'email' => 'superadmin@mail.com',
-            'password' => bcrypt('Super09876'),
-            'roles' => 'SUPERADMIN',
-            'is_active' => true,
-        ]);
-
-        User::create([
-            'name' => 'Admin 01',
-            'email' => 'admin01@mail.com',
-            'password' => bcrypt('Admin01123'),
-            'roles' => 'ADMIN',
-            'is_active' => true,
-        ]);
-
-        User::create([
-            'name' => 'Admin 02',
-            'email' => 'admin02@mail.com',
-            'password' => bcrypt('Admin02123'),
-            'roles' => 'ADMIN',
-            'is_active' => false,
-        ]);
-
-        Event::create([
-            'name' => 'Star Group',
-            'is_active' => true,
-        ]);
-
-        Management::create([
-            'name' => 'Top',
-            'is_active' => true,
-        ]);
-        Management::create([
-            'name' => 'Middle',
-            'is_active' => true,
-        ]);
-        Management::create([
-            'name' => 'Low',
-            'is_active' => true,
+        DB::table('users')->insert([
+            [
+                'fullname' => 'Admin 01',
+                'email' => 'admin@gmail.com',
+                'whatsapp' => '1234567890',
+                'birthday' => Carbon::parse('1990-05-15')->format('Y-m-d'),
+                'gender' => 'Male',
+                'address' => '123 Main Street, Jakarta',
+                'position' => 'Developer',
+                'is_admin' => true,
+            ],
+            [
+                'fullname' => 'Budi',
+                'email' => 'budi@gmail.com',
+                'whatsapp' => '9876543210',
+                'birthday' => Carbon::parse('1995-07-20')->format('Y-m-d'),
+                'gender' => 'Female',
+                'address' => '456 Elm Street, Surabaya',
+                'position' => 'Designer',
+                'is_admin' => false,
+            ],
         ]);
     }
 }

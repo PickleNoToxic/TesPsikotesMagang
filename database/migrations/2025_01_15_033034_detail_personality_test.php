@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('events', function (Blueprint $table) {
+        Schema::create('detail_personality_test', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->boolean('is_active')->default(false);
+            $table->foreignId('user_id')->references('id')->on('users')->name('fk_user_personality_test');;
+            $table->foreignId('personality_test_id')->references('id')->on('personality_test')->name('fk_personality_test');;
+            $table->string('answer');
             $table->timestamps();
         });
     }
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('events');
+        Schema::dropIfExists('detail_personality_test');
     }
 };

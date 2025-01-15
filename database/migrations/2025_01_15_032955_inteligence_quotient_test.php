@@ -11,10 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('management', function (Blueprint $table) {
+        Schema::create('inteligence_quotient_test', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->boolean('is_active')->default(false);
+            $table->text('question');
+            $table->string('option_1');
+            $table->string('option_2');
+            $table->string('option_3');
+            $table->string('option_4');
+            $table->string('correct_answer');
+            $table->integer('score');
             $table->timestamps();
         });
     }
@@ -24,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('management');
+        Schema::dropIfExists('inteligence_quotient_test');
     }
 };

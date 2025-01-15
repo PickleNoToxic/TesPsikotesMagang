@@ -11,14 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('validations', function (Blueprint $table) {
+        Schema::create('personality_test', function (Blueprint $table) {
             $table->id();
-            $table->string('code');
-            $table->string('statement');
-            $table->integer('answer');
-            $table->unsignedBigInteger('participant_id');
-
-            $table->foreign('participant_id')->references('id')->on('participants')->onDelete('cascade');
+            $table->text('question');
+            $table->string('option_1');
+            $table->string('option_2');
+            $table->string('option_3');
+            $table->string('option_4');
+            $table->string('correct_answer');
+            $table->integer('score');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('validations');
+        Schema::dropIfExists('personality_test');
     }
 };

@@ -5,16 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class InteligenceQuotientTest extends Model
 {
     use HasFactory;
 
-    protected $table = 'users';
-
-    public function detail_personality_test()
-    {
-        return $this->hasMany(DetailPersonalityTest::class);
-    }
+    protected $table = 'inteligence_quotient_test';
 
     public function detail_inteligence_quotient_test()
     {
