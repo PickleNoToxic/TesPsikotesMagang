@@ -12,14 +12,78 @@
             >
                 @method('PUT')
                 @csrf
-                <h1 class="font-poppins font-semibold text-white text-3xl capitalize tracking-wider">detail event</h1>
+                <h1 class="font-poppins font-semibold text-white text-3xl capitalize tracking-wider" id="detail-title">detail question </h1>
                 <div class="flex flex-col w-full gap-1 mt-10">
-                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Name</span>
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Question</span>
                     <div class="w-full h-9 rounded-full">
                         <input type="text"
                             required
-                            id="detail-name"
-                            name="name"
+                            id="detail-question"
+                            name="question"
+                            class="font-poppins text-sm bg-white text-black rounded-full w-full h-full px-5 placeholder:italic focus:outline-none focus:ring-0">
+                    </div>
+                </div>
+                <div class="flex flex-col w-full gap-1">
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Option 1</span>
+                    <div class="w-full h-9 rounded-full">
+                        <input type="text"
+                            required
+                            id="detail-option-1"
+                            name="option_1"
+                            class="font-poppins text-sm bg-white text-black rounded-full w-full h-full px-5 placeholder:italic focus:outline-none focus:ring-0">
+                    </div>
+                </div>
+                <div class="flex flex-col w-full gap-1">
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Option 2</span>
+                    <div class="w-full h-9 rounded-full">
+                        <input type="text"
+                            required
+                            id="detail-option-2"
+                            name="option_2"
+                            class="font-poppins text-sm bg-white text-black rounded-full w-full h-full px-5 placeholder:italic focus:outline-none focus:ring-0">
+                    </div>
+                </div>
+                <div class="flex flex-col w-full gap-1">
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Option 3</span>
+                    <div class="w-full h-9 rounded-full">
+                        <input type="text"
+                            required
+                            id="detail-option-3"
+                            name="option_3"
+                            class="font-poppins text-sm bg-white text-black rounded-full w-full h-full px-5 placeholder:italic focus:outline-none focus:ring-0">
+                    </div>
+                </div>
+                <div class="flex flex-col w-full gap-1">
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Option 4</span>
+                    <div class="w-full h-9 rounded-full">
+                        <input type="text"
+                            required
+                            id="detail-option-4"
+                            name="option_4"
+                            class="font-poppins text-sm bg-white text-black rounded-full w-full h-full px-5 placeholder:italic focus:outline-none focus:ring-0">
+                    </div>
+                </div>
+                <div class="flex flex-col w-full gap-1">
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Correct Answer</span>
+                    <div class="w-full h-9 rounded-full">
+                        <select required
+                            id="detail-correct-answer"
+                            name="correct_answer"
+                            class="font-poppins text-sm bg-white text-black rounded-full w-full h-full px-5 placeholder:italic focus:outline-none focus:ring-0">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex flex-col w-full gap-1">
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Score</span>
+                    <div class="w-full h-9 rounded-full">
+                        <input type="text"
+                            required
+                            id="detail-score"
+                            name="score"
                             class="font-poppins text-sm bg-white text-black rounded-full w-full h-full px-5 placeholder:italic focus:outline-none focus:ring-0">
                     </div>
                 </div>
@@ -52,15 +116,59 @@
         <div class="w-full max-h-[100vh] overflow-y-scroll flex justify-center items-start py-10" style="-ms-overflow-style: none; scrollbar-width: none;">
             <form id="modal-add-content"
                 class="w-11/12 md:w-1/2 lg:w-4/12 bg-white/30 rounded-2xl py-5 px-5 md:px-10 flex flex-col justify-center gap-3 items-center"
-                action="{{ route("events.store") }}"
+                action="{{ route("personality-test.store") }}"
                 method="POST" 
             >
                 @csrf
-                <h1 class="font-poppins font-semibold text-white text-3xl capitalize tracking-wider">add new events</h1>
+                <h1 class="font-poppins font-semibold text-white text-3xl capitalize tracking-wider">add new question</h1>
                 <div class="flex flex-col w-full gap-1 mt-10">
-                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Name</span>
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Question</span>
                     <div class="w-full h-9 rounded-full">
-                        <input type="text" name="name" required class="font-poppins text-sm bg-white text-black rounded-full w-full h-full px-5 placeholder:italic focus:outline-none focus:ring-0">
+                        <input type="text" name="question" required class="font-poppins text-sm bg-white text-black rounded-full w-full h-full px-5 placeholder:italic focus:outline-none focus:ring-0">
+                    </div>
+                </div>
+                <div class="flex flex-col w-full gap-1">
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Option 1</span>
+                    <div class="w-full h-9 rounded-full">
+                        <input type="text" name="option_1" required class="font-poppins text-sm bg-white text-black rounded-full w-full h-full px-5 placeholder:italic focus:outline-none focus:ring-0">
+                    </div>
+                </div>
+                <div class="flex flex-col w-full gap-1">
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Option 2</span>
+                    <div class="w-full h-9 rounded-full">
+                        <input type="text" name="option_2" required class="font-poppins text-sm bg-white text-black rounded-full w-full h-full px-5 placeholder:italic focus:outline-none focus:ring-0">
+                    </div>
+                </div>
+                <div class="flex flex-col w-full gap-1">
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Option 3</span>
+                    <div class="w-full h-9 rounded-full">
+                        <input type="text" name="option_3" required class="font-poppins text-sm bg-white text-black rounded-full w-full h-full px-5 placeholder:italic focus:outline-none focus:ring-0">
+                    </div>
+                </div>
+                <div class="flex flex-col w-full gap-1">
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Option 4</span>
+                    <div class="w-full h-9 rounded-full">
+                        <input type="text" name="option_4" required class="font-poppins text-sm bg-white text-black rounded-full w-full h-full px-5 placeholder:italic focus:outline-none focus:ring-0">
+                    </div>
+                </div>
+                <div class="flex flex-col w-full gap-1">
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Correct Answer</span>
+                    <div class="w-full h-9 rounded-full">
+                        <select
+                            required
+                            name="correct_answer"
+                            class="font-poppins text-sm bg-white text-black rounded-full w-full h-full px-5 placeholder:italic focus:outline-none focus:ring-0">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex flex-col w-full gap-1">
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Score</span>
+                    <div class="w-full h-9 rounded-full">
+                        <input type="number" name="score" required class="font-poppins text-sm bg-white text-black rounded-full w-full h-full px-5 placeholder:italic focus:outline-none focus:ring-0">
                     </div>
                 </div>
                 <div class="flex flex-col w-full gap-1">
@@ -92,7 +200,7 @@
     <div class="flex-none flex flex-col justify-center md:justify-start px-0 lg:px-2 w-screen lg:w-[calc(100vw-350px)]">
         <!-- header -->
         <div class="w-full pl-3 pr-3 md:pl-7 md:pr-7 lg:pl-20 lg:pr-0 flex justify-between">
-            <div class="font-poppins font-bold text-2xl md:text-3xl capitalize">Events</div>
+            <div class="font-poppins font-bold text-2xl md:text-3xl capitalize">Personality Test Questions</div>
             <div onclick="toggleModalAdd()" class="px-5 md:px-7 py-2 text-white text-sm font-poppins font-medium bg-blue-400 rounded-full cursor-pointer flex flex-row justify-center items-center gap-3">
                 <span>Add Data</span>
             </div>
@@ -105,12 +213,12 @@
                     <div class="h-[100px] w-full bg-white/80 hover:bg-white rounded-2xl p-5 flex justify-start gap-5 items-center">
                         <div class="flex-1 w-full flex flex-col justify-center items-center gap-2">
                             <div class="flex flex-row gap-2 items-center">
-                                <h3 class="text-base font-semibold">{{ $data->name }}</h3>
+                                <h3 class="text-base font-semibold">Question {{ $data->id }}</h3>
                             </div>
                             <div class="flex flex-row gap-3">
                                 @if ($data->is_active)
                                     <form
-                                        method="POST" action="{{ route('event-inactive') }}"
+                                        method="POST" action="{{ route('personality-test-inactive') }}"
                                         class="text-greenPrimary text-xs font-poppins font-light flex flex-row gap-2 text-white bg-green-500 px-7 py-1 rounded-full justify-center items-center cursor-pointer"
                                         onclick="this.submit()"
                                     >
@@ -120,7 +228,7 @@
                                     </form>
                                 @else
                                     <form
-                                        method="POST" action="{{ route('event-active') }}"
+                                        method="POST" action="{{ route('personality-test-active') }}"
                                         class="text-grayPrimary text-xs font-poppins font-light text-white bg-red-500 px-7 py-1 rounded-full flex flex-row gap-2 justify-center items-center cursor-pointer"
                                         onclick="this.submit()"
                                     >
@@ -168,9 +276,16 @@
 
         const showModalDetail = (data) => {
             const form = document.getElementById('modal-detail-content');
-            form.action = `{{ route('events.update', ':id') }}`.replace(':id', data.id);
+            form.action = `{{ route('personality-test.update', ':id') }}`.replace(':id', data.id);
 
-            document.querySelector('#detail-name').value = data.name;
+            document.querySelector('#detail-title').innerText = 'Detail Question ' + data.id;
+            document.querySelector('#detail-question').value = data.question;
+            document.querySelector('#detail-option-1').value = data.option_1;
+            document.querySelector('#detail-option-2').value = data.option_2;
+            document.querySelector('#detail-option-3').value = data.option_3;
+            document.querySelector('#detail-option-4').value = data.option_4;
+            document.querySelector('#detail-correct-answer').value = data.correct_answer;
+            document.querySelector('#detail-score').value = data.score;
             document.querySelector('#detail-status').value = data.is_active ? 1 : 0;
 
             // Show modal

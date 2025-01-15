@@ -89,7 +89,10 @@ Route::prefix('cms')
         // Route::resource('/faqs', FaqController::class);
 
         Route::resource('/inteligence-quotient-test', InteligenceQuotientTestController::class);
-
+        Route::post('/inteligence-quotient-test/active', [InteligenceQuotientTestController::class, 'active'])->name('inteligence-quotient-test-active');
+        Route::post('/inteligence-quotient-test/inactive', [InteligenceQuotientTestController::class, 'inactive'])->name('inteligence-quotient-test-inactive');
 
         Route::resource('/personality-test', PersonalityTestController::class);
+        Route::post('/personality-test/active', [PersonalityTestController::class, 'active'])->name('personality-test-active');
+        Route::post('/personality-test/inactive', [PersonalityTestController::class, 'inactive'])->name('personality-test-inactive');
 });

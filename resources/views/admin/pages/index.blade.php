@@ -10,12 +10,12 @@
         <!-- Section cards -->
         <div class="mt-10 pl-6 pr-6 md:pl-20 md:pr-20 font-poppins text-white flex flex-col gap-5 max-h-[75vh] overflow-y-scroll custom-scrollbar" style="-ms-overflow-style: none; scrollbar-width: none;">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-auto font-poppins" >
-                <a href="{{ route("events.index") }}" class="min-h-[100px] md:min-h-[150px] w-full bg-black/50 hover:bg-black/30 rounded-2xl px-5 py-3 flex flex-wrap justify-start items-start gap-3">
+                <a href="{{ route("inteligence-quotient-test.index") }}" class="min-h-[100px] md:min-h-[150px] w-full bg-black/50 hover:bg-black/30 rounded-2xl px-5 py-3 flex flex-wrap justify-start items-start gap-3">
                     <div class="font-poppins flex justify-start gap-5 items-center">
                         <h1 class="text-7xl md:text-5xl text-white font-extrabold">
-                            {{ $events }}
+                            {{ $inteligence_quotient_tests }}
                         </h1>
-                        <h3 class="text-xl font-semibold">Event Active</h3>
+                        <h3 class="text-xl font-semibold">Active Inteligence Quotient Test</h3>
                     </div>
                     <div class="w-full flex flex-row justify-center items-center gap-3 font-poppins text-white">
                         <span>More Detail</span>
@@ -24,12 +24,12 @@
                         </svg>
                     </div>
                 </a>
-                <a href="{{ route("managements.index") }}" class="min-h-[100px] md:min-h-[150px] w-full bg-black/50 hover:bg-black/30 rounded-2xl px-5 py-3 flex flex-wrap justify-start items-start gap-3">
+                <a href="{{ route("personality-test.index") }}" class="min-h-[100px] md:min-h-[150px] w-full bg-black/50 hover:bg-black/30 rounded-2xl px-5 py-3 flex flex-wrap justify-start items-start gap-3">
                     <div class="font-poppins flex justify-start gap-5 items-center">
                         <h1 class="text-7xl md:text-5xl text-white font-extrabold">
-                            {{ $managements }}
+                            {{ $personality_tests }}
                         </h1>
-                        <h3 class="text-xl font-semibold">Management Active</h3>
+                        <h3 class="text-xl font-semibold">Active Personality Test</h3>
                     </div>
                     <div class="w-full flex flex-row justify-center items-center gap-3 font-poppins text-white">
                         <span>More Detail</span>
