@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\PersonalityTest;
 use DB;
+use Validator;
 use App\Models\MasterWeb;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -21,14 +22,32 @@ class PersonalityTestController extends Controller
     }
 
     public function store(Request $request) {
+        $validator = Validator::make($request->all(), [
+            'option_1' => 'required|string',
+            'option_2' => 'required|string',
+            'option_3' => 'required|string',
+            'option_4' => 'required|string',
+            'category_option_1' => 'required',
+            'category_option_2' => 'required|different:category_option_1',
+            'category_option_3' => 'required|different:category_option_1,category_option_2',
+            'category_option_4' => 'required|different:category_option_1,category_option_2,category_option_3',
+            'is_active' => 'required|boolean',
+        ]);
+
+        if ($validator->fails()) {
+            Alert::error('Failed', 'Kategori semua opsi tidak boleh kembar.');
+            return back();
+        }
+
         $result = DB::table('personality_test')->insert([
-                'question' => $request->question,
                 'option_1' => $request->option_1,
                 'option_2' => $request->option_2,
                 'option_3' => $request->option_3,
                 'option_4' => $request->option_4,
-                'correct_answer' => $request->correct_answer,
-                'score' => $request->score,
+                'category_option_1' => $request->category_option_1,
+                'category_option_2' => $request->category_option_2,
+                'category_option_3' => $request->category_option_3,
+                'category_option_4' => $request->category_option_4,
                 'is_active' => $request->is_active,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -78,15 +97,33 @@ class PersonalityTestController extends Controller
     }
 
     public function update(Request $request, PersonalityTest $personalityTest) {
+        $validator = Validator::make($request->all(), [
+            'option_1' => 'required|string',
+            'option_2' => 'required|string',
+            'option_3' => 'required|string',
+            'option_4' => 'required|string',
+            'category_option_1' => 'required',
+            'category_option_2' => 'required|different:category_option_1',
+            'category_option_3' => 'required|different:category_option_1,category_option_2',
+            'category_option_4' => 'required|different:category_option_1,category_option_2,category_option_3',
+            'is_active' => 'required|boolean',
+        ]);
+
+        if ($validator->fails()) {
+            Alert::error('Failed', 'Kategori semua opsi tidak boleh kembar.');
+            return back();
+        }
+        
         $result = PersonalityTest::where('id', $personalityTest->id)
                     ->update([
-                        'question' => $request->question,
                         'option_1' => $request->option_1,
                         'option_2' => $request->option_2,
                         'option_3' => $request->option_3,
                         'option_4' => $request->option_4,
-                        'correct_answer' => $request->correct_answer,
-                        'score' => $request->score,
+                        'category_option_1' => $request->category_option_1,
+                        'category_option_2' => $request->category_option_2,
+                        'category_option_3' => $request->category_option_3,
+                        'category_option_4' => $request->category_option_4,
                         'is_active' => $request->is_active
                     ]);
 

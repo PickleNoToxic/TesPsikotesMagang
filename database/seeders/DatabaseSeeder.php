@@ -799,7 +799,6 @@ class DatabaseSeeder extends Seeder
 
         for($i = 0; $i < 50; $i++) {
             DB::table('personality_test')->insert([
-                'question' => 'Question '.($i+1),
                 'option_1' => 'Option 1',
                 'option_2' => 'Option 2',
                 'option_3' => 'Option 3',
