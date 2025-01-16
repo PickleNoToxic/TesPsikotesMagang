@@ -5,14 +5,35 @@
     const submitElement = document.getElementById('submit-button');
     const counterHeader = document.getElementById('counter');
 
-    let userScore = 0;
-    let countdown = 200; // Timer in seconds
+    let userScore = 50;
+    let countdown = 0; //in seconds
+
+    const testFinished = localStorage.getItem('testFinished');
+    if (testFinished == "true") {
+        window.location.href = "{{ route('finish') }}";
+    }
+
+    const savedState = localStorage.getItem('quizState');
+    if (savedState) {
+        countdown = JSON.parse(savedState).countdown;
+    } else {
+        fetch('/master-web/latest')
+        .then(response => response.json())
+        .then(data => {
+            if (data) {
+                countdown = data['iq_test_duration'] * 60;
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
 
     const updateCountdown = () => {
         const minutes = Math.floor(countdown / 60);
         const seconds = countdown % 60;
         counterHeader.innerHTML = `${minutes}:${seconds.toString().padStart(2, '0')}`;
         countdown--;
+
+        saveStateToLocalStorage();
 
         if (countdown < 0) {
             clearInterval(intervalId);
@@ -34,6 +55,7 @@
         const questionElement = document.getElementById('question');
         questionElement.textContent = dataFiltered[currentQuestion].question;
         displayAnswers();
+        updateNavigationButtons();
     };
 
     const displayAnswers = () => {
@@ -72,6 +94,23 @@
         });
     };
 
+    const saveStateToLocalStorage = () => {
+        const state = {
+            currentQuestion,
+            userAnswers,
+            countdown
+        };
+        localStorage.setItem('quizState', JSON.stringify(state));
+    };
+
+    const updateNavigationButtons = () => {
+        backElement.classList.toggle('hidden', currentQuestion === 0);
+
+        nextElement.classList.toggle('hidden', currentQuestion === dataFiltered.length - 1);
+
+        submitElement.classList.toggle('hidden', currentQuestion !== dataFiltered.length - 1);
+    };
+
     const resetCheckboxes = () => {
         const selectedAnswer = document.querySelector(`input[name="answer-${currentQuestion}"]:checked`);
         if (selectedAnswer) {
@@ -81,9 +120,6 @@
 
     const storeUpdateAnswer = (index, selectedOption) => {
         userAnswers[index].answer = selectedOption;
-         if (selectedOption === parseInt( dataFiltered[index].correct_answer)) {
-            userScore += dataFiltered[index].score; 
-        }
     };
 
     const checkedAnswer = (index) => {
@@ -105,6 +141,8 @@
             backElement.classList.toggle('hidden', currentQuestion === 0);
             nextElement.classList.remove('hidden');
             submitElement.classList.add('hidden');
+
+            saveStateToLocalStorage();
         }
     };
 
@@ -119,12 +157,21 @@
             backElement.classList.remove('hidden');
             nextElement.classList.toggle('hidden', currentQuestion === dataFiltered.length - 1);
             submitElement.classList.toggle('hidden', currentQuestion !== dataFiltered.length - 1);
+
+            saveStateToLocalStorage();
         } else {
             alert('Please select an answer.');
         }
     };
 
     const submitQuiz = () => {
+        //Calculate final score
+        for(let i = 0; i < dataFiltered.length; i++) {
+            if(userAnswers[i].answer === parseInt(dataFiltered[i].correct_answer)) {
+                userScore += dataFiltered[i].score; 
+            }
+        }
+        
         let userCode = localStorage.getItem('code');
         let finalAnswers = userAnswers.sort((a, b) => a.inteligence_quotient_test_id - b
             .inteligence_quotient_test_id);
@@ -168,21 +215,32 @@
                 return response.json();
             })
             .then(dataFiltered => {
+                localStorage.removeItem('quizState');
+                localStorage.setItem('testFinished', true);
                 window.location.href = "{{ route('finish') }}";
             })
             .catch(error => {
                 console.error('Error:', error);
                 alert('An error occurred: ' + error.message);
             });
-
-            
-
-
-
     };
 
     const intervalId = setInterval(updateCountdown, 1000);
 
-    displayAnswers();
-    showQuestion();
+    window.onload = () => {
+        const savedState = localStorage.getItem('quizState');
+        if (savedState) {
+            const { currentQuestion: savedCurrentQuestion, userAnswers: savedUserAnswers, countdown: savedCountdown } = JSON.parse(savedState);
+            console.log(savedState);
+            currentQuestion = savedCurrentQuestion;
+            userAnswers = savedUserAnswers;
+            countdown = savedCountdown;
+
+            showQuestion();
+            checkedAnswer(currentQuestion);
+        } else {
+            displayAnswers();
+            showQuestion();
+        }
+    };
 </script>

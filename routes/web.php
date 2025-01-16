@@ -9,6 +9,7 @@ use App\Http\Controllers\PersonalityTestController;
 use App\Http\Controllers\ManagementController;
 use App\Http\Controllers\ParticipantController;
 use App\Http\Controllers\PublicController;
+use App\Models\MasterWeb;
 use App\Http\Controllers\ValidationController;
 use App\Http\Controllers\MasterWebController;
 use App\Http\Controllers\UserController;
@@ -53,6 +54,11 @@ Route::controller(AuthController::class)->group(function () {
     Route::get('/cms/login', 'index')->name('admin-login')->middleware('guest');
     Route::post('/cms/login', 'authenticate')->name('admin-authenticate');
     Route::get('/cms/logout', 'logout')->name('admin-logout');
+});
+
+Route::get('/master-web/latest', function () {
+    $masterWebData = MasterWeb::latest()->first();
+    return response()->json($masterWebData);
 });
 
 Route::prefix('cms')

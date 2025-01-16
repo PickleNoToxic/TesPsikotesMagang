@@ -214,6 +214,7 @@
                     <div class="w-full h-9 rounded-full">
                         <input type="number"
                             required
+                            min="1"
                             id="detail-number-of-questions"
                             name="number_of_questions_iq_test"
                             class="font-poppins text-sm bg-white text-black rounded-full w-full h-full px-5 placeholder:italic focus:outline-none focus:ring-0">
@@ -224,6 +225,7 @@
                     <div class="w-full h-9 rounded-full">
                         <input type="number"
                             required
+                            min="1"
                             id="detail-test-duration"
                             name="iq_test_duration"
                             class="font-poppins text-sm bg-white text-black rounded-full w-full h-full px-5 placeholder:italic focus:outline-none focus:ring-0">
