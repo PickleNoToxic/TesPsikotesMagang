@@ -7,7 +7,7 @@
                 <div class="hidden lg:block w-2/5 flex flex-col h-fit bg-white rounded-2xl shadow-md">
                     <div
                         class=" px-5 py-7 space-y-3 mt-3 font-poppins text-lg text-center font-light flex flex-col items-center justify-center gap-2">
-                        <h1 class="text-3xl font-bold mb-3">Intelligence Quotient & Personality Test</h1>
+                        <h1 class="text-3xl font-bold mb-3">Inteligence Quotient & Personality Test</h1>
                         <div class="mx-16 space-y-4">
                             <p>
                                 Tes ini dirancang untuk mengukur tingkat kecerdasan dan kepribadian Anda secara menyeluruh.
@@ -16,7 +16,7 @@
                                 Selama proses tes, usahakan untuk tetap tenang dan fokus demi hasil yang akurat.
                             </p>
                             <p>
-                                Selamat mengikuti Intelligence Quotient & Personality Test.
+                                Selamat mengikuti Inteligence Quotient & Personality Test.
                             </p>
                         </div>
                     </div>

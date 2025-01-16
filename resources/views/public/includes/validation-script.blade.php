@@ -28,9 +28,11 @@
     }
 
     const updateCountdown = () => {
-        const minutes = Math.floor(countdown / 60);
-        const seconds = countdown % 60;
-        counterHeader.innerHTML = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        const hours = Math.floor(countdown / 3600); 
+        const minutes = Math.floor((countdown % 3600) / 60); 
+        const seconds = countdown % 60; 
+
+        counterHeader.innerHTML = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
         countdown--;
 
         saveStateToLocalStorage();
