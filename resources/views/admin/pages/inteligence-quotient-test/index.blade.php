@@ -215,6 +215,7 @@
                         <input type="number"
                             required
                             min="1"
+                            value={{ $master_web_data->number_of_questions_iq_test }}
                             id="detail-number-of-questions"
                             name="number_of_questions_iq_test"
                             class="font-poppins text-sm bg-white text-black rounded-full w-full h-full px-5 placeholder:italic focus:outline-none focus:ring-0">
@@ -226,6 +227,7 @@
                         <input type="number"
                             required
                             min="1"
+                            value={{ $master_web_data->iq_test_duration }}
                             id="detail-test-duration"
                             name="iq_test_duration"
                             class="font-poppins text-sm bg-white text-black rounded-full w-full h-full px-5 placeholder:italic focus:outline-none focus:ring-0">
@@ -366,17 +368,9 @@
             }
         })
 
-        const masterWebData = {
-            numberOfQuestions: {{ $master_web_data->number_of_questions_iq_test }},
-            testDuration: {{ $master_web_data->iq_test_duration }},
-        };
-
         const showModalChangeMasterWeb = () => {
             const form = document.getElementById('modal-detail-master-web');
             
-            document.querySelector('#detail-number-of-questions').value = masterWebData.numberOfQuestions;
-            document.querySelector('#detail-test-duration').value = masterWebData.testDuration;
-
             // Show modal
             modalChangeMasterWeb.classList.remove('hidden');
         };

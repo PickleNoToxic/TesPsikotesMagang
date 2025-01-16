@@ -216,6 +216,7 @@
                             min="1"
                             required
                             id="detail-number-of-questions"
+                            value={{ $master_web_data->number_of_questions_personality_test }}
                             name="number_of_questions_personality_test"
                             class="font-poppins text-sm bg-white text-black rounded-full w-full h-full px-5 placeholder:italic focus:outline-none focus:ring-0">
                     </div>
@@ -227,6 +228,7 @@
                             min="1"
                             required
                             id="detail-test-duration"
+                            value={{ $master_web_data->personality_test_duration }}
                             name="personality_test_duration"
                             class="font-poppins text-sm bg-white text-black rounded-full w-full h-full px-5 placeholder:italic focus:outline-none focus:ring-0">
                     </div>
