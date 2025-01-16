@@ -6,7 +6,6 @@
     const counterHeader = document.getElementById('counter');
     counterHeader.classList.add('hidden');
 
-    let userScore = 50;
 
     const testFinished = localStorage.getItem('testFinished');
 
@@ -42,8 +41,8 @@
 
 
     const showQuestion = () => {
-        const questionElement = document.getElementById('question');
-        questionElement.textContent = dataFiltered[currentQuestion].question;
+        // const questionElement = document.getElementById('question');
+        // questionElement.textContent = dataFiltered[currentQuestion].question;
         displayAnswers();
         updateNavigationButtons();
     };
@@ -113,7 +112,7 @@
     };
 
     const storeUpdateAnswer = (index, selectedOption) => {
-        userAnswers[index].answer = selectedOption;
+        userAnswers[index].answer = dataFiltered[index][`category_option_${selectedOption}`];
     };
 
     const checkedAnswer = (index) => {
@@ -164,12 +163,7 @@
     };
 
     const submitQuiz = () => {
-        //Calculate final score
-        for (let i = 0; i < dataFiltered.length; i++) {
-            if (userAnswers[i].answer === parseInt(dataFiltered[i].correct_answer)) {
-                userScore += dataFiltered[i].score;
-            }
-        }
+    
 
         let userCode = localStorage.getItem('code');
         let finalAnswers = userAnswers.sort((a, b) => a.personality_test_id - b
@@ -189,30 +183,6 @@
                 if (!response.ok) {
                     throw new Error('Failed to save answers');
                 }
-                return response.json();
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('An error occurred: ' + error.message);
-            });
-
-        fetch(`/personality-score`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                },
-                body: JSON.stringify({
-                    score: userScore
-                })
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Failed to save score');
-                }
-                return response.json();
-            })
-            .then(dataFiltered => {
                 Swal.fire({
                     icon: 'success',
                     title: 'Your answers have been submitted!',
@@ -223,6 +193,7 @@
                     window.location.href = "{{ route('finish') }}";
                     localStorage.setItem('testFinished', true);
                 });
+                return response.json();
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -236,11 +207,10 @@
             const {
                 currentQuestion: savedCurrentQuestion,
                 userAnswers: savedUserAnswers,
-                countdown: savedCountdown
+                
             } = JSON.parse(savedState);
             currentQuestion = savedCurrentQuestion;
             userAnswers = savedUserAnswers;
-            countdown = savedCountdown;
 
             showQuestion();
             checkedAnswer(currentQuestion);

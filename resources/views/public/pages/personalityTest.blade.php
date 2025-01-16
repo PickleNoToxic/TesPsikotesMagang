@@ -6,7 +6,7 @@
             <div class="flex flex-col w-full p-3">
                 <div class="flex flex-col bg-white rounded-xl drop-shadow-xl">
                     <div id="question" class=" font-semibold text-md  lg:text-xl bg-gradient-to-b from-[#222222] to-[#3e3e3e] text-white text-justify rounded-t-xl p-6">
-                        Question 
+                        Pilihlah satu sifat/tingkah laku yang paling sesuai dengan Anda
                     </div>
                     <div class="p-2 mt-3 ml-3 font-poppins text-sm lg:text-lg font-light flex flex-col gap-2" id="answers-container">
                     </div>

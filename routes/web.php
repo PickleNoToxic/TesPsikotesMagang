@@ -45,7 +45,6 @@ Route::controller(PublicController::class)->group(function () {
 });
 
 Route::put('/inteligence-quotient-score',  [UserController::class, 'inteligence_score'])->name('inteligence-quotient-score');
-Route::put('/personality-score',  [UserController::class, 'personality_score'])->name('inteligence-quotient-score');
 
 
 Route::post('/user-store', [UserController::class, 'store'])->name('user.store');

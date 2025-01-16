@@ -14,7 +14,7 @@ class DetailPersonalityTestController extends Controller
         $validationData = $request->validate([
             'personality_test' => 'required|array',
             'personality_test.*.personality_test_id' => 'required|int',
-            'personality_test.*.answer' => 'nullable|integer|min:1|max:5',
+            'personality_test.*.answer' => 'nullable',
         ]);
 
 
