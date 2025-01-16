@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('personality_test', function (Blueprint $table) {
             $table->id();
-            $table->text('question');
             $table->string('option_1');
             $table->string('option_2');
             $table->string('option_3');
