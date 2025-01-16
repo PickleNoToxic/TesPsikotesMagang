@@ -22,7 +22,7 @@
 
         submitButton.disabled = true;
         submitButton.innerText = 'Process...';
-        
+
         const formData = {
             fullname: document.getElementById('fullname').value,
             email: document.getElementById('email').value,
@@ -35,7 +35,7 @@
         };
 
         try {
-            const response = await fetch('{{ route("user.store") }}', {
+            const response = await fetch('{{ route('user.store') }}', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -47,7 +47,7 @@
             if (!response.ok) {
                 throw new Error('Failed to submit form');
             }
-            
+
             localStorage.removeItem('quizState');
             localStorage.removeItem('testFinished');
             localStorage.setItem('fullname', formData.fullname);
@@ -60,8 +60,9 @@
             localStorage.setItem('whatsapp', formData.whatsapp);
             localStorage.setItem('address', formData.address);
             localStorage.setItem('position', formData.position);
-            
-            window.location.href = "{{ route('resting-state') }}";
+
+            window.location.href =
+                `{{ route('resting-state') }}?title=${encodeURIComponent('Inteligence Quotient')}`;
         } catch (error) {
             console.error(error);
             alert('An error occurred while submitting the form');

@@ -3,7 +3,7 @@
 @section('container')
     <!-- modal detail -->
     <div id="modal-detail"
-        class="hidden w-screen h-screen bg-black/90 fixed top-0 left-0 z-50 font-poppins flex justify-center text-white ">
+        class="hidden w-screen overflow-y-auto h-screen bg-black/90 fixed top-0 left-0 z-50 font-poppins flex justify-center text-white ">
         <div class="w-full max-h-[100vh] overflow-y-scroll flex justify-center items-start py-10"
             style="-ms-overflow-style: none; scrollbar-width: none;">
             <form id="modal-detail-content" method="POST" enctype="multipart/form-data"
@@ -101,7 +101,7 @@
 
     <!-- modal add -->
     <div id="modal-add"
-        class="hidden w-screen h-screen bg-black/90 fixed top-0 left-0 z-50 font-poppins flex justify-center text-white">
+        class="hidden overflow-y-auto w-screen h-screen bg-black/90 fixed top-0 left-0 z-50 font-poppins flex justify-center text-white">
         <div class="w-full max-h-[100vh] overflow-y-scroll flex justify-center items-start py-10"
             style="-ms-overflow-style: none; scrollbar-width: none;">
             <form id="modal-add-content"

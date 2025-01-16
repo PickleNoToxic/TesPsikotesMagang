@@ -6,66 +6,76 @@
     const startStimulus = document.querySelectorAll('.stimulus-start');
     const counter = document.querySelectorAll(".counter");
 
-    let intervalId
-    let sentence
+    let intervalId;
+    let sentence;
     let currentStimulus = 0;
 
-    counterHeader.classList.toggle('hidden');
+    // Initially hide the counter
+    counterHeader.classList.add('hidden');
 
     const toggleButton = () => {
         startStimulus.forEach(element => {
             element.classList.toggle('hidden');
         });
-    }
+    };
 
     const countdown = () => {
-        let count = counter[currentStimulus].textContent * 1 - 1;
+        let count = parseInt(counter[currentStimulus].textContent, 10) - 1;
         counter[currentStimulus].textContent = count;
+
         if (count === 0) {
             currentStimulus++;
             clearInterval(intervalId);
+
             if (currentStimulus === 1) {
                 showStimulusCloseEyes();
             } else {
                 window.location.href = "{{ route('biografi') }}";
             }
         }
-    }
+    };
 
-    const handleRedirect = () => {
+    const handleRedirect = (title) => {
         localStorage.removeItem('testFinished');
         localStorage.removeItem('quizState');
+
         const userId = @json(session('user_id')); 
 
-        if (userId !== null ) {
+        if (userId === null) {
+            window.location.href = "{{ route('registration') }}";
+        } else if (title === 'Inteligence Quotient') {
             window.location.href = '/inteligence-quotient';
-        } else{
-
-        window.location.href = "{{ route('registration') }}"
+        } else if (title === 'Personality') {
+            window.location.href = '/personality-test'; 
         }
-
-    }
+    };
 
     const stimulusOpenEyes = () => {
         toggleButton();
         intervalId = setInterval(countdown, 1000);
-    }
+    };
 
     const showStimulusCloseEyes = () => {
         toggleButton();
-        sentence =
-            "Silahkan tekan tombol <span class='font-semibold'>START</span> <br> untuk proses STIMULUS selanjutnya,<br> <span class='font-semibold uppercase'>tutup mata</span> Anda sampai terdengar intruksi buka mata Anda.";
-        titleContainer.innerHTML = sentence
+        sentence = `
+            Silahkan tekan tombol <span class='font-semibold'>START</span> 
+            <br> untuk proses STIMULUS selanjutnya,
+            <br> <span class='font-semibold uppercase'>tutup mata</span> Anda 
+            sampai terdengar instruksi buka mata Anda.
+        `;
+        titleContainer.innerHTML = sentence;
 
-        openEyesContainer.classList.toggle("hidden")
-        closedEyesContainer.classList.toggle("hidden")
-    }
+        openEyesContainer.classList.add("hidden");
+        closedEyesContainer.classList.remove("hidden");
+    };
 
     const stimulusClosedEyes = () => {
         toggleButton();
         setTimeout(() => {
-            voice.play().then()
+            if (voice && typeof voice.play === 'function') {
+                voice.play().then(() => console.log("Voice played"));
+            }
         }, 55000);
         intervalId = setInterval(countdown, 1000);
-    }
+    };
 </script>

@@ -5,11 +5,13 @@
         
     </header>
     <div class="flex flex-col justify-center items-center mt-5 ">
-    <p class=" text-3xl px-8 lg:text-4xl text-center font-light" id="title">
-            Silahkan tekan tombol <span class="font-semibold"> START </span> <br> untuk memulai Inteligence Quotient Test.
+        <p class="text-3xl px-8 lg:text-4xl text-center font-light" id="title">
+            Silahkan tekan tombol <span class="font-semibold"><br> START </span> <br> untuk memulai {{ request('title') }} Test.
         </p>
-    <div onClick="handleRedirect()" class=" px-6 lg:px-10 py-3 w-fit my-12 lg:my-16 bg-gradient-to-b from-[#03045E] to-[#03558b] text-white text-2xl uppercase tracking-wider rounded-xl cursor-pointer">
-                    Start
+        <div 
+            onClick="handleRedirect('{{ request('title') }}')" 
+            class="px-6 lg:px-10 py-3 w-fit my-12 lg:my-16 bg-gradient-to-b from-[#03045E] to-[#03558b] text-white text-2xl uppercase tracking-wider rounded-xl cursor-pointer">
+            Start
         </div>
     </div>
 @endsection

@@ -4,9 +4,9 @@
     const backElement = document.getElementById('back-button');
     const submitElement = document.getElementById('submit-button');
     const counterHeader = document.getElementById('counter');
+    counterHeader.classList.add('hidden');
 
     let userScore = 50;
-    let countdown = 0; //in seconds
 
     const testFinished = localStorage.getItem('testFinished');
 
@@ -31,29 +31,12 @@
             .catch(error => console.error('Error:', error));
     }
 
-    const updateCountdown = () => {
-        const hours = Math.floor(countdown / 3600);
-        const minutes = Math.floor((countdown % 3600) / 60);
-        const seconds = countdown % 60;
-
-        counterHeader.innerHTML =
-            `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-        countdown--;
-
-        saveStateToLocalStorage();
-
-        if (countdown < 0) {
-            clearInterval(intervalId);
-            submitQuiz();
-
-        }
-    };
 
     const data = @json($datas);
     const dataFiltered = data.filter(item => item.is_active);
 
     let userAnswers = Array(dataFiltered.length).fill(null).map((_, index) => ({
-        inteligence_quotient_test_id: dataFiltered[index].id,
+        personality_test_id: dataFiltered[index].id,
         answer: null
     }));
 
@@ -189,17 +172,17 @@
         }
 
         let userCode = localStorage.getItem('code');
-        let finalAnswers = userAnswers.sort((a, b) => a.inteligence_quotient_test_id - b
-            .inteligence_quotient_test_id);
+        let finalAnswers = userAnswers.sort((a, b) => a.personality_test_id - b
+            .personality_test_id);
 
-        fetch(`/inteligence-quotient-store/${userCode}`, {
+        fetch(`/personality-store/${userCode}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'X-CSRF-TOKEN': '{{ csrf_token() }}'
                 },
                 body: JSON.stringify({
-                    inteligence_quotient_test: finalAnswers
+                    personality_test: finalAnswers
                 })
             })
             .then(response => {
@@ -213,7 +196,7 @@
                 alert('An error occurred: ' + error.message);
             });
 
-        fetch(`/inteligence-quotient-score`, {
+        fetch(`/personality-score`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -237,8 +220,7 @@
                     confirmButtonText: 'OK'
                 }).then(() => {
                     localStorage.removeItem('quizState');
-                    window.location.href =
-                        `{{ route('resting-state') }}?title=${encodeURIComponent('Personality')}`;
+                    window.location.href = "{{ route('finish') }}";
                     localStorage.setItem('testFinished', true);
                 });
             })
@@ -247,8 +229,6 @@
                 alert('An error occurred: ' + error.message);
             });
     };
-
-    const intervalId = setInterval(updateCountdown, 1000);
 
     window.onload = () => {
         const savedState = localStorage.getItem('quizState');

@@ -3,7 +3,7 @@
 @section('container')
     <!-- modal detail -->
     <div id="modal-detail"
-        class="hidden w-screen h-screen bg-black/90 fixed top-0 left-0 z-50 font-poppins flex justify-center text-white ">
+        class="hidden w-screen overflow-y-auto h-screen bg-black/90 fixed top-0 left-0 z-50 font-poppins flex justify-center text-white ">
         <div class="w-full  flex justify-center items-start py-10" style="-ms-overflow-style: none; scrollbar-width: none;">
             <form id="modal-detail-content" method="POST" enctype="multipart/form-data"
                 class="w-11/12 md:w-1/2 lg:w-4/12 bg-white/50 rounded-2xl py-5 px-5 md:px-10 flex flex-col justify-center gap-3 items-center">
@@ -98,11 +98,11 @@
             </form>
         </div>
     </div>
-`
+
 
     <!-- modal add -->
     <div id="modal-add"
-        class="hidden w-screen h-screen bg-black/90 fixed top-0 left-0 z-50 font-poppins flex justify-center text-white">
+        class="hidden overflow-y-auto w-screen h-screen bg-black/90 fixed top-0 left-0 z-50 font-poppins flex justify-center text-white">
         <div class="w-full  flex justify-center items-start py-10" style="-ms-overflow-style: none; scrollbar-width: none;">
             <form id="modal-add-content"
                 class="w-11/12 md:w-1/2 lg:w-4/12 bg-white/50 rounded-2xl py-5 px-5 md:px-10 flex flex-col justify-center gap-3 items-center"

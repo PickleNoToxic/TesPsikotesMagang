@@ -23,12 +23,26 @@ class UserController extends Controller
         session(['user_id' => $userId]);
     }
 
-    public function score(Request $request)
+    public function inteligence_score(Request $request)
     {
         $userId =(int) session('user_id');
         $updated = DB::table('users')
             ->where('id', $userId)  
             ->update(['score_iq' => $request->score]);  
+
+        if ($updated) {
+            return response()->json(['message' => 'Score updated successfully']);
+        } else {
+            return response()->json(['message' => 'No changes made or user not found']);
+        }
+    }
+
+    public function personality_score(Request $request)
+    {
+        $userId =(int) session('user_id');
+        $updated = DB::table('users')
+            ->where('id', $userId)  
+            ->update(['score_personality' => $request->score]);  
 
         if ($updated) {
             return response()->json(['message' => 'Score updated successfully']);
