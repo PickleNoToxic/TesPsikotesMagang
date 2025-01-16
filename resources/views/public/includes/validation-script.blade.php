@@ -39,7 +39,12 @@
 
         if (countdown < 0) {
             clearInterval(intervalId);
-            alert("Time is up! Auto-submitting your answers...");
+            Swal.fire({
+                icon: 'info',
+                title: 'Time is up!',
+                text: 'Auto-submitting your answers...',
+                confirmButtonText: 'OK'
+            });
             submitQuiz();
         }
     };
@@ -162,7 +167,12 @@
 
             saveStateToLocalStorage();
         } else {
-            alert('Please select an answer.');
+            Swal.fire({
+                icon: 'warning',
+                title: 'No answer selected',
+                text: 'Please select an answer to continue.',
+                confirmButtonText: 'OK'
+            });
         }
     };
 
