@@ -213,6 +213,7 @@
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Number of Questions</span>
                     <div class="w-full h-9 rounded-full">
                         <input type="number"
+                            min="1"
                             required
                             id="detail-number-of-questions"
                             name="number_of_questions_personality_test"
@@ -223,6 +224,7 @@
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Test Duration (in Minutes)</span>
                     <div class="w-full h-9 rounded-full">
                         <input type="number"
+                            min="1"
                             required
                             id="detail-test-duration"
                             name="personality_test_duration"
