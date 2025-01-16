@@ -12,68 +12,73 @@
                 @csrf
                 <h1 class="font-poppins font-semibold text-white text-3xl capitalize tracking-wider" id="detail-title">detail
                     question </h1>
-                <div class="flex flex-col w-full gap-1 mt-10">
-                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Question</span>
-                    <div class="w-full">
-                        <textarea name="question" required id="detail-question"
-                            class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 resize-none"
-                            rows="1"></textarea>
-                    </div>
-                </div>
 
-                <div class="flex flex-col w-full gap-1 ">
+                <div class="flex flex-col w-full gap-1 mb-2">
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Option 1</span>
                     <div class="w-full">
                         <textarea required id="detail-option-1" name="option_1"
                             class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 resize-none"
                             rows="1"></textarea>
                     </div>
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Category Option 1</span>
+                    <select id="detail-category-option-1" name="category_option_1" required
+                        class="font-poppins text-sm bg-white text-black rounded-xl w-full h-10 px-5 placeholder:italic focus:outline-none focus:ring-0">
+                        <option value="Koleris">Koleris</option>
+                        <option value="Phlegmatis">Phlegmatis</option>
+                        <option value="Sanguinis">Sanguinis</option>
+                        <option value="Melankolis">Melankolis</option>
+                    </select>
                 </div>
 
-                <div class="flex flex-col w-full gap-1 ">
+                <div class="flex flex-col w-full gap-1 mb-2">
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Option 2</span>
                     <div class="w-full">
                         <textarea required id="detail-option-2" name="option_2"
                             class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 resize-none"
                             rows="1"></textarea>
                     </div>
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Category Option 2</span>
+                    <select id="detail-category-option-2" name="category_option_2" required
+                        class="font-poppins text-sm bg-white text-black rounded-xl w-full h-10 px-5 placeholder:italic focus:outline-none focus:ring-0">
+                        <option value="Koleris">Koleris</option>
+                        <option value="Phlegmatis">Phlegmatis</option>
+                        <option value="Sanguinis">Sanguinis</option>
+                        <option value="Melankolis">Melankolis</option>
+                    </select>
                 </div>
 
-                <div class="flex flex-col w-full gap-1 ">
+                <div class="flex flex-col w-full gap-1 mb-2">
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Option 3</span>
                     <div class="w-full">
                         <textarea required id="detail-option-3" name="option_3"
                             class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 resize-none"
                             rows="1"></textarea>
                     </div>
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Category Option 3</span>
+                    <select id="detail-category-option-3" name="category_option_3" required
+                        class="font-poppins text-sm bg-white text-black rounded-xl w-full h-10 px-5 placeholder:italic focus:outline-none focus:ring-0">
+                        <option value="Koleris">Koleris</option>
+                        <option value="Phlegmatis">Phlegmatis</option>
+                        <option value="Sanguinis">Sanguinis</option>
+                        <option value="Melankolis">Melankolis</option>
+                    </select>
                 </div>
 
-                <div class="flex flex-col w-full gap-1 ">
+                <div class="flex flex-col w-full gap-1 mb-2">
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Option 4</span>
                     <div class="w-full">
                         <textarea required id="detail-option-4" name="option_4"
                             class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 resize-none"
                             rows="1"></textarea>
                     </div>
-                </div>
-                <div class="flex flex-col w-full gap-1">
-                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Correct Answer</span>
-                    <div class="w-full h-9 rounded-xl">
-                        <select required id="detail-correct-answer" name="correct_answer"
-                            class="font-poppins text-sm bg-white text-black rounded-xl w-full h-full px-5 placeholder:italic focus:outline-none focus:ring-0">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="flex flex-col w-full gap-1">
-                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Score</span>
-                    <div class="w-full h-9 rounded-xl">
-                        <input type="text" required id="detail-score" name="score"
-                            class="font-poppins text-sm bg-white text-black rounded-xl w-full h-full px-5 placeholder:italic focus:outline-none focus:ring-0">
-                    </div>
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Category Option 4</span>
+                    <select id="detail-category-option-4" name="category_option_4" required
+                        class="font-poppins text-sm bg-white text-black rounded-xl w-full h-10 px-5 placeholder:italic focus:outline-none focus:ring-0">
+                        <option value="Koleris">Koleris</option>
+                        <option value="Phlegmatis">Phlegmatis</option>
+                        <option value="Sanguinis">Sanguinis</option>
+                        <option value="Melankolis">Melankolis</option>
+                    </select>
                 </div>
                 <div class="flex flex-col w-full gap-1">
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Status</span>
@@ -109,67 +114,71 @@
                 action="{{ route('personality-test.store') }}" method="POST">
                 @csrf
                 <h1 class="font-poppins font-semibold text-white text-3xl capitalize tracking-wider">add new question</h1>
-                <div class="flex flex-col w-full gap-1 mt-10 ">
-                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Question</span>
-                    <div class="w-full">
-                        <textarea name="question" required
-                            class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 resize-none"
-                            rows="1"></textarea>
-                    </div>
+
+                <div class="flex flex-col w-full gap-1 mb-2">
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Option 1</span>
+                    <textarea name="option_1" required
+                        class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 resize-none"
+                        rows="1"></textarea>
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Category Option 1</span>
+                    <select name="category_option_1" required
+                        class="font-poppins text-sm bg-white text-black rounded-xl w-full h-10 px-5 placeholder:italic focus:outline-none focus:ring-0">
+                        <option value="Koleris">Koleris</option>
+                        <option value="Phlegmatis">Phlegmatis</option>
+                        <option value="Sanguinis">Sanguinis</option>
+                        <option value="Melankolis">Melankolis</option>
+                    </select>
                 </div>
 
-                <div class="flex flex-col w-full gap-1 ">
-                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Option 1</span>
-                    <div class="w-full">
-                        <textarea name="option_1" required
-                            class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 resize-none"
-                            rows="1"></textarea>
-                    </div>
-                </div>
-                <div class="flex flex-col w-full gap-1 ">
+                <div class="flex flex-col w-full gap-1 mb-2">
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Option 2</span>
                     <div class="w-full">
                         <textarea name="option_2" required
                             class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 resize-none"
                             rows="1"></textarea>
                     </div>
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Category Option 2</span>
+                    <select name="category_option_2" required
+                        class="font-poppins text-sm bg-white text-black rounded-xl w-full h-10 px-5 placeholder:italic focus:outline-none focus:ring-0">
+                        <option value="Koleris">Koleris</option>
+                        <option value="Phlegmatis">Phlegmatis</option>
+                        <option value="Sanguinis">Sanguinis</option>
+                        <option value="Melankolis">Melankolis</option>
+                    </select>
                 </div>
-                <div class="flex flex-col w-full gap-1 ">
+                <div class="flex flex-col w-full gap-1 mb-2">
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Option 3</span>
                     <div class="w-full">
                         <textarea name="option_3" required
                             class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 resize-none"
                             rows="1"></textarea>
                     </div>
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Category Option 3</span>
+                    <select name="category_option_3" required
+                        class="font-poppins text-sm bg-white text-black rounded-xl w-full h-10 px-5 placeholder:italic focus:outline-none focus:ring-0">
+                        <option value="Koleris">Koleris</option>
+                        <option value="Phlegmatis">Phlegmatis</option>
+                        <option value="Sanguinis">Sanguinis</option>
+                        <option value="Melankolis">Melankolis</option>
+                    </select>
                 </div>
-                <div class="flex flex-col w-full gap-1 ">
+                <div class="flex flex-col w-full gap-1 mb-2">
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Option 4</span>
                     <div class="w-full">
                         <textarea name="option_4" required
                             class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 resize-none"
                             rows="1"></textarea>
                     </div>
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Category Option 4</span>
+                    <select name="category_option_4" required
+                        class="font-poppins text-sm bg-white text-black rounded-xl w-full h-10 px-5 placeholder:italic focus:outline-none focus:ring-0">
+                        <option value="Koleris">Koleris</option>
+                        <option value="Phlegmatis">Phlegmatis</option>
+                        <option value="Sanguinis">Sanguinis</option>
+                        <option value="Melankolis">Melankolis</option>
+                    </select>
                 </div>
 
-                <div class="flex flex-col w-full gap-1">
-                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Correct Answer</span>
-                    <div class="w-full h-9 rounded-xl">
-                        <select required name="correct_answer"
-                            class="font-poppins text-sm bg-white text-black rounded-xl w-full h-full px-5 placeholder:italic focus:outline-none focus:ring-0">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="flex flex-col w-full gap-1">
-                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Score</span>
-                    <div class="w-full h-9 rounded-xl">
-                        <input type="number" name="score" required
-                            class="font-poppins text-sm bg-white text-black rounded-xl w-full h-full px-5 placeholder:italic focus:outline-none focus:ring-0">
-                    </div>
-                </div>
                 <div class="flex flex-col w-full gap-1">
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Status</span>
                     <div class="w-full h-9 rounded-xl">
@@ -219,7 +228,7 @@
                             class="font-poppins text-sm bg-white text-black rounded-xl w-full h-full px-5 placeholder:italic focus:outline-none focus:ring-0">
                     </div>
                 </div>
-                <div class="flex flex-col w-full gap-1">
+                <!-- <div class="flex flex-col w-full gap-1">
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Test Duration (in Minutes)</span>
                     <div class="w-full h-9 rounded-xl">
                         <input type="number"
@@ -230,7 +239,7 @@
                             name="personality_test_duration"
                             class="font-poppins text-sm bg-white text-black rounded-xl w-full h-full px-5 placeholder:italic focus:outline-none focus:ring-0">
                     </div>
-                </div>
+                </div> -->
                 <div class="flex justify-end gap-4 w-full flex-row mt-14 mb-3">
                     <div onclick="toggleModalChangeMasterWeb()"
                         class="px-7 py-2 text-white text-sm text-center font-poppins font-medium border border-white rounded-xl cursor-pointer tracking-wider">
@@ -263,10 +272,10 @@
                 {{ $master_web_data->number_of_questions_personality_test }} Questions</div>
         </div>
 
-        <div class="w-full pl-3 pr-3 mt-5 md:pl-7 md:pr-7 lg:pl-20 lg:pr-0 flex justify-between">
+        <!-- <div class="w-full pl-3 pr-3 mt-5 md:pl-7 md:pr-7 lg:pl-20 lg:pr-0 flex justify-between">
             <div class="font-poppins font-medium text-xl md:text-2xl capitalize">Test Duration:
                 {{ $master_web_data->personality_test_duration }} Minutes</div>
-        </div>
+        </div> -->
 
         <div class="w-full pl-3 pr-3 mt-5 md:pl-7 md:pr-7 lg:pl-20 lg:pr-0 flex justify-start">
             <div onclick="toggleModalChangeMasterWeb()"
@@ -359,13 +368,14 @@
             form.action = `{{ route('personality-test.update', ':id') }}`.replace(':id', data.id);
 
             document.querySelector('#detail-title').innerText = 'Detail Question ' + data.id;
-            document.querySelector('#detail-question').value = data.question;
             document.querySelector('#detail-option-1').value = data.option_1;
             document.querySelector('#detail-option-2').value = data.option_2;
             document.querySelector('#detail-option-3').value = data.option_3;
             document.querySelector('#detail-option-4').value = data.option_4;
-            document.querySelector('#detail-correct-answer').value = data.correct_answer;
-            document.querySelector('#detail-score').value = data.score;
+            document.querySelector('#detail-category-option-1').value = data.category_option_1;
+            document.querySelector('#detail-category-option-2').value = data.category_option_2;
+            document.querySelector('#detail-category-option-3').value = data.category_option_3;
+            document.querySelector('#detail-category-option-4').value = data.category_option_4;
             document.querySelector('#detail-status').value = data.is_active ? 1 : 0;
 
             // Show modal
@@ -383,16 +393,8 @@
             }
         })
 
-        const masterWebData = {
-            numberOfQuestions: {{ $master_web_data->number_of_questions_personality_test }},
-            testDuration: {{ $master_web_data->personality_test_duration }},
-        };
-
         const showModalChangeMasterWeb = () => {
             const form = document.getElementById('modal-detail-master-web');
-
-            document.querySelector('#detail-number-of-questions').value = masterWebData.numberOfQuestions;
-            document.querySelector('#detail-test-duration').value = masterWebData.testDuration;
 
             // Show modal
             modalChangeMasterWeb.classList.remove('hidden');

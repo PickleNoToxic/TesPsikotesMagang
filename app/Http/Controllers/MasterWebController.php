@@ -42,7 +42,7 @@ class MasterWebController extends Controller
         $result = MasterWeb::where('id', 1)
                     ->update([
                         'number_of_questions_personality_test' => $request->number_of_questions_personality_test,
-                        'personality_test_duration' => $request->personality_test_duration,
+                        // 'personality_test_duration' => $request->personality_test_duration,
                     ]);
 
         if ($result) {
