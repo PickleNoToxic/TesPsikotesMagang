@@ -21,12 +21,48 @@ class InteligenceQuotientTestController extends Controller
     }
 
     public function store(Request $request) {
+        $request->validate([
+            'question' => 'required|string',
+            'option_1' => 'required|string',
+            'option_2' => 'required|string',
+            'correct_answer' => 'required|integer',
+            'score' => 'required|integer',
+            'is_active' => 'required|boolean',
+        ]);
+
+        $options = [
+            $request->option_3,
+            $request->option_4,
+            $request->option_5,
+            $request->option_6,
+        ];
+
+        $foundNull = false;
+        foreach ($options as $option) {
+            if (is_null($option)) {
+                $foundNull = true; 
+            } elseif ($foundNull && !is_null($option)) {
+                Alert::error('Failed', 'Opsi jawaban harus diisi secara berurutan.');
+                return back();
+            }
+        }
+
+        $correctAnswerIndex = $request->correct_answer; 
+        $optionKey = "option_$correctAnswerIndex";
+
+        if (is_null($request->input($optionKey))) {
+            Alert::error('Error', "Opsi untuk jawaban benar tidak boleh kosong.");
+            return back();
+        }
+    
         $result = DB::table('inteligence_quotient_test')->insert([
                 'question' => $request->question,
                 'option_1' => $request->option_1,
                 'option_2' => $request->option_2,
                 'option_3' => $request->option_3,
                 'option_4' => $request->option_4,
+                'option_5' => $request->option_5,
+                'option_6' => $request->option_6,
                 'correct_answer' => $request->correct_answer,
                 'score' => $request->score,
                 'is_active' => $request->is_active,
@@ -78,6 +114,40 @@ class InteligenceQuotientTestController extends Controller
     }
 
     public function update(Request $request, InteligenceQuotientTest $inteligenceQuotientTest) {
+        $request->validate([
+            'question' => 'required|string',
+            'option_1' => 'required|string',
+            'option_2' => 'required|string',
+            'correct_answer' => 'required|integer',
+            'score' => 'required|integer',
+            'is_active' => 'required|boolean',
+        ]);
+
+        $options = [
+            $request->option_3,
+            $request->option_4,
+            $request->option_5,
+            $request->option_6,
+        ];
+
+        $foundNull = false;
+        foreach ($options as $option) {
+            if (is_null($option)) {
+                $foundNull = true; 
+            } elseif ($foundNull && !is_null($option)) {
+                Alert::error('Failed', 'Opsi jawaban harus diisi secara berurutan.');
+                return back();
+            }
+        }
+
+        $correctAnswerIndex = $request->correct_answer; 
+        $optionKey = "option_$correctAnswerIndex";
+
+        if (is_null($request->input($optionKey))) {
+            Alert::error('Error', "Opsi untuk jawaban benar tidak boleh kosong.");
+            return back();
+        }
+        
         $result = InteligenceQuotientTest::where('id', $inteligenceQuotientTest->id)
                     ->update([
                         'question' => $request->question,
@@ -85,6 +155,8 @@ class InteligenceQuotientTestController extends Controller
                         'option_2' => $request->option_2,
                         'option_3' => $request->option_3,
                         'option_4' => $request->option_4,
+                        'option_5' => $request->option_5,
+                        'option_6' => $request->option_6,
                         'correct_answer' => $request->correct_answer,
                         'score' => $request->score,
                         'is_active' => $request->is_active
