@@ -64,10 +64,10 @@ class DatabaseSeeder extends Seeder
 
         for($i = 0; $i < 50; $i++) {
             DB::table('inteligence_quotient_test')->insert([
-                'question' => 'Question '.($i+1),
+                'question' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt soluta unde distinctio dignissimos perferendis laboriosam sit incidunt consectetur vero. Hic, molestiae at laudantium aspernatur aperiam in veniam magnam ad vero expedita, ratione laborum est beatae accusantium eum quos amet! Maxime vitae temporibus, enim autem facere neque quaerat officiis? Quo, voluptas. '.($i+1),
                 'option_1' => 'Option 1',
-                'option_2' => 'Option 2',
-                'option_3' => 'Option 3',
+                'option_2' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa iusto earum ipsam. Ipsum maxime sequi non? Nobis nostrum at fugiat?',
+                'option_3' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati fugit voluptatibus dolorum est, eos molestiae in, mollitia dolorem voluptate doloremque harum libero maiores perferendis? Quia doloribus earum eligendi labore veritatis.',
                 'option_4' => 'Option 4',
                 'correct_answer' => rand(1,4),
                 'score' => 1,
