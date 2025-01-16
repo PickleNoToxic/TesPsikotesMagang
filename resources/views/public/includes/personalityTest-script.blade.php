@@ -211,11 +211,6 @@
             alert('An error occurred: ' + error.message);
         });
 
-        console.log(userScoreMelankolis);
-        console.log(userScoreKoleris);
-        console.log(userScorePhlegmatis);
-        console.log(userScoreSanguinis);
-
         fetch(`/personality-score`, {
             method: 'PUT',
             headers: {

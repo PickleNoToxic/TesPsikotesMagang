@@ -30,7 +30,8 @@ class PublicController extends Controller
         ]);
     }
 
-    public function inteligenceQuotientTest(){
+    public function inteligenceQuotientTest()
+    {
         $master_web_data = MasterWeb::latest()->first();
         $number_of_questions = $master_web_data->number_of_questions_iq_test;
 
@@ -40,7 +41,8 @@ class PublicController extends Controller
         ]);
     }
 
-    public function personalityTest(){
+    public function personalityTest()
+    {
         $master_web_data = MasterWeb::latest()->first();
         $number_of_questions = $master_web_data->number_of_questions_personality_test;
         $datas = PersonalityTest::where('is_active', 1)->latest()->get()->take($number_of_questions);
@@ -74,16 +76,20 @@ class PublicController extends Controller
     }
 
     public function finish()
-    {   
+    {
         $user = User::find(session('user_id'));
         $countUser = User::count();
         $scoreBetter = User::where('score_iq', '<', $user->score_iq)->count();
-        $percentage = round($scoreBetter / ($countUser-1) * 100, 2);
+        $percentage = round($scoreBetter / ($countUser - 1) * 100, 2);
         $maxScore = 50 + MasterWeb::latest()->first()->number_of_questions_iq_test;
         return view('public.pages.finish', [
             'score' => $user->score_iq,
             'maxScore' => $maxScore,
-            'percentage' => $percentage
+            'percentage' => $percentage,
+            'score_koleris' => $user->score_koleris,
+            'score_melankolis' => $user->score_melankolis,
+            'score_phlegmatis' => $user->score_phlegmatis,
+            'score_sanguinis' => $user->score_sanguinis,
         ]);
     }
 }
