@@ -18,7 +18,7 @@
                             <div
                                 class=" flex flex-col items-center  rounded-full bg-gradient-to-t from-indigo-800 to-violet-600 w-20 h-20 flex items-center justify-center  font-bold shadow-inner">
                                 <p class="text-3xl text-white">{{ $score }}</p>
-                                <!-- <p class="text-violet-300 text-[0.5rem]">of 100</p> -->
+                                <p class="text-violet-300 text-[0.5rem]">of {{ $maxScore }}</p>
                             </div>
                             <p class="mt-2 font-semibold text-xl text-white">Great</p>
                             <p class="text-xs text-violet-300 mt-1">You scored {{ $percentage }}% higher than the people who have taken the

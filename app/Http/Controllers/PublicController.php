@@ -69,8 +69,10 @@ class PublicController extends Controller
         $countUser = User::count();
         $scoreBetter = User::where('score_iq', '<', $user->score_iq)->count();
         $percentage = round($scoreBetter / ($countUser-1) * 100, 2);
+        $maxScore = 50 + MasterWeb::latest()->first()->number_of_questions_iq_test;
         return view('public.pages.finish', [
             'score' => $user->score_iq,
+            'maxScore' => $maxScore,
             'percentage' => $percentage
         ]);
     }

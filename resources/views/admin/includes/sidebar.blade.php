@@ -2,7 +2,7 @@
 <div id="sidebar" class="hidden flex-none w-screen lg:w-[260px] h-screen lg:h-auto lg:flex flex-col transform -translate-x-full transition-transform duration-300 lg:translate-x-0 lg:relative p-5 md:p-7 lg:p-0">
     <div class="flex flex-col">
         <a href="{{ route("admin-home") }}" class="uppercase text-3xl font-bold text-black tracking-wide">
-            Stimulus EEG
+            Inteligence Quotient & Personality test
         </a>
         <span class="mt-2 font-poppins capitalize text-base font-light tracking-wide">admin page</span>
     </div>
