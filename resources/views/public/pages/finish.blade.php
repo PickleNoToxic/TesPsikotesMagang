@@ -14,7 +14,7 @@
                         {{-- Inteligent Quotient Score --}}
                         <div
                             class="flex flex-col space-y-4 flex-1 rounded-md lg:w-1/5 text-center items-center bg-gradient-to-t from-indigo-700 to-violet-500  p-4 shadow-lg">
-                            <p class=" text-sm text-violet-300 font-bold">Intelligent Quotient</p>
+                            <p class=" text-sm text-violet-300 font-bold">Inteligent Quotient</p>
                             <div
                                 class=" flex flex-col items-center  rounded-full bg-gradient-to-t from-indigo-800 to-violet-600 w-20 h-20 flex items-center justify-center  font-bold shadow-inner">
                                 <p class="text-3xl text-white">{{ $score }}</p>

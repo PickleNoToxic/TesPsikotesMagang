@@ -48,6 +48,8 @@
                 throw new Error('Failed to submit form');
             }
             
+            localStorage.removeItem('quizState');
+            localStorage.removeItem('testFinished');
             localStorage.setItem('fullname', formData.fullname);
             localStorage.setItem('code', codeUnique);
             const parts = formData.birthday.split("-");
