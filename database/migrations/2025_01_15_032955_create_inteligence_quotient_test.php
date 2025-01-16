@@ -16,8 +16,10 @@ return new class extends Migration
             $table->text('question');
             $table->string('option_1');
             $table->string('option_2');
-            $table->string('option_3');
-            $table->string('option_4');
+            $table->string('option_3')->nullable();
+            $table->string('option_4')->nullable();
+            $table->string('option_5')->nullable();
+            $table->string('option_6')->nullable();
             $table->string('correct_answer');
             $table->integer('score');
             $table->boolean('is_active')->default(true);

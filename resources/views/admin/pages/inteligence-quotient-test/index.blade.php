@@ -3,7 +3,7 @@
 @section('container')
     <!-- modal detail -->
     <div id="modal-detail"
-        class="hidden w-screen overflow-y-auto h-screen bg-black/90 fixed top-0 left-0 z-50 font-poppins flex justify-center text-white ">
+        class="hidden w-screen h-screen bg-black/90 fixed top-0 left-0 z-50 font-poppins flex justify-center text-white overflow-y-auto">
         <div class="w-full  flex justify-center items-start py-10" style="-ms-overflow-style: none; scrollbar-width: none;">
             <form id="modal-detail-content" method="POST" enctype="multipart/form-data"
                 class="w-11/12 md:w-1/2 lg:w-4/12 bg-white/50 rounded-2xl py-5 px-5 md:px-10 flex flex-col justify-center gap-3 items-center">
@@ -41,7 +41,7 @@
                 <div class="flex flex-col w-full gap-1 ">
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Option 3</span>
                     <div class="w-full">
-                        <textarea required id="detail-option-3" name="option_3"
+                        <textarea id="detail-option-3" name="option_3"
                             class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 resize-none"
                             rows="1"></textarea>
                     </div>
@@ -50,7 +50,25 @@
                 <div class="flex flex-col w-full gap-1 ">
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Option 4</span>
                     <div class="w-full">
-                        <textarea required id="detail-option-4" name="option_4"
+                        <textarea id="detail-option-4" name="option_4"
+                            class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 resize-none"
+                            rows="1"></textarea>
+                    </div>
+                </div>
+
+                <div class="flex flex-col w-full gap-1 ">
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Option 5</span>
+                    <div class="w-full">
+                        <textarea id="detail-option-5" name="option_5"
+                            class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 resize-none"
+                            rows="1"></textarea>
+                    </div>
+                </div>
+
+                <div class="flex flex-col w-full gap-1 ">
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Option 6</span>
+                    <div class="w-full">
+                        <textarea id="detail-option-6" name="option_6"
                             class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 resize-none"
                             rows="1"></textarea>
                     </div>
@@ -65,6 +83,8 @@
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
                         </select>
                     </div>
                 </div>
@@ -102,7 +122,7 @@
 
     <!-- modal add -->
     <div id="modal-add"
-        class="hidden overflow-y-auto w-screen h-screen bg-black/90 fixed top-0 left-0 z-50 font-poppins flex justify-center text-white">
+        class="hidden w-screen h-screen bg-black/90 fixed top-0 left-0 z-50 font-poppins flex justify-center text-white overflow-y-auto">
         <div class="w-full  flex justify-center items-start py-10" style="-ms-overflow-style: none; scrollbar-width: none;">
             <form id="modal-add-content"
                 class="w-11/12 md:w-1/2 lg:w-4/12 bg-white/50 rounded-2xl py-5 px-5 md:px-10 flex flex-col justify-center gap-3 items-center"
@@ -138,7 +158,7 @@
                 <div class="flex flex-col w-full gap-1 ">
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Option 3</span>
                     <div class="w-full">
-                        <textarea name="option_3" required
+                        <textarea name="option_3" 
                             class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 resize-none"
                             rows="1"></textarea>
                     </div>
@@ -146,7 +166,23 @@
                 <div class="flex flex-col w-full gap-1 ">
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Option 4</span>
                     <div class="w-full">
-                        <textarea name="option_4" required
+                        <textarea name="option_4"
+                            class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 resize-none"
+                            rows="1"></textarea>
+                    </div>
+                </div>
+                <div class="flex flex-col w-full gap-1 ">
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Option 5</span>
+                    <div class="w-full">
+                        <textarea name="option_5" 
+                            class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 resize-none"
+                            rows="1"></textarea>
+                    </div>
+                </div>
+                <div class="flex flex-col w-full gap-1 ">
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Option 6</span>
+                    <div class="w-full">
+                        <textarea name="option_6" 
                             class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 resize-none"
                             rows="1"></textarea>
                     </div>
@@ -161,6 +197,8 @@
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
                         </select>
                     </div>
                 </div>
@@ -196,11 +234,9 @@
         </div>
     </div>
 
-
-
     <!-- modal change master web -->
     <div id="modal-edit-master-web"
-        class="hidden w-screen h-screen bg-black/90 fixed top-0 left-0 z-50 font-poppins flex justify-center text-white ">
+        class="hidden w-screen h-screen bg-black/90 fixed top-0 left-0 z-50 font-poppins flex justify-center text-white overflow-y-auto">
         <div class="w-full max-h-[100vh] overflow-y-scroll flex justify-center items-start py-10"
             style="-ms-overflow-style: none; scrollbar-width: none;">
             <form id="modal-detail-master-web" method="POST" action="{{ route('master-web.updateIQTest') }}"
@@ -366,6 +402,8 @@
             document.querySelector('#detail-option-2').value = data.option_2;
             document.querySelector('#detail-option-3').value = data.option_3;
             document.querySelector('#detail-option-4').value = data.option_4;
+            document.querySelector('#detail-option-5').value = data.option_5;
+            document.querySelector('#detail-option-6').value = data.option_6;
             document.querySelector('#detail-correct-answer').value = data.correct_answer;
             document.querySelector('#detail-score').value = data.score;
             document.querySelector('#detail-status').value = data.is_active ? 1 : 0;

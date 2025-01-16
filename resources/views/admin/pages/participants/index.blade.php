@@ -29,7 +29,10 @@
                         <th class="py-3 px-6 text-left">Address</th>
                         <th class="py-3 px-6 text-left">Position</th>
                         <th class="py-3 px-6 text-left">Score IQ Test</th>
-                        <th class="py-3 px-6 text-left">Score Personality Test</th>
+                        <th class="py-3 px-6 text-left">Score Koleris</th>
+                        <th class="py-3 px-6 text-left">Score Phlegmatis</th>
+                        <th class="py-3 px-6 text-left">Score Sanguinis</th>
+                        <th class="py-3 px-6 text-left">Score Melankolis</th>
                     </tr>
                 </thead>
                 <tbody class="text-gray-600 text-sm font-light">
@@ -43,7 +46,10 @@
                             <td class="py-3 px-6 text-left">{{ $data->address }}</td>
                             <td class="py-3 px-6 text-left">{{ $data->position }}</td>
                             <td class="py-3 px-6 text-left">{{ $data->score_iq }}</td>
-                            <td class="py-3 px-6 text-left">{{ $data->score_personality }}</td>
+                            <td class="py-3 px-6 text-left">{{ $data->score_koleris }}</td>
+                            <td class="py-3 px-6 text-left">{{ $data->score_phlegmatis }}</td>
+                            <td class="py-3 px-6 text-left">{{ $data->score_sanguinis }}</td>
+                            <td class="py-3 px-6 text-left">{{ $data->score_melankolis }}</td>
                         </tr>
                     @endforeach
                 </tbody>
