@@ -4,9 +4,9 @@
     <main class="mt-3 w-full flex justify-center items-center0">
         <section id="register-container" class="flex flex-col justify-center items-center h-fit w-full gap-5 mb-5">
             <div class="flex justify-center w-full p-3 gap-5 ">
-                <div class="w-2/5 flex flex-col h-fit bg-white rounded-2xl shadow-md">
+                <div class="hidden lg:block w-2/5 flex flex-col h-fit bg-white rounded-2xl shadow-md">
                     <div
-                        class="px-5 py-7 space-y-3 mt-3 font-poppins text-lg text-center font-light flex flex-col items-center justify-center gap-2">
+                        class=" px-5 py-7 space-y-3 mt-3 font-poppins text-lg text-center font-light flex flex-col items-center justify-center gap-2">
                         <h1 class="text-3xl font-bold mb-3">Intelligence Quotient & Personality Test</h1>
                         <div class="mx-16 space-y-4">
                             <p>
@@ -22,7 +22,7 @@
                     </div>
 
                 </div>
-                <div class="w-2/5 flex flex-col bg-white rounded-2xl shadow-md">
+                <div class="lg:w-2/5 flex flex-col bg-white rounded-2xl shadow-md">
                     <form id="registrasi-form" class="px-7 py-7 mt-3 font-poppins text-lg font-light flex flex-col gap-2">
                         @csrf
                         <h5 class="text-xl text-center font-bold mb-7">Isi data diri Anda</h5>
@@ -56,7 +56,7 @@
                             </div>
                             <div class="flex flex-col mb-2.5 flex-auto w-1/2">
                                 <label class="tracking-wide text-gray-700 text-base font-medium mb-1">
-                                    Nomor WhatsApp
+                                    No. WhatsApp
                                 </label>
                                 <input
                                     class="appearance-none block w-full bg-gray-100 text-gray-700 text-sm border border-gray-200 rounded py-2 px-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
@@ -98,11 +98,11 @@
                         <div class="flex flex-row gap-5">
                             <div class="flex flex-col mb-2.5 flex-auto w-full">
                                 <label class="tracking-wide text-gray-700 text-base font-medium mb-1">
-                                    Position
+                                    Posisi
                                 </label>
                                 <input
                                     class="appearance-none block w-full bg-gray-100 text-gray-700 text-sm border border-gray-200 rounded py-2 px-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                    type="text" placeholder="Position" id="position" name="position" required>
+                                    type="text" placeholder="Posisi" id="position" name="position" required>
                             </div>
                         </div>
                         <div class="mt-5 flex flex-row justify-center gap-5">

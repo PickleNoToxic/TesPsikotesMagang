@@ -68,10 +68,10 @@
 
         options.forEach((answer, index) => {
             const answerDiv = document.createElement('div');
-            answerDiv.classList.add('flex', 'items-center', 'gap-2');
+            answerDiv.classList.add('flex', 'items-center', 'gap-4');
 
             const inputElement = document.createElement('input');
-            inputElement.classList.add('w-6', 'h-6', 'mt-[2px]', 'text-blue-600', 'bg-gray-100',
+            inputElement.classList.add('w-6', 'h-6', 'mt-[2px]', 'shrink-0' ,'text-blue-600', 'bg-gray-100',
                 'border-gray-300', 'focus:ring-blue-500', 'focus:ring-2');
             inputElement.type = 'radio';
             inputElement.name = `answer-${currentQuestion}`;
