@@ -42,7 +42,12 @@ class UserController extends Controller
         $userId =(int) session('user_id');
         $updated = DB::table('users')
             ->where('id', $userId)  
-            ->update(['score_personality' => $request->score]);  
+            ->update([
+            'score_koleris' => $request->score_koleris,
+            'score_phlegmatis' => $request->score_phlegmatis,
+            'score_sanguinis' => $request->score_sanguinis,
+            'score_melankolis' => $request->score_melankolis,
+        ]);  
 
         if ($updated) {
             return response()->json(['message' => 'Score updated successfully']);

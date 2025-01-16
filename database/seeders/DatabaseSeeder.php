@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
         DB::table('master_web')->insert([
             [
                 'number_of_questions_iq_test' => 50,
-                'number_of_questions_personality_test' => 50,
+                'number_of_questions_personality_test' => 40,
                 'iq_test_duration' => 30,
                 'personality_test_duration' => 30,
                 'created_at' => now(),

@@ -6,6 +6,10 @@
     const counterHeader = document.getElementById('counter');
     counterHeader.classList.add('hidden');
 
+    let userScoreMelankolis = 0;
+    let userScoreKoleris = 0;
+    let userScorePhlegmatis = 0;
+    let userScoreSanguinis = 0;
 
     const testFinished = localStorage.getItem('testFinished');
 
@@ -163,42 +167,91 @@
     };
 
     const submitQuiz = () => {
-    
+        for (let i = 0; i < dataFiltered.length; i++) {
+            switch (userAnswers[i].answer) {
+                case 'Sanguinis':
+                    userScoreSanguinis += 1;
+                    break;
+                case 'Melankolis':
+                    userScoreMelankolis += 1;
+                    break;
+                case 'Koleris':
+                    userScoreKoleris += 1;
+                    break;
+                case 'Phlegmatis':
+                    userScorePhlegmatis += 1;
+                    break;
+                default:
+                    break;
+            }
+        }
 
         let userCode = localStorage.getItem('code');
         let finalAnswers = userAnswers.sort((a, b) => a.personality_test_id - b
             .personality_test_id);
 
         fetch(`/personality-store/${userCode}`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                },
-                body: JSON.stringify({
-                    personality_test: finalAnswers
-                })
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            },
+            body: JSON.stringify({
+                personality_test: finalAnswers
             })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Failed to save answers');
-                }
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Your answers have been submitted!',
-                    text: 'Thank you for completing the quiz.',
-                    confirmButtonText: 'OK'
-                }).then(() => {
-                    localStorage.removeItem('quizState');
-                    window.location.href = "{{ route('finish') }}";
-                    localStorage.setItem('testFinished', true);
-                });
-                return response.json();
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to save answers');
+            }
+            return response.json();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred: ' + error.message);
+        });
+
+        console.log(userScoreMelankolis);
+        console.log(userScoreKoleris);
+        console.log(userScorePhlegmatis);
+        console.log(userScoreSanguinis);
+
+        fetch(`/personality-score`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            },
+            body: JSON.stringify({
+                score_koleris: userScoreKoleris,
+                score_melankolis: userScoreMelankolis,
+                score_phlegmatis: userScorePhlegmatis,
+                score_sanguinis: userScoreSanguinis
             })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('An error occurred: ' + error.message);
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to save score');
+            }
+            return response.json();
+        })
+        .then(dataFiltered => {
+            Swal.fire({
+                icon: 'success',
+                title: 'Your answers have been submitted!',
+                text: 'Thank you for completing the quiz.',
+                confirmButtonText: 'OK'
+            }).then(() => {
+                localStorage.removeItem('quizState');
+                window.location.href =
+                    `{{ route('finish') }}`;
+                localStorage.setItem('testFinished', true);
             });
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred: ' + error.message);
+        });
     };
 
     window.onload = () => {
