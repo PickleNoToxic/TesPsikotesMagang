@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use App\Models\InteligenceQuotientTest;
 use App\Models\MasterWeb;
+use App\Models\PersonalityTest;
 use App\Models\User;
 use App\Models\Management;
 use Illuminate\Http\Request;
@@ -35,6 +36,15 @@ class PublicController extends Controller
 
         $datas = InteligenceQuotientTest::where('is_active', 1)->latest()->get()->take($number_of_questions);
         return view('public.pages.validation', [
+            "datas" => $datas
+        ]);
+    }
+
+    public function personalityTest(){
+        $master_web_data = MasterWeb::latest()->first();
+        $number_of_questions = $master_web_data->number_of_questions_personality_test;
+        $datas = PersonalityTest::where('is_active', 1)->latest()->get()->take($number_of_questions);
+        return view('public.pages.personalityTest', [
             "datas" => $datas
         ]);
     }

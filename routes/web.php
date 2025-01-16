@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DetailInteligenceQuotientTestController;
+use App\Http\Controllers\DetailPersonalityTestController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\InteligenceQuotientTestController;
 use App\Http\Controllers\PersonalityTestController;
@@ -40,15 +41,18 @@ Route::controller(PublicController::class)->group(function () {
     // Route::get('/validation', 'validation')->name('validation');
     Route::get('/finish', 'finish')->name('finish');
     Route::get('/inteligence-quotient',  'inteligenceQuotientTest')->name('inteligence-quotient');
+    Route::get('/personality-test',  'personalityTest')->name('personality-test');
 });
 
-Route::put('/inteligence-quotient-score',  [UserController::class, 'score'])->name('inteligence-quotient-score');
+Route::put('/inteligence-quotient-score',  [UserController::class, 'inteligence_score'])->name('inteligence-quotient-score');
+Route::put('/personality-score',  [UserController::class, 'personality_score'])->name('inteligence-quotient-score');
 
 
 Route::post('/user-store', [UserController::class, 'store'])->name('user.store');
 
 Route::resource('/participants', ParticipantController::class);
 Route::post('/inteligence-quotient-store/{userCode}', [DetailInteligenceQuotientTestController::class, 'store'])->name('inteligence-quotient-store');
+Route::post('/personality-store/{userCode}', [DetailPersonalityTestController::class, 'store'])->name('personality-store');
 
 Route::controller(AuthController::class)->group(function () {
     Route::get('/cms/login', 'index')->name('admin-login')->middleware('guest');
