@@ -9,6 +9,10 @@
     let countdown = 0; //in seconds
 
     const testFinished = localStorage.getItem('testFinished');
+
+    if (!@json(session('user_id'))) {
+        window.location.href = '/registration'
+    }
     if (testFinished == "true") {
         window.location.href = "{{ route('finish') }}";
     }
@@ -18,21 +22,22 @@
         countdown = JSON.parse(savedState).countdown;
     } else {
         fetch('/master-web/latest')
-        .then(response => response.json())
-        .then(data => {
-            if (data) {
-                countdown = data['iq_test_duration'] * 60;
-            }
-        })
-        .catch(error => console.error('Error:', error));
+            .then(response => response.json())
+            .then(data => {
+                if (data) {
+                    countdown = data['iq_test_duration'] * 60;
+                }
+            })
+            .catch(error => console.error('Error:', error));
     }
 
     const updateCountdown = () => {
-        const hours = Math.floor(countdown / 3600); 
-        const minutes = Math.floor((countdown % 3600) / 60); 
-        const seconds = countdown % 60; 
+        const hours = Math.floor(countdown / 3600);
+        const minutes = Math.floor((countdown % 3600) / 60);
+        const seconds = countdown % 60;
 
-        counterHeader.innerHTML = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        counterHeader.innerHTML =
+            `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
         countdown--;
 
         saveStateToLocalStorage();
@@ -64,7 +69,8 @@
         const answersContainer = document.getElementById('answers-container');
         answersContainer.innerHTML = '';
 
-        const options = [dataFiltered[currentQuestion].option_1, dataFiltered[currentQuestion].option_2, dataFiltered[currentQuestion]
+        const options = [dataFiltered[currentQuestion].option_1, dataFiltered[currentQuestion].option_2,
+            dataFiltered[currentQuestion]
             .option_3, dataFiltered[currentQuestion].option_4
         ];
 
@@ -73,7 +79,7 @@
             answerDiv.classList.add('flex', 'items-center', 'gap-4');
 
             const inputElement = document.createElement('input');
-            inputElement.classList.add('w-6', 'h-6', 'mt-[2px]', 'shrink-0' ,'text-blue-600', 'bg-gray-100',
+            inputElement.classList.add('w-6', 'h-6', 'mt-[2px]', 'shrink-0', 'text-blue-600', 'bg-gray-100',
                 'border-gray-300', 'focus:ring-blue-500', 'focus:ring-2');
             inputElement.type = 'radio';
             inputElement.name = `answer-${currentQuestion}`;
@@ -168,12 +174,12 @@
 
     const submitQuiz = () => {
         //Calculate final score
-        for(let i = 0; i < dataFiltered.length; i++) {
-            if(userAnswers[i].answer === parseInt(dataFiltered[i].correct_answer)) {
-                userScore += dataFiltered[i].score; 
+        for (let i = 0; i < dataFiltered.length; i++) {
+            if (userAnswers[i].answer === parseInt(dataFiltered[i].correct_answer)) {
+                userScore += dataFiltered[i].score;
             }
         }
-        
+
         let userCode = localStorage.getItem('code');
         let finalAnswers = userAnswers.sort((a, b) => a.inteligence_quotient_test_id - b
             .inteligence_quotient_test_id);
@@ -199,8 +205,7 @@
                 alert('An error occurred: ' + error.message);
             });
 
-
-            fetch(`/inteligence-quotient-score`, {
+        fetch(`/inteligence-quotient-score`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -232,8 +237,11 @@
     window.onload = () => {
         const savedState = localStorage.getItem('quizState');
         if (savedState) {
-            const { currentQuestion: savedCurrentQuestion, userAnswers: savedUserAnswers, countdown: savedCountdown } = JSON.parse(savedState);
-            console.log(savedState);
+            const {
+                currentQuestion: savedCurrentQuestion,
+                userAnswers: savedUserAnswers,
+                countdown: savedCountdown
+            } = JSON.parse(savedState);
             currentQuestion = savedCurrentQuestion;
             userAnswers = savedUserAnswers;
             countdown = savedCountdown;

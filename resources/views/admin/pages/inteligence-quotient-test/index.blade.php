@@ -98,7 +98,7 @@
             </form>
         </div>
     </div>
-
+`
 
     <!-- modal add -->
     <div id="modal-add"
@@ -210,7 +210,7 @@
                 @csrf
                 <h1 class="font-poppins font-semibold text-white text-3xl capitalize tracking-wider" id="detail-title">IQ
                     Test's Configuration </h1>
-                <div class="flex flex-col w-full gap-1 ">
+                <div class="flex flex-col w-full gap-1 mt-10 ">
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Number of Questions</span>
                     <div class="w-full h-9 rounded-xl">
                         <input type="number"

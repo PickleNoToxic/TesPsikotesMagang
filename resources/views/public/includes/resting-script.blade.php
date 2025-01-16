@@ -32,10 +32,18 @@
         }
     }
 
-    const handleRedirect= () => {
+    const handleRedirect = () => {
         localStorage.removeItem('testFinished');
         localStorage.removeItem('quizState');
-        window.location.href = '/inteligence-quotient'
+        const userId = @json(session('user_id')); 
+
+        if (userId !== null ) {
+            window.location.href = '/inteligence-quotient';
+        } else{
+
+        window.location.href = "{{ route('registration') }}"
+        }
+
     }
 
     const stimulusOpenEyes = () => {
@@ -45,7 +53,8 @@
 
     const showStimulusCloseEyes = () => {
         toggleButton();
-        sentence = "Silahkan tekan tombol <span class='font-semibold'>START</span> <br> untuk proses STIMULUS selanjutnya,<br> <span class='font-semibold uppercase'>tutup mata</span> Anda sampai terdengar intruksi buka mata Anda.";
+        sentence =
+            "Silahkan tekan tombol <span class='font-semibold'>START</span> <br> untuk proses STIMULUS selanjutnya,<br> <span class='font-semibold uppercase'>tutup mata</span> Anda sampai terdengar intruksi buka mata Anda.";
         titleContainer.innerHTML = sentence
 
         openEyesContainer.classList.toggle("hidden")
@@ -54,7 +63,9 @@
 
     const stimulusClosedEyes = () => {
         toggleButton();
-        setTimeout(() => {voice.play().then()}, 55000);
+        setTimeout(() => {
+            voice.play().then()
+        }, 55000);
         intervalId = setInterval(countdown, 1000);
     }
 </script>
