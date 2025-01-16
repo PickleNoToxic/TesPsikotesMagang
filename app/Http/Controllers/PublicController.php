@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use App\Models\InteligenceQuotientTest;
+use App\Models\MasterWeb;
+use App\Models\User;
 use App\Models\Management;
 use Illuminate\Http\Request;
 
@@ -28,7 +30,10 @@ class PublicController extends Controller
     }
 
     public function inteligenceQuotientTest(){
-        $datas = InteligenceQuotientTest::latest()->get();
+        $master_web_data = MasterWeb::latest()->first();
+        $number_of_questions = $master_web_data->number_of_questions_iq_test;
+
+        $datas = InteligenceQuotientTest::where('is_active', 1)->latest()->get()->take($number_of_questions);
         return view('public.pages.validation', [
             "datas" => $datas
         ]);
@@ -59,8 +64,14 @@ class PublicController extends Controller
     }
 
     public function finish()
-    {
+    {   
+        $user = User::find(session('user_id'));
+        $countUser = User::count();
+        $scoreBetter = User::where('score_iq', '<', $user->score_iq)->count();
+        $percentage = round($scoreBetter / ($countUser-1) * 100, 2);
         return view('public.pages.finish', [
+            'score' => $user->score_iq,
+            'percentage' => $percentage
         ]);
     }
 }

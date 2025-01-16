@@ -33,6 +33,7 @@
     }
 
     const handleRedirect= () => {
+        localStorage.removeItem('testFinished');
         window.location.href = '/inteligence-quotient'
     }
 
