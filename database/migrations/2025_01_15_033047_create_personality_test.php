@@ -18,8 +18,10 @@ return new class extends Migration
             $table->string('option_2');
             $table->string('option_3');
             $table->string('option_4');
-            $table->string('correct_answer');
-            $table->integer('score');
+            $table->string('category_option_1');
+            $table->string('category_option_2');
+            $table->string('category_option_3');
+            $table->string('category_option_4');
             $table->boolean('is_active')->default(true);
             $table->timestamps();
         });

@@ -39,7 +39,10 @@ class DatabaseSeeder extends Seeder
                 'address' => '123 Main Street, Jakarta',
                 'position' => 'Developer',
                 'score_iq' => 0, 
-                'score_personality' => 0,
+                'score_koleris' => 0,
+                'score_phlegmatis' => 0,
+                'score_sanguinis' => 0,
+                'score_melankolis' => 0,
                 'is_admin' => true,
                 'password' => bcrypt('12345'),
                 'created_at' => now(),
@@ -54,7 +57,10 @@ class DatabaseSeeder extends Seeder
                 'address' => '456 Elm Street, Surabaya',
                 'position' => 'Designer',
                 'score_iq' => 0, 
-                'score_personality' => 0,
+                'score_koleris' => 0,
+                'score_phlegmatis' => 0,
+                'score_sanguinis' => 0,
+                'score_melankolis' => 0,
                 'is_admin' => false,
                 'password' => null,
                 'created_at' => now(),
@@ -789,8 +795,7 @@ class DatabaseSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now()
             ]
-        ]);
-        
+        ]);  
 
         for($i = 0; $i < 50; $i++) {
             DB::table('personality_test')->insert([
@@ -799,8 +804,10 @@ class DatabaseSeeder extends Seeder
                 'option_2' => 'Option 2',
                 'option_3' => 'Option 3',
                 'option_4' => 'Option 4',
-                'correct_answer' => rand(1,4),
-                'score' => 1,
+                'category_option_1' => 'Koleris',
+                'category_option_2' => 'Phlegmatis',
+                'category_option_3' => 'Sanguinis',
+                'category_option_4' => 'Melankolis',
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now()

@@ -21,7 +21,10 @@ return new class extends Migration
             $table->string('address');
             $table->string('position');
             $table->integer('score_iq')->default(0);
-            $table->integer('score_personality')->default(0);
+            $table->integer('score_koleris')->default(0);
+            $table->integer('score_phlegmatis')->default(0);
+            $table->integer('score_sanguinis')->default(0);
+            $table->integer('score_melankolis')->default(0);
             $table->boolean('is_admin')->default(false);
             $table->string('password')->nullable();
             $table->rememberToken();
