@@ -34,7 +34,11 @@ class PublicController extends Controller
         $master_web_data = MasterWeb::latest()->first();
         $number_of_questions = $master_web_data->number_of_questions_iq_test;
 
-        $datas = InteligenceQuotientTest::where('is_active', 1)->latest()->get()->take($number_of_questions);
+        $datas = InteligenceQuotientTest::where('is_active', 1)
+            ->orderBy('id', 'asc') 
+            ->take($number_of_questions) 
+            ->get();
+
         return view('public.pages.validation', [
             "datas" => $datas
         ]);
@@ -43,7 +47,11 @@ class PublicController extends Controller
     public function personalityTest(){
         $master_web_data = MasterWeb::latest()->first();
         $number_of_questions = $master_web_data->number_of_questions_personality_test;
-        $datas = PersonalityTest::where('is_active', 1)->latest()->get()->take($number_of_questions);
+        $datas = PersonalityTest::where('is_active', 1)
+            ->orderBy('id', 'asc') 
+            ->take($number_of_questions) 
+            ->get();
+            
         return view('public.pages.personalityTest', [
             "datas" => $datas
         ]);
