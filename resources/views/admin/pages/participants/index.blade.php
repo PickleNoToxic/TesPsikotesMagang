@@ -29,10 +29,10 @@
                         <th class="py-3 px-6 text-left">Address</th>
                         <th class="py-3 px-6 text-left">Position</th>
                         <th class="py-3 px-6 text-left">Score IQ Test</th>
-                        <th class="py-3 px-6 text-left">Score Koleris</th>
-                        <th class="py-3 px-6 text-left">Score Phlegmatis</th>
-                        <th class="py-3 px-6 text-left">Score Sanguinis</th>
-                        <th class="py-3 px-6 text-left">Score Melankolis</th>
+                        <th class="py-3 px-6 text-left">Score Koleris (%)</th>
+                        <th class="py-3 px-6 text-left">Score Phlegmatis (%)</th>
+                        <th class="py-3 px-6 text-left">Score Sanguinis (%)</th>
+                        <th class="py-3 px-6 text-left">Score Melankolis (%)</th>
                     </tr>
                 </thead>
                 <tbody class="text-gray-600 text-sm font-light">
