@@ -47,25 +47,7 @@ class DatabaseSeeder extends Seeder
                 'password' => bcrypt('12345'),
                 'created_at' => now(),
                 'updated_at' => now()
-            ],
-            [
-                'fullname' => 'Budi',
-                'email' => 'budi@gmail.com',
-                'whatsapp' => '9876543210',
-                'birthday' => Carbon::parse('1995-07-20')->format('Y-m-d'),
-                'gender' => 'Wanita',
-                'address' => '456 Elm Street, Surabaya',
-                'position' => 'Designer',
-                'score_iq' => 0,
-                'score_koleris' => 0.0,
-                'score_phlegmatis' => 0.0,
-                'score_sanguinis' => 0.0,
-                'score_melankolis' => 0.0,
-                'is_admin' => false,
-                'password' => null,
-                'created_at' => now(),
-                'updated_at' => now()
-            ],
+            ]
         ]);
 
         DB::table('inteligence_quotient_test')->insert([

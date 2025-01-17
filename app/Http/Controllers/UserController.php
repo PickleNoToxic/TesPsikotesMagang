@@ -42,6 +42,7 @@ class UserController extends Controller
     {
         $userId =(int) session('user_id');
         $number_of_questions = MasterWeb::latest()->first()->number_of_questions_personality_test;
+
         $updated = DB::table('users')
             ->where('id', $userId)  
             ->update([
