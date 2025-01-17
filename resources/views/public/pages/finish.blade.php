@@ -13,16 +13,15 @@
                     <div class="flex flex-col lg:flex-row px-4 mt-4 space-y-4 lg:space-y-0 lg:space-x-4 justify-center ">
                         {{-- Inteligent Quotient Score --}}
                         <div
-                            class="flex flex-col space-y-4 flex-1 rounded-md lg:w-1/5 text-center items-center bg-gradient-to-t from-indigo-700 to-violet-500  p-4 shadow-lg">
+                            class="flex flex-col  flex-1 rounded-md lg:w-1/5 text-center items-center bg-gradient-to-t from-indigo-700 to-violet-500  p-4 shadow-lg">
                             <p class=" text-sm text-violet-300 font-bold">Inteligent Quotient</p>
                             <div
-                                class=" flex flex-col items-center  rounded-full bg-gradient-to-t from-indigo-800 to-violet-600 w-20 h-20 flex items-center justify-center  font-bold shadow-inner">
-                                <p class="text-3xl text-white">{{ $score }}</p>
-                                <p class="text-violet-300 text-[0.5rem]">of {{ $maxScore }}</p>
+                                class=" flex flex-1 my-8 items-center justify-center font-bold ">
+                                <div class="flex flex-col rounded-full bg-gradient-to-t from-indigo-800 to-violet-600 w-40 h-40 items-center justify-center">
+                                    <p class="text-6xl text-white">{{ $score }}</p>
+                                    <p class="text-violet-300 ">of {{ $maxScore }}</p>
+                                </div>
                             </div>
-                            <p class="mt-2 font-semibold text-xl text-white">Great</p>
-                            <p class="text-xs text-violet-300 mt-1">You scored {{ $percentage }}% higher than the people who have taken the
-                                test</p>
                         </div>
 
                         {{-- Personality Score --}}
@@ -36,28 +35,24 @@
                                         d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
                                 </svg>
                             </div>
-                            <p class="mt-2 font-semibold text-xl text-white">ISTJ</p>
-                            <p class="text-sm text-violet-300 mt-1">You are an ISTJ with a strong sense of responsibility
-                            </p>
-                        </div>
-
-                        <div class="flex flex-col space-y-4 flex-1 lg:w-1/5 py-4">
-                            <p class="text-center lg:text-start font-bold">Summary</p>
                             <div
                                 class="rounded-md shadow-lg w-full bg-red-200 px-2 py-2 text-red-500 text-sm flex justify-between font-bold">
-                                Test<span>80 <span class="text-violet-300">/100</span></span> </div>
-                                <div
+                                Koleris<span>{{ $score_koleris }} %</span></div>
+                            <div
                                 class="rounded-md shadow-lg w-full bg-yellow-200 px-2 py-2 text-yellow-500 text-sm flex justify-between font-bold">
-                                Test<span>80 <span class="text-violet-300">/100</span></span> </div>
-                                <divz
+                                Melankolis<span>{{ $score_melankolis }} %</span></div>
+                            <divz
                                 class="rounded-md shadow-lg w-full bg-green-200 px-2 py-2 text-green-500 text-sm flex justify-between font-bold">
-                                Test<span>80 <span class="text-violet-300">/100</span></span> </divz>
-                                <div
+                                Phlegmatis<span>{{ $score_phlegmatis }} %</span></divz>
+                            <div
                                 class="rounded-md shadow-lg w-full bg-indigo-200 px-2 py-2 text-indigo-500 text-sm flex justify-between font-bold">
-                                Test<span>80 <span class="text-violet-300">/100</span></span> </div>
+                                Sanguinis<span>{{ $score_sanguinis }} %</span></div>
 
                         </div>
+
                     </div>
+
+
 
 
                     <div class="p-2 text-lg font-normal mt-2 mb-3 flex flex-wrap items-center justify-center gap-2">

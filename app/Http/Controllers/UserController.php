@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\MasterWeb;
 use Illuminate\Http\Request;
 use DB;
 
@@ -40,13 +41,14 @@ class UserController extends Controller
     public function personality_score(Request $request)
     {
         $userId =(int) session('user_id');
+        $number_of_questions = MasterWeb::latest()->first()->number_of_questions_personality_test;
         $updated = DB::table('users')
             ->where('id', $userId)  
             ->update([
-            'score_koleris' => $request->score_koleris,
-            'score_phlegmatis' => $request->score_phlegmatis,
-            'score_sanguinis' => $request->score_sanguinis,
-            'score_melankolis' => $request->score_melankolis,
+            'score_koleris' => round($request->score_koleris/$number_of_questions*100, 2),
+            'score_phlegmatis' => round($request->score_phlegmatis/$number_of_questions*100, 2),
+            'score_sanguinis' => round($request->score_sanguinis/$number_of_questions*100, 2),
+            'score_melankolis' => round($request->score_melankolis/$number_of_questions*100, 2),
         ]);  
 
         if ($updated) {
