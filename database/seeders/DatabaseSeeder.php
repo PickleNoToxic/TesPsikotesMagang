@@ -497,7 +497,7 @@ class DatabaseSeeder extends Seeder
             [
                 'question' => 'Binatang selalu memiliki ….',
                 'option_1' => 'Rambut',
-                'option_2' => 'Bayi/ anak',
+                'option_2' => 'Bayi/anak',
                 'option_3' => 'Makanan',
                 'option_4' => 'Tubuh',
                 'option_5' => null,
