@@ -61,7 +61,7 @@ class UserController extends Controller
 
     public function all()
     {
-        $datas = DB::table('users')->get();
+        $datas = DB::table('users')->where('is_admin', 0)->get();
 
         return view('admin.pages.participants.index', [
             "datas" => $datas

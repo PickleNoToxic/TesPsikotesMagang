@@ -15,10 +15,18 @@
 
     const codeUnique = generateUniqueCode(10);
 
+    const makeSecureUrl = (url) => {
+        if (url.startsWith('http://')) {
+            return url.replace('http://', 'https://');
+        }
+        return url;
+    };
+
     counter.classList.toggle('hidden');
 
     regisForm.addEventListener("submit", async (e) => {
         e.preventDefault();
+        let baseUrl = makeSecureUrl('{{ route('user.store') }}');
 
         submitButton.disabled = true;
         submitButton.innerText = 'Process...';
@@ -35,7 +43,7 @@
         };
 
         try {
-            const response = await fetch('{{ route('user.store') }}', {
+            const response = await fetch(baseUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
