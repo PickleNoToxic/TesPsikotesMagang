@@ -7,16 +7,13 @@
                 <div class="hidden lg:block w-2/5 flex flex-col h-fit bg-white rounded-2xl shadow-md">
                     <div
                         class=" px-5 py-7 space-y-3 mt-3 font-poppins text-lg text-center font-light flex flex-col items-center justify-center gap-2">
-                        <h1 class="text-3xl font-bold mb-3">Inteligence Quotient & Personality Test</h1>
-                        <div class="mx-16 space-y-4">
+                        <h1 class="text-3xl font-bold mb-3">Psychological Test</h1>
+                        <div class="mx-10 space-y-4">
                             <p>
-                                Tes ini dirancang untuk mengukur tingkat kecerdasan dan kepribadian Anda secara menyeluruh.
+                                Selama proses tes, usahakan untuk fokus dan menjawab pertanyaan yang ada dengan baik demi hasil yang akurat.
                             </p>
                             <p>
-                                Selama proses tes, usahakan untuk tetap tenang dan fokus demi hasil yang akurat.
-                            </p>
-                            <p>
-                                Selamat mengikuti Inteligence Quotient & Personality Test.
+                                Selamat mengikuti Psychological Test.
                             </p>
                         </div>
                     </div>
@@ -25,7 +22,7 @@
                 <div class="lg:w-2/5 flex flex-col bg-white rounded-2xl shadow-md">
                     <form id="registrasi-form" class="px-7 py-7 mt-3 font-poppins text-lg font-light flex flex-col gap-2">
                         @csrf
-                        <h5 class="text-xl text-center font-bold mb-7">Isi data diri Anda</h5>
+                        <h5 class="text-2xl text-center font-bold mb-7">Isi data diri Anda</h5>
                         <div class="flex flex-row gap-5">
                             <div class="flex flex-col mb-2.5 flex-auto w-1/2">
                                 <label class="tracking-wide text-gray-700 text-base font-medium mb-1">
@@ -98,7 +95,7 @@
                         <div class="flex flex-row gap-5">
                             <div class="flex flex-col mb-2.5 flex-auto w-full">
                                 <label class="tracking-wide text-gray-700 text-base font-medium mb-1">
-                                    Posisi
+                                    Posisi Yang Dilamar
                                 </label>
                                 <input
                                     class="appearance-none block w-full bg-gray-100 text-gray-700 text-sm border border-gray-200 rounded py-2 px-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"

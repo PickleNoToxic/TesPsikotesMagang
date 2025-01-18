@@ -15,7 +15,7 @@
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Question</span>
                     <div class="w-full">
                         <textarea name="question" required id="detail-question"
-                            class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 resize-none"
+                            class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 min-h-[100px]"
                             rows="1"></textarea>
                     </div>
                 </div>
@@ -246,7 +246,7 @@
                 @csrf
                 <h1 class="font-poppins font-semibold text-white text-3xl capitalize tracking-wider" id="detail-title">IQ
                     Test's Configuration </h1>
-                <div class="flex flex-col w-full gap-1 mt-10 ">
+                <div class="flex flex-col w-full gap-1 mt-10">
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Number of Questions</span>
                     <div class="w-full h-9 rounded-xl">
                         <input type="number"
@@ -289,28 +289,23 @@
         <!-- header -->
         <div class="w-full pl-3 pr-3 md:pl-7 md:pr-7 lg:pl-20 lg:pr-0 flex justify-between">
             <div class="font-poppins font-bold text-2xl md:text-3xl capitalize">Inteligence Quotient Test Questions</div>
-            <div onclick="toggleModalAdd()"
-                class="px-5 md:px-7 py-2 text-white text-sm font-poppins font-medium bg-blue-400 rounded-xl cursor-pointer flex flex-row justify-center items-center gap-3">
-                <span>Add Data</span>
+            <div class="flex flex-row gap-2">
+                <div onclick="toggleModalAdd()"
+                    class="px-5 md:px-7 py-2 text-white text-sm font-poppins font-medium bg-blue-400 rounded-xl cursor-pointer flex flex-row justify-center items-center gap-3">
+                    <span>Add Data</span>
+                </div>
+                <div onclick="toggleModalChangeMasterWeb()"
+                    class="px-5 md:px-7 py-2 text-white text-sm font-poppins font-medium bg-gray-400 rounded-xl cursor-pointer flex flex-row justify-center items-center gap-3">
+                    <span>Change</span>
+                </div>
             </div>
         </div>
 
-        <!-- subheader -->
-        <div class="w-full pl-3 pr-3 mt-5 md:pl-7 md:pr-7 lg:pl-20 lg:pr-0 flex justify-between">
-            <div class="font-poppins font-medium text-xl md:text-2xl capitalize">Number of Questions per Test:
-                {{ $master_web_data->number_of_questions_iq_test }} Questions</div>
-        </div>
-
-        <div class="w-full pl-3 pr-3 mt-5 md:pl-7 md:pr-7 lg:pl-20 lg:pr-0 flex justify-between">
-            <div class="font-poppins font-medium text-xl md:text-2xl capitalize">Test Duration:
-                {{ $master_web_data->iq_test_duration }} Minutes</div>
-        </div>
-
-        <div class="w-full pl-3 pr-3 mt-5 md:pl-7 md:pr-7 lg:pl-20 lg:pr-0 flex justify-start">
-            <div onclick="toggleModalChangeMasterWeb()"
-                class="px-5 md:px-7 py-2 text-white text-sm font-poppins font-medium bg-blue-400 rounded-xl cursor-pointer mb-10">
-                <span>Change</span>
-            </div>
+        <div class="w-auto pl-6 pr-6 md:pl-20 md:pr-20 flex flex-col mb-10 mt-3">
+            <p class="font-poppins text-lg md:text-xl capitalize">Number of Questions per Test:
+                <b>{{ $master_web_data->number_of_questions_iq_test }}</b> Questions</p>
+            <p class="font-poppins text-lg md:text-xl capitalize">Test Duration:
+                <b>{{ $master_web_data->iq_test_duration }}</b> Minutes</p>
         </div>
 
         <!-- Section cards -->

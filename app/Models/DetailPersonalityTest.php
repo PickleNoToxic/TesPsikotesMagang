@@ -11,6 +11,8 @@ class DetailPersonalityTest extends Model
 
     protected $table = 'detail_personality_test';
 
+    // protected $with = ['personalityTest'];
+
     public function personalityTest()
     {
         return $this->belongsTo(PersonalityTest::class);

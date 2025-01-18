@@ -15,6 +15,8 @@ class DetailPersonalityTestController extends Controller
             'personality_test' => 'required|array',
             'personality_test.*.personality_test_id' => 'required|int',
             'personality_test.*.answer' => 'nullable',
+            'personality_test.*.statement' => 'nullable',
+            'personality_test.*.option' => 'nullable',
         ]);
 
 
@@ -23,6 +25,8 @@ class DetailPersonalityTestController extends Controller
                 'user_id' => session('user_id'),
                 'personality_test_id' => $answer['personality_test_id'],
                 'answer' => $answer['answer'],
+                'statement' => $answer['statement'],
+                'option' => $answer['option'],
                 'created_at' => now(),
                 'updated_at' => now()
             ]);

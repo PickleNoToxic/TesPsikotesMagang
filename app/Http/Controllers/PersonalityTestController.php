@@ -31,6 +31,10 @@ class PersonalityTestController extends Controller
             'category_option_2' => 'required|different:category_option_1',
             'category_option_3' => 'required|different:category_option_1,category_option_2',
             'category_option_4' => 'required|different:category_option_1,category_option_2,category_option_3',
+            'statement_1' => 'required|string',
+            'statement_2' => 'required|string',
+            'statement_3' => 'required|string',
+            'statement_4' => 'required|string',
             'is_active' => 'required|boolean',
         ]);
 
@@ -48,6 +52,10 @@ class PersonalityTestController extends Controller
                 'category_option_2' => $request->category_option_2,
                 'category_option_3' => $request->category_option_3,
                 'category_option_4' => $request->category_option_4,
+                'statement_1' => $request->statement_1,
+                'statement_2' => $request->statement_2,
+                'statement_3' => $request->statement_3,
+                'statement_4' => $request->statement_4,
                 'is_active' => $request->is_active,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -106,6 +114,10 @@ class PersonalityTestController extends Controller
             'category_option_2' => 'required|different:category_option_1',
             'category_option_3' => 'required|different:category_option_1,category_option_2',
             'category_option_4' => 'required|different:category_option_1,category_option_2,category_option_3',
+            'statement_1' => 'required|string',
+            'statement_2' => 'required|string',
+            'statement_3' => 'required|string',
+            'statement_4' => 'required|string',
             'is_active' => 'required|boolean',
         ]);
 
@@ -124,6 +136,10 @@ class PersonalityTestController extends Controller
                         'category_option_2' => $request->category_option_2,
                         'category_option_3' => $request->category_option_3,
                         'category_option_4' => $request->category_option_4,
+                        'statement_1' => $request->statement_1,
+                        'statement_2' => $request->statement_2,
+                        'statement_3' => $request->statement_3,
+                        'statement_4' => $request->statement_4,
                         'is_active' => $request->is_active
                     ]);
 

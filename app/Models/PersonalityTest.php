@@ -11,6 +11,9 @@ class PersonalityTest extends Model
 
     public $table = 'personality_test';
 
+    protected $with = ['detail_personality_test'];
+
+
     public function detail_personality_test()
     {
         return $this->hasMany(DetailPersonalityTest::class);

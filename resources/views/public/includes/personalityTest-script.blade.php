@@ -117,10 +117,13 @@
 
     const storeUpdateAnswer = (index, selectedOption) => {
         userAnswers[index].answer = dataFiltered[index][`category_option_${selectedOption}`];
+        userAnswers[index].statement = dataFiltered[index][`statement_${selectedOption}`];
+        userAnswers[index].option = dataFiltered[index][`option_${selectedOption}`];
     };
 
     const checkedAnswer = (index) => {
         const selectedValue = userAnswers[index].answer;
+        
         const radioElement = document.querySelector(`input[name="answer-${index}"][value="${selectedValue}"]`);
 
         if (radioElement) {

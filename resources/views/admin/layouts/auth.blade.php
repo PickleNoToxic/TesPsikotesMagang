@@ -4,8 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png">
-        <title>Admin Panel - Stimulus EEG</title>
-        <meta name="description" content="Admin Panel Stimulus EEG by Star IT" />
+        <title>Admin Panel - Psychological Test</title>
+        <meta name="description" content="Admin Panel Psychological Test by Star IT" />
         <meta name="author" content="Star IT" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com">

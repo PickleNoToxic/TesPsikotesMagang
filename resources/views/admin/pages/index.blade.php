@@ -4,7 +4,7 @@
     <div class="flex-none flex flex-col justify-start px-2 w-[calc(100vw-350px)]">
         <!-- header -->
         <div class="w-full pl-3 pr-3 md:pl-7 md:pr-7 lg:pl-20 lg:pr-0 flex justify-between">
-            <div class="text-black font-poppins font-bold text-2xl md:text-3xl capitalize">Dashboard</div>
+            <div class="text-black font-poppins font-bold text-2xl md:text-3xl capitalize">Dashboard Psychological Test</div>
         </div>
 
         <!-- Section cards -->
@@ -18,7 +18,7 @@
                             {{ $inteligence_quotient_tests }}
                         </h1>
                         <div class="flex flex-1 flex-col ">
-                            <h3 class="text-xl font-semibold">Active Inteligence Quotient Test</h3>
+                            <h3 class="text-lg font-semibold">IQ Test</h3>
                             <div class="font-poppins text-white">
                                 <span class="whitespace-nowrap inline-flex">More Detail
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -38,7 +38,7 @@
                             {{ $personality_tests }}
                         </h1>
                         <div class="flex flex-1 flex-col ">
-                            <h3 class="text-xl font-semibold">Active Personality Test</h3>
+                            <h3 class="text-lg font-semibold">Personality Test</h3>
                             <div class="font-poppins text-white">
                                 <span class="whitespace-nowrap inline-flex">More Detail
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"

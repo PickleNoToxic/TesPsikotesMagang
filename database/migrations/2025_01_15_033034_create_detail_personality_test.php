@@ -16,6 +16,8 @@ return new class extends Migration
             $table->foreignId('user_id')->references('id')->on('users')->name('fk_user_personality_test');;
             $table->foreignId('personality_test_id')->references('id')->on('personality_test')->name('fk_personality_test');;
             $table->string('answer');
+            $table->string('statement')->nullable();
+            $table->string('option')->nullable();
             $table->timestamps();
         });
     }

@@ -26,7 +26,8 @@
 
     regisForm.addEventListener("submit", async (e) => {
         e.preventDefault();
-        let baseUrl = makeSecureUrl('{{ route('user.store') }}');
+        // let baseUrl = makeSecureUrl('{{ route('user.store') }}');
+        let baseUrl = '{{ route('user.store') }}';
 
         submitButton.disabled = true;
         submitButton.innerText = 'Process...';

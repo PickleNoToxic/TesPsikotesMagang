@@ -11,13 +11,13 @@
                 @method('PUT')
                 @csrf
                 <h1 class="font-poppins font-semibold text-white text-3xl capitalize tracking-wider" id="detail-title">detail
-                    question </h1>
+                    Statement </h1>
 
-                <div class="flex flex-col w-full gap-1 mb-2">
+                <div class="flex flex-col w-full gap-2 mb-3 mt-10">
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Option 1</span>
                     <div class="w-full">
                         <textarea required id="detail-option-1" name="option_1"
-                            class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 resize-none"
+                            class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 min-h-[100px] resize-none"
                             rows="1"></textarea>
                     </div>
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Category Option 1</span>
@@ -28,13 +28,17 @@
                         <option value="Sanguinis">Sanguinis</option>
                         <option value="Melankolis">Melankolis</option>
                     </select>
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Attribute 1</span>
+                    <input name="statement_1" required id="detail_statement_1"
+                        type="text"
+                        class="font-poppins text-sm bg-white text-black rounded-xl w-full h-10 px-5 placeholder:italic focus:outline-none focus:ring-0">
                 </div>
 
-                <div class="flex flex-col w-full gap-1 mb-2">
+                <div class="flex flex-col w-full gap-2 mb-3">
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Option 2</span>
                     <div class="w-full">
                         <textarea required id="detail-option-2" name="option_2"
-                            class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 resize-none"
+                            class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 min-h-[100px] resize-none"
                             rows="1"></textarea>
                     </div>
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Category Option 2</span>
@@ -45,13 +49,17 @@
                         <option value="Sanguinis">Sanguinis</option>
                         <option value="Melankolis">Melankolis</option>
                     </select>
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Attribute 2</span>
+                    <input name="statement_2" required id="detail_statement_2"
+                        type="text"
+                        class="font-poppins text-sm bg-white text-black rounded-xl w-full h-10 px-5 placeholder:italic focus:outline-none focus:ring-0">
                 </div>
 
-                <div class="flex flex-col w-full gap-1 mb-2">
+                <div class="flex flex-col w-full gap-2 mb-3">
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Option 3</span>
                     <div class="w-full">
                         <textarea required id="detail-option-3" name="option_3"
-                            class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 resize-none"
+                            class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 min-h-[100px] resize-none"
                             rows="1"></textarea>
                     </div>
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Category Option 3</span>
@@ -62,13 +70,17 @@
                         <option value="Sanguinis">Sanguinis</option>
                         <option value="Melankolis">Melankolis</option>
                     </select>
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Attribute 3</span>
+                    <input name="statement_3" required id="detail_statement_3"
+                        type="text"
+                        class="font-poppins text-sm bg-white text-black rounded-xl w-full h-10 px-5 placeholder:italic focus:outline-none focus:ring-0">
                 </div>
 
-                <div class="flex flex-col w-full gap-1 mb-2">
+                <div class="flex flex-col w-full gap-2 mb-3">
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Option 4</span>
                     <div class="w-full">
                         <textarea required id="detail-option-4" name="option_4"
-                            class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 resize-none"
+                            class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 min-h-[100px] resize-none"
                             rows="1"></textarea>
                     </div>
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Category Option 4</span>
@@ -79,6 +91,10 @@
                         <option value="Sanguinis">Sanguinis</option>
                         <option value="Melankolis">Melankolis</option>
                     </select>
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Attribute 4</span>
+                    <input name="statement_4" required id="detail_statement_4"
+                        type="text"
+                        class="font-poppins text-sm bg-white text-black rounded-xl w-full h-10 px-5 placeholder:italic focus:outline-none focus:ring-0">
                 </div>
                 <div class="flex flex-col w-full gap-1">
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Status</span>
@@ -113,12 +129,12 @@
                 class="w-11/12 md:w-1/2 lg:w-4/12 bg-white/30 rounded-2xl py-5 px-5 md:px-10 flex flex-col justify-center gap-3 items-center"
                 action="{{ route('personality-test.store') }}" method="POST">
                 @csrf
-                <h1 class="font-poppins font-semibold text-white text-3xl capitalize tracking-wider">add new question</h1>
+                <h1 class="font-poppins font-semibold text-white text-3xl capitalize tracking-wider">add new Statement</h1>
 
-                <div class="flex flex-col w-full gap-1 mb-2">
+                <div class="flex flex-col w-full gap-2 mt-10 mb-3">
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Option 1</span>
                     <textarea name="option_1" required
-                        class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 resize-none"
+                        class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 min-h-[100px] resize-none"
                         rows="1"></textarea>
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Category Option 1</span>
                     <select name="category_option_1" required
@@ -128,13 +144,17 @@
                         <option value="Sanguinis">Sanguinis</option>
                         <option value="Melankolis">Melankolis</option>
                     </select>
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Attribute 1</span>
+                    <input name="statement_1" required
+                        type="text"
+                        class="font-poppins text-sm bg-white text-black rounded-xl w-full h-10 px-5 placeholder:italic focus:outline-none focus:ring-0">
                 </div>
 
-                <div class="flex flex-col w-full gap-1 mb-2">
+                <div class="flex flex-col w-full gap-2 mb-3">
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Option 2</span>
                     <div class="w-full">
                         <textarea name="option_2" required
-                            class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 resize-none"
+                            class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 min-h-[100px] resize-none"
                             rows="1"></textarea>
                     </div>
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Category Option 2</span>
@@ -145,12 +165,17 @@
                         <option value="Sanguinis">Sanguinis</option>
                         <option value="Melankolis">Melankolis</option>
                     </select>
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Attribute 2</span>
+                    <input name="statement_2" required
+                        type="text"
+                        class="font-poppins text-sm bg-white text-black rounded-xl w-full h-10 px-5 placeholder:italic focus:outline-none focus:ring-0">
                 </div>
-                <div class="flex flex-col w-full gap-1 mb-2">
+
+                <div class="flex flex-col w-full gap-2 mb-3">
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Option 3</span>
                     <div class="w-full">
                         <textarea name="option_3" required
-                            class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 resize-none"
+                            class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 min-h-[100px] resize-none"
                             rows="1"></textarea>
                     </div>
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Category Option 3</span>
@@ -161,12 +186,17 @@
                         <option value="Sanguinis">Sanguinis</option>
                         <option value="Melankolis">Melankolis</option>
                     </select>
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Attribute 3</span>
+                    <input name="statement_3" required
+                        type="text"
+                        class="font-poppins text-sm bg-white text-black rounded-xl w-full h-10 px-5 placeholder:italic focus:outline-none focus:ring-0">
                 </div>
-                <div class="flex flex-col w-full gap-1 mb-2">
+
+                <div class="flex flex-col w-full gap-2 mb-3">
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Option 4</span>
                     <div class="w-full">
                         <textarea name="option_4" required
-                            class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 resize-none"
+                            class="font-poppins text-sm bg-white text-black rounded-xl w-full px-5 py-2 placeholder:italic focus:outline-none focus:ring-0 min-h-[100px] resize-none"
                             rows="1"></textarea>
                     </div>
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Category Option 4</span>
@@ -177,6 +207,10 @@
                         <option value="Sanguinis">Sanguinis</option>
                         <option value="Melankolis">Melankolis</option>
                     </select>
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Attribute 4</span>
+                    <input name="statement_4" required
+                        type="text"
+                        class="font-poppins text-sm bg-white text-black rounded-xl w-full h-10 px-5 placeholder:italic focus:outline-none focus:ring-0">
                 </div>
 
                 <div class="flex flex-col w-full gap-1">
@@ -214,10 +248,10 @@
                 class="w-11/12 md:w-1/2 lg:w-4/12 bg-white/30 rounded-2xl py-5 px-5 md:px-10 flex flex-col justify-center gap-3 items-center">
                 @method('PUT')
                 @csrf
-                <h1 class="font-poppins font-semibold text-white text-3xl capitalize tracking-wider" id="detail-title">
+                <h1 class="font-poppins font-semibold text-white text-3xl capitalize tracking-wider text-center" id="detail-title">
                     Personality Test's Configuration </h1>
                 <div class="flex flex-col w-full gap-1 mt-10">
-                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Number of Questions</span>
+                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Number of Statements</span>
                     <div class="w-full h-9 rounded-xl">
                         <input type="number"
                             min="1"
@@ -228,18 +262,6 @@
                             class="font-poppins text-sm bg-white text-black rounded-xl w-full h-full px-5 placeholder:italic focus:outline-none focus:ring-0">
                     </div>
                 </div>
-                <!-- <div class="flex flex-col w-full gap-1">
-                    <span class="ml-3 text-white text-base font-poppins tracking-wide">Test Duration (in Minutes)</span>
-                    <div class="w-full h-9 rounded-xl">
-                        <input type="number"
-                            min="1"
-                            required
-                            id="detail-test-duration"
-                            value={{ $master_web_data->personality_test_duration }}
-                            name="personality_test_duration"
-                            class="font-poppins text-sm bg-white text-black rounded-xl w-full h-full px-5 placeholder:italic focus:outline-none focus:ring-0">
-                    </div>
-                </div> -->
                 <div class="flex justify-end gap-4 w-full flex-row mt-14 mb-3">
                     <div onclick="toggleModalChangeMasterWeb()"
                         class="px-7 py-2 text-white text-sm text-center font-poppins font-medium border border-white rounded-xl cursor-pointer tracking-wider">
@@ -254,34 +276,26 @@
         </div>
     </div>
 
-
     {{-- content --}}
     <div class="flex-none flex flex-col justify-center md:justify-start px-0 lg:px-2 w-screen lg:w-[calc(100vw-350px)]">
         <!-- header -->
         <div class="w-full pl-3 pr-3 md:pl-7 md:pr-7 lg:pl-20 lg:pr-0 flex justify-between">
-            <div class="font-poppins font-bold text-2xl md:text-3xl capitalize">Personality Test Questions</div>
-            <div onclick="toggleModalAdd()"
-                class="px-5 md:px-7 py-2 text-white text-sm font-poppins font-medium bg-blue-400 rounded-xl cursor-pointer flex flex-row justify-center items-center gap-3">
-                <span>Add Data</span>
+            <div class="font-poppins font-bold text-2xl md:text-3xl capitalize">Personality Test Statements</div>
+            <div class="flex flex-row gap-2">
+                <div onclick="toggleModalAdd()"
+                    class="px-5 md:px-7 py-2 text-white text-sm font-poppins font-medium bg-blue-400 rounded-xl cursor-pointer flex flex-row justify-center items-center gap-3">
+                    <span>Add Data</span>
+                </div>
+                <div onclick="toggleModalChangeMasterWeb()"
+                    class="px-5 md:px-7 py-2 text-white text-sm font-poppins font-medium bg-gray-400 rounded-xl cursor-pointer flex flex-row justify-center items-center gap-3">
+                    <span>Change</span>
+                </div>
             </div>
         </div>
 
-        <!-- subheader -->
-        <div class="w-full pl-3 pr-3 mt-5 md:pl-7 md:pr-7 lg:pl-20 lg:pr-0 flex justify-between">
-            <div class="font-poppins font-medium text-xl md:text-2xl capitalize">Number of Questions per Test:
-                {{ $master_web_data->number_of_questions_personality_test }} Questions</div>
-        </div>
-
-        <!-- <div class="w-full pl-3 pr-3 mt-5 md:pl-7 md:pr-7 lg:pl-20 lg:pr-0 flex justify-between">
-            <div class="font-poppins font-medium text-xl md:text-2xl capitalize">Test Duration:
-                {{ $master_web_data->personality_test_duration }} Minutes</div>
-        </div> -->
-
-        <div class="w-full pl-3 pr-3 mt-5 md:pl-7 md:pr-7 lg:pl-20 lg:pr-0 flex justify-start">
-            <div onclick="toggleModalChangeMasterWeb()"
-                class="px-5 md:px-7 py-2 text-white text-sm font-poppins font-medium bg-blue-400 rounded-xl cursor-pointer">
-                <span>Change</span>
-            </div>
+        <div class="w-auto pl-6 pr-6 md:pl-20 md:pr-20 flex flex-col mb-5 mt-3">
+            <p class="font-poppins text-lg md:text-xl capitalize">Number of Statements per Test:
+                <b>{{ $master_web_data->number_of_questions_personality_test }}</b> Statements</p>
         </div>
 
         <!-- Section cards -->
@@ -293,7 +307,7 @@
                         class="h-[100px] w-full bg-white/80 hover:bg-white rounded-2xl p-5 flex justify-start gap-5 items-center">
                         <div class="flex-1 w-full flex flex-col justify-center items-center gap-2">
                             <div class="flex flex-row gap-2 items-center">
-                                <h3 class="text-base font-semibold">Question {{ $data->id }}</h3>
+                                <h3 class="text-base font-semibold">Statement {{ $data->id }}</h3>
                             </div>
                             <div class="flex flex-row gap-3">
                                 @if ($data->is_active)
@@ -376,6 +390,10 @@
             document.querySelector('#detail-category-option-2').value = data.category_option_2;
             document.querySelector('#detail-category-option-3').value = data.category_option_3;
             document.querySelector('#detail-category-option-4').value = data.category_option_4;
+            document.querySelector('#detail_statement_1').value = data.statement_1;
+            document.querySelector('#detail_statement_2').value = data.statement_2;
+            document.querySelector('#detail_statement_3').value = data.statement_3;
+            document.querySelector('#detail_statement_4').value = data.statement_4;
             document.querySelector('#detail-status').value = data.is_active ? 1 : 0;
 
             // Show modal

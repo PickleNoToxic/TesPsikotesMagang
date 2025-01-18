@@ -8,7 +8,7 @@
                     <div class="px-5 py-7 mt-3 font-poppins text-lg text-center font-light flex flex-col items-center justify-center gap-1">
                         <h1 class="text-3xl font-bold mb-3">Admin Zone</h1>
                         <p>
-                            Halaman hanya untuk admin dari Stimulus EEG
+                            Halaman hanya untuk admin dari Psychological Test
                         </p>
                         <form class="mt-5 w-full flex flex-col px-20 gap-2" method="POST" action="{{ route('admin-authenticate') }}">
                             @csrf

@@ -76,5 +76,9 @@
             localStorage.clear();
             window.location.href = "{{ route('home') }}";
         }
+
+        setTimeout(() => {
+            window.location.href = "{{ route('home') }}";
+        }, 10000);
     </script>
 @endpush

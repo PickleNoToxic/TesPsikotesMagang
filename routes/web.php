@@ -37,8 +37,7 @@ Route::controller(PublicController::class)->group(function () {
     Route::get('/registration', 'registration')->name('registration');
     Route::get('/resting-state', 'resting')->name('resting-state');
     Route::get('/biografi', 'biografi')->name('biografi');
-    Route::get('/cognitive', 'cognitive')->name('cognitive');
-    // Route::get('/validation', 'validation')->name('validation');
+    // Route::get('/cognitive', 'cognitive')->name('cognitive');
     Route::get('/finish', 'finish')->name('finish');
     Route::get('/inteligence-quotient',  'inteligenceQuotientTest')->name('inteligence-quotient');
     Route::get('/personality-test',  'personalityTest')->name('personality-test');
@@ -47,10 +46,8 @@ Route::controller(PublicController::class)->group(function () {
 Route::put('/inteligence-quotient-score',  [UserController::class, 'inteligence_score'])->name('inteligence-quotient-score');
 Route::put('/personality-score',  [UserController::class, 'personality_score'])->name('personality-score');
 
-
 Route::post('/user-store', [UserController::class, 'store'])->name('user.store');
 
-Route::resource('/participants', ParticipantController::class);
 Route::post('/inteligence-quotient-store/{userCode}', [DetailInteligenceQuotientTestController::class, 'store'])->name('inteligence-quotient-store');
 Route::post('/personality-store/{userCode}', [DetailPersonalityTestController::class, 'store'])->name('personality-store');
 
@@ -76,33 +73,7 @@ Route::prefix('cms')
             Route::get('/dashboard', 'index')->name('admin-home');
         });
 
-        Route::resource('/events', EventController::class);
-        Route::post('/events/active', [EventController::class, 'active'])->name('event-active');
-        Route::post('/events/inactive', [EventController::class, 'inactive'])->name('event-inactive');
-
-        Route::resource('/managements', ManagementController::class);
-        Route::post('/managements/active', [ManagementController::class, 'active'])->name('management-active');
-        Route::post('/managements/inactive', [ManagementController::class, 'inactive'])->name('management-inactive');
-
         Route::get('/participants', [UserController::class, 'all'])->name('participants-all');
-        // Route::put('/participants/{participant}', [UserController::class, 'update'])->name('participants-update');
-        // Route::delete('/participants/{participant}', [UserController::class, 'destroy'])->name('participants-delete');
-    
-        Route::get('/participants/validations', [ParticipantController::class, 'validations'])->name('participants-validations');
-        // Route::resource('/statistiks', StatistikController::class);
-        // Route::resource('/heroes', HeroController::class);
-        // Route::resource('/master', MasterWebController::class);
-        // Route::resource('/testimonials', TestimonialController::class);
-        // Route::resource('/galleries', OurGalleryController::class);
-        // Route::resource('/contacts', ContactController::class);
-        // Route::resource('/sosmeds', SosialMediaController::class);
-        // Route::resource('/partners', PartnerController::class);
-        // Route::resource('/posts', PostController::class);
-        // Route::resource('/post-galleries', GalleryPostController::class);
-        // Route::resource('/programs', ProgramController::class);
-        // Route::resource('/facility/categories', CategoryFacilityController::class);
-        // Route::resource('/facility/facilities', FacilityController::class);
-        // Route::resource('/faqs', FaqController::class);
     
         Route::resource('/inteligence-quotient-test', InteligenceQuotientTestController::class);
         Route::post('/inteligence-quotient-test/active', [InteligenceQuotientTestController::class, 'active'])->name('inteligence-quotient-test-active');

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\MasterWeb;
+use App\Models\User;
 use Illuminate\Http\Request;
 use DB;
+use PHPUnit\Metadata\Uses;
 
 class UserController extends Controller
 {
@@ -61,7 +63,9 @@ class UserController extends Controller
 
     public function all()
     {
-        $datas = DB::table('users')->where('is_admin', 0)->get();
+        // $datas = DB::table('users')->where('is_admin', 0)->get();
+        // $datas = User::where('is_admin', 0)->with(['detail_personality_test.personalityTest'])->get();
+        $datas = User::where('is_admin', 0)->get();
 
         return view('admin.pages.participants.index', [
             "datas" => $datas

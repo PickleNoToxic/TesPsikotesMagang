@@ -21,6 +21,10 @@ return new class extends Migration
             $table->string('category_option_2');
             $table->string('category_option_3');
             $table->string('category_option_4');
+            $table->string('statement_1');
+            $table->string('statement_2');
+            $table->string('statement_3');
+            $table->string('statement_4');
             $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
