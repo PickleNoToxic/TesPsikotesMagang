@@ -194,6 +194,11 @@
                 }
             });
         });
+        
+        const formatDate = (dateString) => {
+            const [year, month, day] = dateString.split('-');
+            return `${day}-${month}-${year}`;
+        };
 
         const modalDetail = document.querySelector('#modal-detail');
         const modalDetailContent = document.querySelector('#modal-detail-content');
@@ -211,7 +216,7 @@
         const showModalDetail = (data) => {
             container.innerHTML = '';
             const form = document.getElementById('modal-detail-content');
-            let birthday = '{{ Carbon::parse($data->birthday)->format('d-m-Y') }}'
+            let birthday = formatDate(data.birthday);
 
             document.querySelector('#detail-title').innerText = data.fullname;
             document.querySelector('#email').value = data.email;

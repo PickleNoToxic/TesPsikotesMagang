@@ -15,7 +15,7 @@ class AdminController extends Controller
     {
         $inteligence_quotient_tests = InteligenceQuotientTest::where('is_active', 1)->count();
         $personality_tests = PersonalityTest::where('is_active', 1)->count();
-        $participants = User::count();
+        $participants = User::where('is_admin', 0)->count();
         return view('admin.pages.index', [
             "inteligence_quotient_tests" => $inteligence_quotient_tests,
             "personality_tests" => $personality_tests,
