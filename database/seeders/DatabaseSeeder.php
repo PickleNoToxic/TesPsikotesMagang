@@ -44,7 +44,7 @@ class DatabaseSeeder extends Seeder
                 'score_sanguinis' => 0.0,
                 'score_melankolis' => 0.0,
                 'is_admin' => true,
-                'password' => bcrypt('12345'),
+                'password' => bcrypt('Admin0112345'),
                 'created_at' => now(),
                 'updated_at' => now()
             ]
@@ -59,7 +59,7 @@ class DatabaseSeeder extends Seeder
             'option_5' => null,
             'option_6' => null,
             'correct_answer' => 3,
-            'score' => 1,
+            'score' => 2,
             'is_active' => true,
             'created_at' => now(),
             'updated_at' => now()
@@ -74,7 +74,7 @@ class DatabaseSeeder extends Seeder
             'option_5' => null,
             'option_6' => null,
             'correct_answer' => 3,
-            'score' => 1,
+            'score' => 2,
             'is_active' => true,
             'created_at' => now(),
             'updated_at' => now()
@@ -89,7 +89,7 @@ class DatabaseSeeder extends Seeder
             'option_5' => null,
             'option_6' => null,
             'correct_answer' => 2,
-            'score' => 1,
+            'score' => 2,
             'is_active' => true,
             'created_at' => now(),
             'updated_at' => now()
@@ -104,7 +104,7 @@ class DatabaseSeeder extends Seeder
             'option_5' => null,
             'option_6' => null,
             'correct_answer' => 1,
-            'score' => 1,
+            'score' => 2,
             'is_active' => true,
             'created_at' => now(),
             'updated_at' => now()
@@ -119,7 +119,7 @@ class DatabaseSeeder extends Seeder
             'option_5' => null,
             'option_6' => null,
             'correct_answer' => 4,
-            'score' => 1,
+            'score' => 2,
             'is_active' => true,
             'created_at' => now(),
             'updated_at' => now()
@@ -134,7 +134,7 @@ class DatabaseSeeder extends Seeder
             'option_5' => null,
             'option_6' => null,
             'correct_answer' => 2,
-            'score' => 1,
+            'score' => 2,
             'is_active' => true,
             'created_at' => now(),
             'updated_at' => now()
@@ -149,7 +149,7 @@ class DatabaseSeeder extends Seeder
             'option_5' => null,
             'option_6' => null,
             'correct_answer' => 4,
-            'score' => 1,
+            'score' => 2,
             'is_active' => true,
             'created_at' => now(),
             'updated_at' => now()
@@ -164,7 +164,7 @@ class DatabaseSeeder extends Seeder
             'option_5' => null,
             'option_6' => null,
             'correct_answer' => 3,
-            'score' => 1,
+            'score' => 2,
             'is_active' => true,
             'created_at' => now(),
             'updated_at' => now()
@@ -179,7 +179,7 @@ class DatabaseSeeder extends Seeder
             'option_5' => null,
             'option_6' => null,
             'correct_answer' => 4,
-            'score' => 1,
+            'score' => 2,
             'is_active' => true,
             'created_at' => now(),
             'updated_at' => now()
@@ -194,7 +194,7 @@ class DatabaseSeeder extends Seeder
             'option_5' => null,
             'option_6' => null,
             'correct_answer' => 3,
-            'score' => 1,
+            'score' => 2,
             'is_active' => true,
             'created_at' => now(),
             'updated_at' => now()
@@ -209,7 +209,7 @@ class DatabaseSeeder extends Seeder
             'option_5' => null,
             'option_6' => null,
             'correct_answer' => 1,
-            'score' => 1,
+            'score' => 2,
             'is_active' => true,
             'created_at' => now(),
             'updated_at' => now()
@@ -224,7 +224,7 @@ class DatabaseSeeder extends Seeder
             'option_5' => null,
             'option_6' => null,
             'correct_answer' => 2,
-            'score' => 1,
+            'score' => 2,
             'is_active' => true,
             'created_at' => now(),
             'updated_at' => now()
@@ -239,7 +239,7 @@ class DatabaseSeeder extends Seeder
             'option_5' => null,
             'option_6' => null,
             'correct_answer' => 1, 
-            'score' => 1,
+            'score' => 2,
             'is_active' => true,
             'created_at' => now(),
             'updated_at' => now()
@@ -254,7 +254,7 @@ class DatabaseSeeder extends Seeder
             'option_5' => null,
             'option_6' => null,
             'correct_answer' => 3,
-            'score' => 1,
+            'score' => 2,
             'is_active' => true,
             'created_at' => now(),
             'updated_at' => now()
@@ -269,7 +269,7 @@ class DatabaseSeeder extends Seeder
             'option_5' => null,
             'option_6' => null,
             'correct_answer' => 4,
-            'score' => 1,
+            'score' => 2,
             'is_active' => true,
             'created_at' => now(),
             'updated_at' => now()
@@ -284,7 +284,7 @@ class DatabaseSeeder extends Seeder
             'option_5' => null,
             'option_6' => null,
             'correct_answer' => 2,
-            'score' => 1,
+            'score' => 2,
             'is_active' => true,
             'created_at' => now(),
             'updated_at' => now()
@@ -299,7 +299,7 @@ class DatabaseSeeder extends Seeder
             'option_5' => null,
             'option_6' => null,
             'correct_answer' => 3,
-            'score' => 1,
+            'score' => 2,
             'is_active' => true,
             'created_at' => now(),
             'updated_at' => now()
@@ -314,7 +314,7 @@ class DatabaseSeeder extends Seeder
             'option_5' => null,
             'option_6' => null,
             'correct_answer' => 2,
-            'score' => 1,
+            'score' => 2,
             'is_active' => true,
             'created_at' => now(),
             'updated_at' => now()
@@ -329,7 +329,7 @@ class DatabaseSeeder extends Seeder
             'option_5' => null,
             'option_6' => null,
             'correct_answer' => 2,
-            'score' => 1,
+            'score' => 2,
             'is_active' => true,
             'created_at' => now(),
             'updated_at' => now()
@@ -344,7 +344,7 @@ class DatabaseSeeder extends Seeder
             'option_5' => null,
             'option_6' => null,
             'correct_answer' => 2,
-            'score' => 1,
+            'score' => 2,
             'is_active' => true,
             'created_at' => now(),
             'updated_at' => now()
@@ -360,7 +360,7 @@ class DatabaseSeeder extends Seeder
                 'option_5' => null,
                 'option_6' => null,
                 'correct_answer' => 1,
-                'score' => 1,
+                'score' => 2,
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -374,7 +374,7 @@ class DatabaseSeeder extends Seeder
                 'option_5' => null,
                 'option_6' => null,
                 'correct_answer' => 1,
-                'score' => 1,
+                'score' => 2,
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -388,7 +388,7 @@ class DatabaseSeeder extends Seeder
                 'option_5' => 'Kamis',
                 'option_6' => 'Jum\'at',
                 'correct_answer' => 4,
-                'score' => 1,
+                'score' => 2,
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -402,7 +402,7 @@ class DatabaseSeeder extends Seeder
                 'option_5' => null,
                 'option_6' => null,
                 'correct_answer' => 4,
-                'score' => 1,
+                'score' => 2,
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -416,7 +416,7 @@ class DatabaseSeeder extends Seeder
                 'option_5' => null,
                 'option_6' => null,
                 'correct_answer' => 3,
-                'score' => 1,
+                'score' => 2,
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -430,7 +430,7 @@ class DatabaseSeeder extends Seeder
                 'option_5' => null,
                 'option_6' => null,
                 'correct_answer' => 4,
-                'score' => 1,
+                'score' => 2,
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -444,7 +444,7 @@ class DatabaseSeeder extends Seeder
                 'option_5' => null,
                 'option_6' => null,
                 'correct_answer' => 3,
-                'score' => 1,
+                'score' => 2,
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -458,7 +458,7 @@ class DatabaseSeeder extends Seeder
                 'option_5' => null,
                 'option_6' => null,
                 'correct_answer' => 4,
-                'score' => 1,
+                'score' => 2,
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -472,7 +472,7 @@ class DatabaseSeeder extends Seeder
                 'option_5' => null,
                 'option_6' => null,
                 'correct_answer' => 2,
-                'score' => 1,
+                'score' => 2,
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -486,7 +486,7 @@ class DatabaseSeeder extends Seeder
                 'option_5' => null,
                 'option_6' => null,
                 'correct_answer' => 1,
-                'score' => 1,
+                'score' => 2,
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -503,7 +503,7 @@ class DatabaseSeeder extends Seeder
                 'option_5' => null,
                 'option_6' => null,
                 'correct_answer' => 4,
-                'score' => 1,
+                'score' => 2,
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -517,7 +517,7 @@ class DatabaseSeeder extends Seeder
                 'option_5' => null,
                 'option_6' => null,
                 'correct_answer' => 1,
-                'score' => 1,
+                'score' => 2,
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -531,7 +531,7 @@ class DatabaseSeeder extends Seeder
                 'option_5' => null,
                 'option_6' => null,
                 'correct_answer' => 2,
-                'score' => 1,
+                'score' => 2,
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -545,7 +545,7 @@ class DatabaseSeeder extends Seeder
                 'option_5' => null,
                 'option_6' => null,
                 'correct_answer' => 3,
-                'score' => 1,
+                'score' => 2,
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -559,7 +559,7 @@ class DatabaseSeeder extends Seeder
                 'option_5' => null,
                 'option_6' => null,
                 'correct_answer' => 4,
-                'score' => 1,
+                'score' => 2,
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -573,7 +573,7 @@ class DatabaseSeeder extends Seeder
                 'option_5' => null,
                 'option_6' => null,
                 'correct_answer' => 4,
-                'score' => 1,
+                'score' => 2,
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -587,7 +587,7 @@ class DatabaseSeeder extends Seeder
                 'option_5' => 'Merendahkan',
                 'option_6' => null,
                 'correct_answer' => 4,
-                'score' => 1,
+                'score' => 2,
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -601,7 +601,7 @@ class DatabaseSeeder extends Seeder
                 'option_5' => null,
                 'option_6' => null,
                 'correct_answer' => 2,
-                'score' => 1,
+                'score' => 2,
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -615,7 +615,7 @@ class DatabaseSeeder extends Seeder
                 'option_5' => null,
                 'option_6' => null,
                 'correct_answer' => 2,
-                'score' => 1,
+                'score' => 2,
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -629,7 +629,7 @@ class DatabaseSeeder extends Seeder
                 'option_5' => null,
                 'option_6' => null,
                 'correct_answer' => 2,
-                'score' => 1,
+                'score' => 2,
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -646,7 +646,7 @@ class DatabaseSeeder extends Seeder
                 'option_5' => null,
                 'option_6' => null,
                 'correct_answer' => 2,
-                'score' => 1,
+                'score' => 2,
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -660,7 +660,7 @@ class DatabaseSeeder extends Seeder
                 'option_5' => null,
                 'option_6' => null,
                 'correct_answer' => 2,
-                'score' => 1,
+                'score' => 2,
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -674,7 +674,7 @@ class DatabaseSeeder extends Seeder
                 'option_5' => null,
                 'option_6' => null,
                 'correct_answer' => 4,
-                'score' => 1,
+                'score' => 2,
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -688,7 +688,7 @@ class DatabaseSeeder extends Seeder
                 'option_5' => null,
                 'option_6' => null,
                 'correct_answer' => 2,
-                'score' => 1,
+                'score' => 2,
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -702,7 +702,7 @@ class DatabaseSeeder extends Seeder
                 'option_5' => null,
                 'option_6' => null,
                 'correct_answer' => 4,
-                'score' => 1,
+                'score' => 2,
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -716,7 +716,7 @@ class DatabaseSeeder extends Seeder
                 'option_5' => null,
                 'option_6' => null,
                 'correct_answer' => 2,
-                'score' => 1,
+                'score' => 2,
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -730,7 +730,7 @@ class DatabaseSeeder extends Seeder
                 'option_5' => null,
                 'option_6' => null,
                 'correct_answer' => 4,
-                'score' => 1,
+                'score' => 2,
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -744,7 +744,7 @@ class DatabaseSeeder extends Seeder
                 'option_5' => null,
                 'option_6' => null,
                 'correct_answer' => 3,
-                'score' => 1,
+                'score' => 2,
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -758,7 +758,7 @@ class DatabaseSeeder extends Seeder
                 'option_5' => null,
                 'option_6' => null,
                 'correct_answer' => 2,
-                'score' => 1,
+                'score' => 2,
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -772,7 +772,7 @@ class DatabaseSeeder extends Seeder
                 'option_5' => null,
                 'option_6' => null,
                 'correct_answer' => 1,
-                'score' => 1,
+                'score' => 2,
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -1430,7 +1430,7 @@ investasi melalui pesona kepribadiannya ',
             ],
             [
                 'option_1' => 'Secara sadar atau tidak menyimpan dendam dan menghukum orang yang melanggar, sering dengan diam-diam menahan persahabatan atau kasih sayang',
-                'option_2' => 'Menyukai kegiatan bar terus-menerus karena tidak merasa senang melakukan hal yang sama sepanjang waktu',
+                'option_2' => 'Menyukai kegiatan baru terus-menerus karena tidak merasa senang melakukan hal yang sama sepanjang waktu',
                 'option_3' => 'Tidak bersedia atau melawan keharusan ikut terlibat',
                 'option_4' => 'Bisa bertindak tergesa-gesa, tanpa memikirkan dengan tuntas, biasanya karena ketidaksabaran',
                 'category_option_1' => 'Melankolis',

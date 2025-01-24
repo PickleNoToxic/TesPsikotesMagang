@@ -19,7 +19,7 @@
                                 class=" flex flex-1 my-8 items-center justify-center font-bold ">
                                 <div class="flex flex-col rounded-full bg-gradient-to-t from-indigo-800 to-violet-600 w-40 h-40 items-center justify-center">
                                     <p class="text-6xl text-white">{{ $score }}</p>
-                                    <p class="text-violet-300 ">of {{ $maxScore }}</p>
+                                    {{-- <p class="text-violet-300 ">of {{ $maxScore }}</p> --}}
                                 </div>
                             </div>
                         </div>

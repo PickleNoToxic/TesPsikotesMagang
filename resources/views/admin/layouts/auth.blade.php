@@ -23,7 +23,7 @@
 
         <header class="w-full pt-20 flex flex-col gap-7 justify-center items-center font-poppins text-gray-800 relative">
             <div class="absolute left-5 top-4">
-                <img src="/assets/images/logo-hitam.png" alt="logo" class="w-36">
+                <img src="/assets/images/star.png" alt="logo" class="w-28">
             </div>
         </header>
 

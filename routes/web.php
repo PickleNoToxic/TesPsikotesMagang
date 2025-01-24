@@ -41,6 +41,7 @@ Route::controller(PublicController::class)->group(function () {
     Route::get('/finish', 'finish')->name('finish');
     Route::get('/inteligence-quotient',  'inteligenceQuotientTest')->name('inteligence-quotient');
     Route::get('/personality-test',  'personalityTest')->name('personality-test');
+    Route::get('/psikotest-results',  'testResults')->name('psikotest-results');
 });
 
 Route::put('/inteligence-quotient-score',  [UserController::class, 'inteligence_score'])->name('inteligence-quotient-score');

@@ -100,4 +100,13 @@ class PublicController extends Controller
             'score_sanguinis' => $user->score_sanguinis,
         ]);
     }
+
+    public function testResults()
+    {
+        $datas = User::where('is_admin', 0)->get();
+
+        return view('public.pages.participants', [
+            "datas" => $datas
+        ]);
+    }
 }
