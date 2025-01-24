@@ -17,7 +17,7 @@
                         <div onclick="nextQuestion()" id="next-button" class="px-5 py-2 flex justify-center items-center bg-gradient-to-b from-[#03045E] to-[#03558b] text-white rounded-xl cursor-pointer">
                             Next
                         </div>
-                        <div onclick="submitQuiz()" id="submit-button" class="hidden px-5 py-2 flex justify-center items-center bg-gradient-to-b from-[#007A43] to-[#08C644] text-white rounded-xl cursor-pointer">
+                        <div onclick="submitQuiz(this)" id="submit-button" class="hidden px-5 py-2 flex justify-center items-center bg-gradient-to-b from-[#007A43] to-[#08C644] text-white rounded-xl cursor-pointer">
                             Submit
                         </div>
                     </div>

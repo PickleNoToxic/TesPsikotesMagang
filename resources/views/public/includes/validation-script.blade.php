@@ -180,7 +180,11 @@
         }
     };
 
-    const submitQuiz = () => {
+    const submitQuiz = (button) => {
+        button.onclick = null; 
+        button.style.pointerEvents = 'none'; 
+        button.style.opacity = '0.6'; 
+
         //Calculate final score
         for (let i = 0; i < dataFiltered.length; i++) {
             if (userAnswers[i].answer === parseInt(dataFiltered[i].correct_answer)) {

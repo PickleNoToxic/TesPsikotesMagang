@@ -157,7 +157,11 @@ if (testFinished == "true") {
         }
     };
 
-    const submitQuiz = () => {
+    const submitQuiz = (button) => {
+        button.onclick = null; 
+        button.style.pointerEvents = 'none'; 
+        button.style.opacity = '0.6'; 
+
         for (let i = 0; i < dataFiltered.length; i++) {
             switch (userAnswers[i].answer) {
                 case 'Sanguinis':
