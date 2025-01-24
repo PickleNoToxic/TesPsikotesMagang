@@ -16,22 +16,8 @@
     if (!@json(session('user_id'))) {
         window.location.href = '/registration'
     }
-    if (testFinished == "true") {
+if (testFinished == "true") {
         window.location.href = "{{ route('finish') }}";
-    }
-
-    const savedState = localStorage.getItem('quizState');
-    if (savedState) {
-        countdown = JSON.parse(savedState).countdown;
-    } else {
-        fetch('/master-web/latest')
-            .then(response => response.json())
-            .then(data => {
-                if (data) {
-                    countdown = data['iq_test_duration'] * 60;
-                }
-            })
-            .catch(error => console.error('Error:', error));
     }
 
 
@@ -42,7 +28,9 @@
         personality_test_id: dataFiltered[index].id,
         answer: null
     }));
-
+    let tempAnswer  = Array (dataFiltered.length).fill(null).map((_, index) => ({
+        optionIndex:null
+    }))
 
     const showQuestion = () => {
         // const questionElement = document.getElementById('question');
@@ -95,7 +83,7 @@
         const state = {
             currentQuestion,
             userAnswers,
-            countdown
+            tempAnswer
         };
         localStorage.setItem('quizState', JSON.stringify(state));
     };
@@ -116,14 +104,14 @@
     };
 
     const storeUpdateAnswer = (index, selectedOption) => {
+        tempAnswer[index].optionIndex = selectedOption
         userAnswers[index].answer = dataFiltered[index][`category_option_${selectedOption}`];
         userAnswers[index].statement = dataFiltered[index][`statement_${selectedOption}`];
         userAnswers[index].option = dataFiltered[index][`option_${selectedOption}`];
     };
 
     const checkedAnswer = (index) => {
-        const selectedValue = userAnswers[index].answer;
-        
+        const selectedValue = tempAnswer[index].optionIndex;
         const radioElement = document.querySelector(`input[name="answer-${index}"][value="${selectedValue}"]`);
 
         if (radioElement) {
@@ -258,11 +246,11 @@
             const {
                 currentQuestion: savedCurrentQuestion,
                 userAnswers: savedUserAnswers,
-                
+                tempAnswer: savedTempAnswer
             } = JSON.parse(savedState);
             currentQuestion = savedCurrentQuestion;
             userAnswers = savedUserAnswers;
-
+            tempAnswer = savedTempAnswer;
             showQuestion();
             checkedAnswer(currentQuestion);
         } else {
