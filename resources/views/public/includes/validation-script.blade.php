@@ -45,7 +45,6 @@
         if (countdown < 0) {
             clearInterval(intervalId);
             submitQuiz();
-
         }
     };
 
@@ -180,10 +179,12 @@
         }
     };
 
-    const submitQuiz = (button) => {
-        button.onclick = null; 
-        button.style.pointerEvents = 'none'; 
-        button.style.opacity = '0.6'; 
+    const submitQuiz = (button = null) => {
+        if (button) {
+            button.onclick = null;
+            button.style.pointerEvents = 'none';
+            button.style.opacity = '0.6';
+        }
 
         //Calculate final score
         for (let i = 0; i < dataFiltered.length; i++) {
@@ -197,15 +198,15 @@
             .inteligence_quotient_test_id);
 
         fetch(`/inteligence-quotient-store/${userCode}`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                },
-                body: JSON.stringify({
-                    inteligence_quotient_test: finalAnswers
-                })
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            },
+            body: JSON.stringify({
+                inteligence_quotient_test: finalAnswers
             })
+        })
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Failed to save answers');
@@ -218,15 +219,15 @@
             });
 
         fetch(`/inteligence-quotient-score`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                },
-                body: JSON.stringify({
-                    score: userScore
-                })
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            },
+            body: JSON.stringify({
+                score: userScore
             })
+        })
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Failed to save score');
