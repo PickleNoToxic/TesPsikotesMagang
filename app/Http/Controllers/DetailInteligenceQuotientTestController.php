@@ -34,6 +34,8 @@ class DetailInteligenceQuotientTestController extends Controller
 
             DB::commit();
 
+            session(['iq_test_finished' => true]);
+
             return response()->json(['message' => 'Answers saved successfully.'], 200);
         } catch (\Exception $e) {
             DB::rollBack();

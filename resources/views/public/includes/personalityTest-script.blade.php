@@ -11,16 +11,6 @@
     let userScorePhlegmatis = 0;
     let userScoreSanguinis = 0;
 
-    const testFinished = localStorage.getItem('testFinished');
-
-    if (!@json(session('user_id'))) {
-        window.location.href = '/registration'
-    }
-if (testFinished == "true") {
-        window.location.href = "{{ route('finish') }}";
-    }
-
-
     const data = @json($datas);
     const dataFiltered = data.filter(item => item.is_active);
 
@@ -215,7 +205,6 @@ if (testFinished == "true") {
                 localStorage.removeItem('quizState');
                 window.location.href =
                     `{{ route('finish') }}`;
-                localStorage.setItem('testFinished', true);
             });
         })
         .catch(error => {

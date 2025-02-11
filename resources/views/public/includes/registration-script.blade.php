@@ -58,7 +58,6 @@
             }
 
             localStorage.removeItem('quizState');
-            localStorage.removeItem('testFinished');
             localStorage.setItem('fullname', formData.fullname);
             localStorage.setItem('code', codeUnique);
             const parts = formData.birthday.split("-");
@@ -86,15 +85,4 @@
             submitButton.innerText = 'Submit';
         }
     });
-
-    history.pushState(null, null, location.href);
-window.addEventListener('popstate', function () {
-    history.pushState(null, null, location.href);
-    Swal.fire({
-        icon: 'warning',
-        title: 'Gunakan tombol yang tersedia!',
-        text: 'Anda tidak bisa kembali ke halaman sebelumnya.',
-        confirmButtonText: 'OK'
-    });
-});
 </script>

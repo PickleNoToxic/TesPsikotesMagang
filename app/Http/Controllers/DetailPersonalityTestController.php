@@ -53,6 +53,8 @@ class DetailPersonalityTestController extends Controller
 
             DB::commit();
 
+            session(['personality_test_finished' => true]);
+
             return response()->json(['message' => 'Answers saved successfully.'], 200);
         } catch (\Exception $e) {
             DB::rollBack();

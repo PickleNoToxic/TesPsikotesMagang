@@ -39,8 +39,8 @@ Route::controller(PublicController::class)->group(function () {
     Route::get('/biografi', 'biografi')->name('biografi');
     // Route::get('/cognitive', 'cognitive')->name('cognitive');
     Route::get('/finish', 'finish')->name('finish');
-    Route::get('/inteligence-quotient',  'inteligenceQuotientTest')->name('inteligence-quotient');
-    Route::get('/personality-test',  'personalityTest')->name('personality-test');
+    Route::get('/inteligence-quotient',  'inteligenceQuotientTest')->middleware('check-progress:iq-test')->name('inteligence-quotient');
+    Route::get('/personality-test',  'personalityTest')->middleware('check-progress:personality-test')->name('personality-test');
     Route::get('/psikotest-results',  'testResults')->name('psikotest-results');
 });
 

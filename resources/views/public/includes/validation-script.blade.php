@@ -8,15 +8,6 @@
     let userScore = 50;
     let countdown = 0; //in seconds
 
-    const testFinished = localStorage.getItem('testFinished');
-
-    if (!@json(session('user_id'))) {
-        window.location.href = '/registration'
-    }
-    if (testFinished == "true") {
-        window.location.href = "{{ route('finish') }}";
-    }
-
     const savedState = localStorage.getItem('quizState');
     if (savedState) {
         countdown = JSON.parse(savedState).countdown;
@@ -43,7 +34,7 @@
         saveStateToLocalStorage();
 
         if (countdown < 0) {
-            
+
             clearInterval(intervalId);
             submitQuiz();
         }
@@ -225,7 +216,6 @@
                 }).then(() => {
                     localStorage.removeItem('quizState');
                     window.location.href = `{{ route('resting-state') }}?title=${encodeURIComponent('Personality')}`;
-                    localStorage.setItem('testFinished', true);
                 });
             })
             .catch(error => {
@@ -255,14 +245,14 @@
             userAnswers = savedUserAnswers;
             countdown = savedCountdown;
 
-            if(countdown < 0){
+            if (countdown < 0) {
                 const button = document.getElementById("submit-button");
-            if (button) {
-                button.onclick = null;
-                button.style.pointerEvents = "none";
-                button.style.opacity = "0.6";
-                console.log(button.onclick);
-            }
+                if (button) {
+                    button.onclick = null;
+                    button.style.pointerEvents = "none";
+                    button.style.opacity = "0.6";
+                    console.log(button.onclick);
+                }
             }
 
             showQuestion();

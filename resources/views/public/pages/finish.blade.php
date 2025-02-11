@@ -65,6 +65,18 @@
             </div>
         </section>
     </main>
+    @if(session('swal'))
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            Swal.fire({
+                title: "{{ session('swal.title') }}",
+                text: "{{ session('swal.text') }}",
+                icon: "{{ session('swal.icon') }}",
+                confirmButtonText: "OK"
+            });
+        });
+    </script>
+    @endif
 @endsection
 
 @push('addon-script')
