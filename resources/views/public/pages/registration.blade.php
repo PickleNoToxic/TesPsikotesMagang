@@ -48,7 +48,7 @@
                                 </label>
                                 <input
                                     class="appearance-none block w-full bg-gray-100 text-gray-700 text-sm border border-gray-200 rounded py-2 px-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                    type="date" id="birthday" name="birthday" min="1979-12-31" max="2005-12-31"
+                                    type="date" id="birthday" name="birthday" 
                                     required>
                             </div>
                             <div class="flex flex-col mb-2.5 flex-auto w-1/2">

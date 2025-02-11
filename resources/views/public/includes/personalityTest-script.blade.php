@@ -192,27 +192,7 @@ if (testFinished == "true") {
                 'X-CSRF-TOKEN': '{{ csrf_token() }}'
             },
             body: JSON.stringify({
-                personality_test: finalAnswers
-            })
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Failed to save answers');
-            }
-            return response.json();
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('An error occurred: ' + error.message);
-        });
-
-        fetch(`/personality-score`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-TOKEN': '{{ csrf_token() }}'
-            },
-            body: JSON.stringify({
+                personality_test: finalAnswers,
                 score_koleris: userScoreKoleris,
                 score_melankolis: userScoreMelankolis,
                 score_phlegmatis: userScorePhlegmatis,
@@ -221,11 +201,11 @@ if (testFinished == "true") {
         })
         .then(response => {
             if (!response.ok) {
-                throw new Error('Failed to save score');
+                throw new Error('Failed to save answers');
             }
             return response.json();
         })
-        .then(dataFiltered => {
+        .then(() => {
             Swal.fire({
                 icon: 'success',
                 title: 'Your answers have been submitted!',
@@ -240,7 +220,14 @@ if (testFinished == "true") {
         })
         .catch(error => {
             console.error('Error:', error);
-            alert('An error occurred: ' + error.message);
+            Swal.fire({
+                    icon: 'error',
+                    title: 'An Error has occured!',
+                    text: 'Try refreshing the page',
+                    confirmButtonText: 'OK'
+                }).then(() => {
+                    window.location.reload();
+                })
         });
     };
 

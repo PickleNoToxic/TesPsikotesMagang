@@ -43,6 +43,7 @@
         saveStateToLocalStorage();
 
         if (countdown < 0) {
+            
             clearInterval(intervalId);
             submitQuiz();
         }
@@ -201,40 +202,21 @@
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
             },
             body: JSON.stringify({
-                inteligence_quotient_test: finalAnswers
-            })
-        })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Failed to save answers');
-                }
-                return response.json();
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('An error occurred: ' + error.message);
-            });
-
-        fetch(`/inteligence-quotient-score`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-TOKEN': '{{ csrf_token() }}'
-            },
-            body: JSON.stringify({
+                inteligence_quotient_test: finalAnswers,
                 score: userScore
             })
         })
             .then(response => {
-                if (!response.ok) {
-                    throw new Error('Failed to save score');
-                }
-                return response.json();
+                return response.json().then(data => {
+                    if (!response.ok) {
+                        throw new Error('Failed to save quiz results');
+                    }
+                });
             })
-            .then(dataFiltered => {
+            .then(() => {
                 Swal.fire({
                     icon: 'success',
                     title: 'Your answers have been submitted!',
@@ -242,14 +224,20 @@
                     confirmButtonText: 'OK'
                 }).then(() => {
                     localStorage.removeItem('quizState');
-                    window.location.href =
-                        `{{ route('resting-state') }}?title=${encodeURIComponent('Personality')}`;
+                    window.location.href = `{{ route('resting-state') }}?title=${encodeURIComponent('Personality')}`;
                     localStorage.setItem('testFinished', true);
                 });
             })
             .catch(error => {
                 console.error('Error:', error);
-                alert('An error occurred: ' + error.message);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'An Error has occured!',
+                    text: 'Try refreshing the page',
+                    confirmButtonText: 'OK'
+                }).then(() => {
+                    window.location.reload();
+                })
             });
     };
 
@@ -266,6 +254,16 @@
             currentQuestion = savedCurrentQuestion;
             userAnswers = savedUserAnswers;
             countdown = savedCountdown;
+
+            if(countdown < 0){
+                const button = document.getElementById("submit-button");
+            if (button) {
+                button.onclick = null;
+                button.style.pointerEvents = "none";
+                button.style.opacity = "0.6";
+                console.log(button.onclick);
+            }
+            }
 
             showQuestion();
             checkedAnswer(currentQuestion);

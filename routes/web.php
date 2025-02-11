@@ -44,9 +44,6 @@ Route::controller(PublicController::class)->group(function () {
     Route::get('/psikotest-results',  'testResults')->name('psikotest-results');
 });
 
-Route::put('/inteligence-quotient-score',  [UserController::class, 'inteligence_score'])->name('inteligence-quotient-score');
-Route::put('/personality-score',  [UserController::class, 'personality_score'])->name('personality-score');
-
 Route::post('/user-store', [UserController::class, 'store'])->name('user.store');
 
 Route::post('/inteligence-quotient-store/{userCode}', [DetailInteligenceQuotientTestController::class, 'store'])->name('inteligence-quotient-store');

@@ -9,6 +9,7 @@
     <title>Psychological Test</title>
     <meta name="description" content="Psychological Test by Star Group" />
     <meta name="author" content="Star IT" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link

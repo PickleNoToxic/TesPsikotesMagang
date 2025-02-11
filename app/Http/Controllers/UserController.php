@@ -23,6 +23,7 @@ class UserController extends Controller
             'created_at' => now(),
             'updated_at' => now()
         ]);
+
         session(['user_id' => $userId]);
     }
 

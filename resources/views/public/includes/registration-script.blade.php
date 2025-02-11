@@ -26,7 +26,7 @@
 
     regisForm.addEventListener("submit", async (e) => {
         e.preventDefault();
-        // let baseUrl = makeSecureUrl('{{ route('user.store') }}');
+
         let baseUrl = '{{ route('user.store') }}';
 
         submitButton.disabled = true;
@@ -73,11 +73,28 @@
             window.location.href =
                 `{{ route('resting-state') }}?title=${encodeURIComponent('Inteligence Quotient')}`;
         } catch (error) {
-            console.error(error);
-            alert('An error occurred while submitting the form');
+            Swal.fire({
+                icon: 'error',
+                title: 'An Error has occured!',
+                text: 'Try refreshing the page',
+                confirmButtonText: 'OK'
+            }).then(() => {
+                window.location.reload();
+            })
         } finally {
-            submitButton.disabled = false;
+            // submitButton.disabled = false;
             submitButton.innerText = 'Submit';
         }
     });
+
+    history.pushState(null, null, location.href);
+window.addEventListener('popstate', function () {
+    history.pushState(null, null, location.href);
+    Swal.fire({
+        icon: 'warning',
+        title: 'Gunakan tombol yang tersedia!',
+        text: 'Anda tidak bisa kembali ke halaman sebelumnya.',
+        confirmButtonText: 'OK'
+    });
+});
 </script>
