@@ -75,7 +75,7 @@
             userAnswers,
             tempAnswer
         };
-        localStorage.setItem('quizState', JSON.stringify(state));
+        localStorage.setItem('quizStatePersonalityTest', JSON.stringify(state));
     };
 
     const updateNavigationButtons = () => {
@@ -202,7 +202,7 @@
                 text: 'Thank you for completing the quiz.',
                 confirmButtonText: 'OK'
             }).then(() => {
-                localStorage.removeItem('quizState');
+                localStorage.removeItem('quizStatePersonalityTest');
                 window.location.href =
                     `{{ route('finish') }}`;
             });
@@ -221,7 +221,7 @@
     };
 
     window.onload = () => {
-        const savedState = localStorage.getItem('quizState');
+        const savedState = localStorage.getItem('quizStatePersonalityTest');
         if (savedState) {
             const {
                 currentQuestion: savedCurrentQuestion,
