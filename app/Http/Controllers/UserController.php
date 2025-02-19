@@ -40,6 +40,11 @@ class UserController extends Controller
             return back();
         }
 
+        if(strlen($request->new_password) < 5){
+            Alert::error('Failed', 'Password minimal 5 karakter');
+            return back();
+        }
+
         $user = User::find(1);
 
         if(!Hash::check($request->old_password, $user->password)){

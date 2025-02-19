@@ -12,11 +12,11 @@
         <div class="w-full  flex justify-center items-start py-10" style="-ms-overflow-style: none; scrollbar-width: none;">
             <div id="modal-detail-content"
                 class="w-11/12 md:w-1/2 lg:w-4/12 bg-white/50 rounded-2xl py-8 px-5 md:px-10 flex flex-col justify-center gap-3 items-center">
-                <div class="flex justify-between w-full">
-                    <h1 class="font-poppins font-semibold text-white text-3xl capitalize tracking-wider" id="detail-title">
+                <div class="flex justify-between items-center w-full">
+                    <h1 class="max-w-[18rem] font-poppins font-semibold text-white text-3xl capitalize tracking-wider" id="detail-title">
                         Detail</h1>
                     <div id="btn-delete"
-                        class="px-6 py-2 text-white text-sm text-center font-poppins font-medium border border-white rounded-xl cursor-pointer transition duration-300 transform hover:bg-white hover:border-transparent hover:scale-105 hover:text-black focus:outline-none focus:ring-2 focus:ring-white">
+                        class="h-fit px-6 py-2 text-white text-sm text-center font-poppins font-medium border border-white rounded-xl cursor-pointer transition duration-300 transform hover:bg-white hover:border-transparent hover:scale-105 hover:text-black focus:outline-none focus:ring-2 focus:ring-white">
                         Delete
                     </div>
                 </div>

@@ -10,10 +10,10 @@
         </div>
 
         <!-- Section cards -->
-        <div class="mt-10 pl-6 pr-6 md:pl-20 md:pr-20 font-poppins flex justify-center py-5 max-h-[75vh] overflow-y-scroll custom-scrollbar"
+        <div class="mt-10 pl-6 pr-6 md:pl-20 md:pr-20 font-poppins flex justify-center py-5 overflow-y-scroll custom-scrollbar"
             style="-ms-overflow-style: none; scrollbar-width: none;">
             <div
-                class="h-[70vh] w-[50vh] bg-white drop-shadow-md rounded-lg px-8 py-12 flex flex-col items-center justify-between ">
+                class="h-fit w-[60%] bg-white drop-shadow-md rounded-lg px-8 py-12 flex flex-col items-center justify-between ">
                 <div class="space-y-4 flex flex-col items-center">
                     <img class="h-24 w-24" src="{{ asset('assets/images/profile.png') }}" alt="">
                     <p class="font-semibold text-2xl">Change Password</p>
