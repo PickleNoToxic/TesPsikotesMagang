@@ -11,15 +11,17 @@
         class="hidden w-screen h-screen bg-black/90 fixed top-0 left-0 z-50 font-poppins flex justify-center text-white overflow-y-auto">
         <div class="w-full  flex justify-center items-start py-10" style="-ms-overflow-style: none; scrollbar-width: none;">
             <div id="modal-detail-content"
-                class="w-11/12 md:w-1/2 lg:w-4/12 bg-white/50 rounded-2xl py-5 px-5 md:px-10 flex flex-col justify-center gap-3 items-center">
-                <h1 class="font-poppins font-semibold text-white text-3xl capitalize tracking-wider" id="detail-title">
-                    Detail</h1>
-                <div class="flex justify-end gap-4 w-full flex-row">
-                    <div
-                        id="btn-delete"
-                        class="px-7 py-2 text-white text-sm text-center font-poppins font-medium border border-white rounded-xl cursor-pointer tracking-wider">
+                class="w-11/12 md:w-1/2 lg:w-4/12 bg-white/50 rounded-2xl py-8 px-5 md:px-10 flex flex-col justify-center gap-3 items-center">
+                <div class="flex justify-between w-full">
+                    <h1 class="font-poppins font-semibold text-white text-3xl capitalize tracking-wider" id="detail-title">
+                        Detail</h1>
+                    <div id="btn-delete"
+                        class="px-6 py-2 text-white text-sm text-center font-poppins font-medium border border-white rounded-xl cursor-pointer transition duration-300 transform hover:bg-white hover:border-transparent hover:scale-105 hover:text-black focus:outline-none focus:ring-2 focus:ring-white">
                         Delete
                     </div>
+                </div>
+                <div class="flex justify-end gap-4 w-full flex-row">
+
                 </div>
                 <div class="flex flex-col w-full gap-1 mt-10">
                     <span class="ml-3 text-white text-base font-poppins tracking-wide">Email</span>
@@ -115,7 +117,7 @@
 
                 <div class="flex justify-end gap-4 w-full flex-row mt-14 mb-3">
                     <div onclick="toggleModalDetail()"
-                        class="px-7 py-2 text-white text-sm text-center font-poppins font-medium border border-white rounded-xl cursor-pointer tracking-wider">
+                        class="px-6 py-2 text-white text-sm text-center font-poppins font-medium border border-white rounded-xl cursor-pointer transition duration-300 transform hover:bg-white hover:border-transparent hover:scale-105 hover:text-black focus:outline-none focus:ring-2 focus:ring-white">
                         Close
                     </div>
                 </div>
@@ -192,14 +194,16 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('#example').DataTable({
                 layout: {
                     topStart: {
                         buttons: ['csv', 'excel', 'print']
                     }
                 },
-                order: [[0, 'desc']]
+                order: [
+                    [0, 'desc']
+                ]
             });
         });
 
@@ -266,9 +270,9 @@
     </script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-            document.getElementById("btn-delete").addEventListener("click", function () {
+            document.getElementById("btn-delete").addEventListener("click", function() {
                 let dataId = this.getAttribute("data-id");
 
                 Swal.fire({
@@ -283,20 +287,22 @@
                 }).then((result) => {
                     if (result.isConfirmed) {
                         fetch(`/cms/participants/${dataId}`, {
-                            method: "DELETE",
-                            headers: {
-                                "X-CSRF-TOKEN": csrfToken,
-                                "Content-Type": "application/json"
-                            }
-                        })
+                                method: "DELETE",
+                                headers: {
+                                    "X-CSRF-TOKEN": csrfToken,
+                                    "Content-Type": "application/json"
+                                }
+                            })
                             .then(response => response.json())
                             .then(data => {
                                 if (data.success) {
-                                    Swal.fire("Deleted!", "Data berhasil dihapus.", "success").then(() => {
-                                        location.reload();
-                                    });
+                                    Swal.fire("Deleted!", "Data berhasil dihapus.", "success")
+                                        .then(() => {
+                                            location.reload();
+                                        });
                                 } else {
-                                    Swal.fire("Error!", "Terjadi kesalahan saat menghapus data.", "error");
+                                    Swal.fire("Error!",
+                                        "Terjadi kesalahan saat menghapus data.", "error");
                                 }
                             })
                             .catch(error => {
