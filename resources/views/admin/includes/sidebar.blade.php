@@ -18,6 +18,9 @@
         <a href="{{ route('participants-all') }}" class="flex flex-row gap-5 {{ Request::is('cms/participants') ? 'bg-gray-400/20' : '' }} hover:bg-gray-400/20 py-2 md:py-5 lg:py-2 pl-3 md:pl-5 items-center rounded-lg cursor-pointer">
             <h4 class="text-2xl md:text-4xl lg:text-xl">Participant</h4>
         </a>
+        <a href="{{ route('admin-profile') }}" class="flex flex-row gap-5 {{ Request::is('cms/profile') ? 'bg-gray-400/20' : '' }} hover:bg-gray-400/20 py-2 md:py-5 lg:py-2 pl-3 md:pl-5 items-center rounded-lg cursor-pointer">
+            <h4 class="text-2xl md:text-4xl lg:text-xl">Profile</h4>
+        </a>
         <a href="{{ route("admin-logout") }}" class="mt-10 flex flex-row gap-5 hover:bg-gray-400/20 py-2 md:py-5 lg:py-2 pl-3 md:pl-5 items-center rounded-lg cursor-pointer">
             <h4 class="text-2xl md:text-4xl lg:text-xl">Logout</h4>
         </a>
