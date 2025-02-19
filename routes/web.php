@@ -39,9 +39,9 @@ Route::controller(PublicController::class)->group(function () {
     Route::get('/biografi', 'biografi')->name('biografi');
     // Route::get('/cognitive', 'cognitive')->name('cognitive');
     Route::get('/finish', 'finish')->name('finish');
-    Route::get('/inteligence-quotient',  'inteligenceQuotientTest')->middleware('check-progress:iq-test')->name('inteligence-quotient');
-    Route::get('/personality-test',  'personalityTest')->middleware('check-progress:personality-test')->name('personality-test');
-    Route::get('/psikotest-results',  'testResults')->name('psikotest-results');
+    Route::get('/inteligence-quotient', 'inteligenceQuotientTest')->middleware('check-progress:iq-test')->name('inteligence-quotient');
+    Route::get('/personality-test', 'personalityTest')->middleware('check-progress:personality-test')->name('personality-test');
+    Route::get('/psikotest-results', 'testResults')->name('psikotest-results');
 });
 
 Route::post('/user-store', [UserController::class, 'store'])->name('user.store');
@@ -72,7 +72,12 @@ Route::prefix('cms')
         });
 
         Route::get('/participants', [UserController::class, 'all'])->name('participants-all');
-    
+
+        Route::get('/profile', function () {
+            return view('admin.pages.profile.index') ;
+        })->name('admin-profile');
+
+
         Route::resource('/inteligence-quotient-test', InteligenceQuotientTestController::class);
         Route::post('/inteligence-quotient-test/active', [InteligenceQuotientTestController::class, 'active'])->name('inteligence-quotient-test-active');
         Route::post('/inteligence-quotient-test/inactive', [InteligenceQuotientTestController::class, 'inactive'])->name('inteligence-quotient-test-inactive');
@@ -83,4 +88,4 @@ Route::prefix('cms')
 
         Route::put('/master-web/update-iq-test', [MasterWebController::class, 'updateIQTest'])->name('master-web.updateIQTest');
         Route::put('/master-web/update-personality-test', [MasterWebController::class, 'updatePersonalityTest'])->name('master-web.updatePersonalityTest');
-});
+    });
