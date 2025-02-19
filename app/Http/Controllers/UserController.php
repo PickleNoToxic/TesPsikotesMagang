@@ -74,4 +74,18 @@ class UserController extends Controller
             "datas" => $datas
         ]);
     }
+
+    public function destroy($id)
+    {
+        $user = User::find($id);
+
+        if ($user) {
+            $user->detail_inteligence_quotient_test()->delete();
+            $user->detail_personality_test()->delete();
+            $user->delete();
+            return redirect()->route('participants-all')->with('success', 'Participant deleted successfully');
+        } else {
+            return redirect()->route('participants-all')->with('error', 'Participant not found');
+        }
+    }
 }

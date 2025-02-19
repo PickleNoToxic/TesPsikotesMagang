@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('detail_personality_test', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->references('id')->on('users')->name('fk_user_personality_test');;
-            $table->foreignId('personality_test_id')->references('id')->on('personality_test')->name('fk_personality_test');;
+            $table->foreignId('user_id')->references('id')->on('users')->name('fk_user_personality_test')->onDelete('cascade');
+            $table->foreignId('personality_test_id')->references('id')->on('personality_test')->name('fk_personality_test');
             $table->string('answer');
             $table->string('statement')->nullable();
             $table->string('option')->nullable();
