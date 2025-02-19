@@ -107,11 +107,11 @@
                 </div>
                 <div class="flex justify-end gap-4 w-full flex-row mt-14 mb-3">
                     <div onclick="toggleModalDetail()"
-                        class="px-7 py-2 text-white text-sm text-center font-poppins font-medium border border-white rounded-xl cursor-pointer tracking-wider">
+                        class="px-6 py-2 text-white text-sm text-center font-poppins font-medium border border-white rounded-xl cursor-pointer transition duration-300 transform hover:bg-white hover:border-transparent hover:scale-105 hover:text-black focus:outline-none focus:ring-2 focus:ring-white">
                         Close
                     </div>
                     <button type="submit"
-                        class="px-7 py-2 text-white text-sm text-center font-poppins font-medium bg-blue-500 rounded-xl cursor-pointer tracking-wider">
+                        class="px-7 py-2 text-white text-sm text-center font-poppins font-medium bg-blue-500 rounded-xl cursor-pointer tracking-wider transform transition duration-300 ease-in-out hover:bg-blue-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400">
                         Submit
                     </button>
                 </div>
@@ -222,11 +222,11 @@
 
                 <div class="flex justify-end gap-4 w-full flex-row mt-14 mb-3">
                     <div onclick="toggleModalAdd()"
-                        class="px-7 py-2 text-white text-sm text-center font-poppins font-medium border border-white rounded-xl cursor-pointer tracking-wider">
+                        class="px-6 py-2 text-white text-sm text-center font-poppins font-medium border border-white rounded-xl cursor-pointer transition duration-300 transform hover:bg-white hover:border-transparent hover:scale-105 hover:text-black focus:outline-none focus:ring-2 focus:ring-white">
                         Close
                     </div>
                     <button type="submit"
-                        class="px-7 py-2 text-white text-sm text-center font-poppins font-medium bg-blue-400 rounded-xl cursor-pointer tracking-wider">
+                        class="px-7 py-2 text-white text-sm text-center font-poppins font-medium bg-blue-500 rounded-xl cursor-pointer tracking-wider transform transition duration-300 ease-in-out hover:bg-blue-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400">
                         Submit
                     </button>
                 </div>
@@ -272,11 +272,11 @@
                 </div>
                 <div class="flex justify-end gap-4 w-full flex-row mt-14 mb-3">
                     <div onclick="toggleModalChangeMasterWeb()"
-                        class="px-7 py-2 text-white text-sm text-center font-poppins font-medium border border-white rounded-xl cursor-pointer tracking-wider">
+                        class="px-6 py-2 text-white text-sm text-center font-poppins font-medium border border-white rounded-xl cursor-pointer transition duration-300 transform hover:bg-white hover:border-transparent hover:scale-105 hover:text-black focus:outline-none focus:ring-2 focus:ring-white">
                         Close
                     </div>
                     <button type="submit"
-                        class="px-7 py-2 text-white text-sm text-center font-poppins font-medium bg-blue-500 rounded-xl cursor-pointer tracking-wider">
+                        class="px-7 py-2 text-white text-sm text-center font-poppins font-medium bg-blue-500 rounded-xl cursor-pointer tracking-wider transform transition duration-300 ease-in-out hover:bg-blue-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400">
                         Submit
                     </button>
                 </div>
