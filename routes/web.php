@@ -71,6 +71,7 @@ Route::prefix('cms')
             Route::get('/dashboard', 'index')->name('admin-home');
         });
 
+        Route::resource('/participants', UserController::class);
         Route::get('/participants', [UserController::class, 'all'])->name('participants-all');
     
         Route::resource('/inteligence-quotient-test', InteligenceQuotientTestController::class);
