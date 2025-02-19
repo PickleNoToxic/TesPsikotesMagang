@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\MasterWeb;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use DB;
-use PHPUnit\Metadata\Uses;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class UserController extends Controller
 {
@@ -27,6 +28,31 @@ class UserController extends Controller
         session(['user_id' => $userId]);
         session(['iq_test_finished' => null]);
         session(['personality_test_finished' => null]);
+    }
+
+    public function profile(){
+        $user = User::find(1);
+        return view('admin.pages.profile.index')->with('email', $user->email);
+    }
+    public function profileUpdate(Request $request){
+        if($request->new_password != $request->confirm_password){
+            Alert::error('Failed', 'Password tidak sesuai');
+            return back();
+        }
+
+        $user = User::find(1);
+
+        if(!Hash::check($request->old_password, $user->password)){
+            Alert::error('Failed', 'Password lama salah');
+            return back();
+        }
+
+        $user->update([
+            'password' => bcrypt($request->new_password)
+        ]);
+
+        Alert::success('Success', 'Password berhasil diubah');
+        return back();
     }
 
     public function inteligence_score(Request $request)

@@ -74,9 +74,8 @@ Route::prefix('cms')
         Route::resource('/participants', UserController::class);
         Route::get('/participants', [UserController::class, 'all'])->name('participants-all');
 
-        Route::get('/profile', function () {
-            return view('admin.pages.profile.index') ;
-        })->name('admin-profile');
+        Route::get('/profile', [UserController::class, 'profile'])->name('admin-profile');
+        Route::post('/profile/update', [UserController::class, 'profileUpdate'])->name('profile-update');
 
 
         Route::resource('/inteligence-quotient-test', InteligenceQuotientTestController::class);

@@ -13,6 +13,10 @@ class User extends Authenticatable
 
     protected $table = 'users';
 
+    protected $fillable = [
+        'password'
+    ];
+
     protected $with = ['detail_personality_test', 'detail_inteligence_quotient_test'];
 
     public function detail_personality_test()
