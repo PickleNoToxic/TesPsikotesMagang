@@ -83,9 +83,10 @@ class UserController extends Controller
             $user->detail_inteligence_quotient_test()->delete();
             $user->detail_personality_test()->delete();
             $user->delete();
-            return redirect()->route('participants-all')->with('success', 'Participant deleted successfully');
+            return response()->json(['success' => 'Participant deleted successfully']);
         } else {
-            return redirect()->route('participants-all')->with('error', 'Participant not found');
+            return response()->json(['error' => 'Failed to delete participant']);
         }
     }
+
 }
