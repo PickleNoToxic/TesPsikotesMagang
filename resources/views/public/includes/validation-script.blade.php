@@ -10,17 +10,26 @@
 
     const savedState = localStorage.getItem('quizState');
     if (savedState) {
-        countdown = JSON.parse(savedState).countdown;
+        // countdown = JSON.parse(savedState).countdown;
+        const state = JSON.parse(savedState);
+        countdown = state.countdown;
+        startCountdown();
     } else {
         fetch('/master-web/latest')
             .then(response => response.json())
             .then(data => {
                 if (data) {
                     countdown = data['iq_test_duration'] * 60;
+                    startCountdown();
                 }
             })
             .catch(error => console.error('Error:', error));
     }
+    
+    let intervalId;
+    const startCountdown = () => {
+        intervalId = setInterval(updateCountdown, 1000);
+    };
 
     const updateCountdown = () => {
         const hours = Math.floor(countdown / 3600);
@@ -231,7 +240,7 @@
             });
     };
 
-    const intervalId = setInterval(updateCountdown, 1000);
+    // const intervalId = setInterval(updateCountdown, 1000);
 
     window.onload = () => {
         const savedState = localStorage.getItem('quizState');
